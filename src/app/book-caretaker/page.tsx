@@ -3,7 +3,6 @@
 import Navbar from "@/components/layout/Navbar";
 import Banner from "@/components/layout/Banner";
 import Footer from "@/components/layout/Footer";
-import MobileBottomBar from "@/components/layout/MobileBottomBar";
 import BookingForm from "@/components/interactive/BookingForm";
 import { ShieldCheck, Award, Clock, HeartHandshake, Phone } from "lucide-react";
 
@@ -73,7 +72,6 @@ export default function BookCaretakerPage() {
       </main>
 
       <Footer />
-      <MobileBottomBar />
     </div>
   );
 }

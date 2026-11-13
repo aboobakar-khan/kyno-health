@@ -4,7 +4,6 @@ import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Banner from "@/components/layout/Banner";
 import Footer from "@/components/layout/Footer";
-import MobileBottomBar from "@/components/layout/MobileBottomBar";
 import {
   Phone,
   Mail,
@@ -334,7 +333,6 @@ export default function ContactPage() {
       </main>
 
       <Footer />
-      <MobileBottomBar />
     </div>
   );
 }

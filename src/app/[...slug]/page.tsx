@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import Banner from "@/components/layout/Banner";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import MobileBottomBar from "@/components/layout/MobileBottomBar";
 import BookingForm from "@/components/interactive/BookingForm";
 import { pagesContent, PageData } from "@/data/pagesContent";
 import Link from "next/link";
@@ -212,7 +211,6 @@ function DynamicPageContent() {
       </main>
 
       <Footer />
-      <MobileBottomBar />
     </div>
   );
 }

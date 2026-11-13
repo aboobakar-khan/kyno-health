@@ -1,7 +1,6 @@
 import Banner from "@/components/layout/Banner";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import MobileBottomBar from "@/components/layout/MobileBottomBar";
 
 import Hero from "@/components/sections/Hero";
 import ValueProp from "@/components/sections/ValueProp";
@@ -30,7 +29,6 @@ export default function Home() {
       </main>
 
       <Footer />
-      <MobileBottomBar />
     </div>
   );
 }

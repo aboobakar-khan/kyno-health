@@ -49,12 +49,25 @@ export default function ValueProp() {
 
             {/* Right: Real Healthcare Photo */}
             <div className="lg:col-span-6">
-              <div className="relative overflow-hidden rounded-3xl bg-[#EADEC8] shadow-md aspect-[4/3]">
+              <div className="relative overflow-hidden rounded-3xl bg-[#EADEC8] shadow-xl border-4 border-white aspect-[4/3]">
                 <img
                   src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=1080&auto=format&fit=crop"
                   alt="Kyno Health Caretaker providing empathetic assistance at home in Gurgaon"
                   className="h-full w-full object-cover"
                 />
+                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-2xl border border-[#0F2F28]/10 shadow-md flex items-center justify-between">
+                  <div>
+                    <span className="text-[11px] font-bold text-[#00875A] uppercase tracking-wider block">
+                      Clinical Turning Protocol
+                    </span>
+                    <span className="text-xs font-semibold text-[#0F2F28]">
+                      Zero Bed Sore Guarantee with Q2H Repositioning
+                    </span>
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full bg-[#00875A]/10 text-[#00875A] text-[11px] font-bold">
+                    NABH
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -67,12 +80,25 @@ export default function ValueProp() {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
             {/* Left: Real Healthcare Photo */}
             <div className="lg:col-span-6 order-2 lg:order-1">
-              <div className="relative overflow-hidden rounded-3xl bg-[#EADEC8] shadow-md aspect-[4/3]">
+              <div className="relative overflow-hidden rounded-3xl bg-[#EADEC8] shadow-xl border-4 border-white aspect-[4/3]">
                 <img
                   src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=1080&auto=format&fit=crop"
                   alt="Kyno Health Doctor visiting patient at home in Gurgaon"
                   className="h-full w-full object-cover"
                 />
+                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-2xl border border-[#0F2F28]/10 shadow-md flex items-center justify-between">
+                  <div>
+                    <span className="text-[11px] font-bold text-[#FB923C] uppercase tracking-wider block">
+                      Rapid Medical Vehicle
+                    </span>
+                    <span className="text-xs font-semibold text-[#0F2F28]">
+                      On-demand doctor with 12-lead ECG &amp; vitals monitor
+                    </span>
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full bg-[#FB923C]/10 text-[#EA580C] text-[11px] font-bold">
+                    20 Mins
+                  </span>
+                </div>
               </div>
             </div>
 

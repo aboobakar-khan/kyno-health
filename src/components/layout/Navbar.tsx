@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import navData from "@/data/nav.json";
+import CitySelectorModal, { CITIES_DATA, CityInfo } from "@/components/layout/CitySelectorModal";
 import {
   ArrowRight,
   Menu,
@@ -10,12 +11,45 @@ import {
   ChevronDown,
   Phone,
   ShieldCheck,
+  MapPin,
 } from "lucide-react";
 
 export default function Navbar() {
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
+
+  // City Selector State
+  const [cityModalOpen, setCityModalOpen] = useState(false);
+  const [selectedCity, setSelectedCity] = useState<CityInfo>(CITIES_DATA[0]);
+
+  // Load saved city or detect automatically
+  useEffect(() => {
+    const saved = localStorage.getItem("kyno_selected_city");
+    if (!saved && typeof window !== "undefined" && navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const { latitude, longitude } = pos.coords;
+          if (latitude >= 28.0 && latitude <= 28.9 && longitude >= 76.8 && longitude <= 77.5) {
+            if (latitude >= 28.52 || longitude >= 77.15) {
+              const southDelhi = CITIES_DATA.find((c) => c.id === "south-delhi");
+              if (southDelhi) {
+                setSelectedCity(southDelhi);
+                localStorage.setItem("kyno_selected_city", southDelhi.id);
+              }
+            }
+          }
+        },
+        () => {},
+        { timeout: 4000 }
+      );
+    }
+  }, []);
+
+  const handleCitySelect = (city: CityInfo) => {
+    setSelectedCity(city);
+    localStorage.setItem("kyno_selected_city", city.id);
+  };
 
   const cubicEase = [0.22, 1, 0.36, 1] as const;
 
@@ -79,6 +113,19 @@ export default function Navbar() {
                 </span>
               </div>
             </a>
+
+            {/* City Selector Pill Button */}
+            <button
+              type="button"
+              onClick={() => setCityModalOpen(true)}
+              className="ml-2 sm:ml-3 flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-[#FAF8F5] text-xs font-medium transition-all cursor-pointer active:scale-95 shadow-sm"
+              aria-label="Select city for healthcare services"
+            >
+              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
+              <MapPin className="w-3.5 h-3.5 text-[#34D399]" />
+              <span className="font-semibold text-[11px] sm:text-xs">{selectedCity.name.split(" ")[0]}</span>
+              <ChevronDown className="w-3 h-3 text-white/70" />
+            </button>
           </div>
 
           {/* Desktop Nav Links with Micro-Interactions & Submenus */}
@@ -385,6 +432,14 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Global City Selector Modal */}
+      <CitySelectorModal
+        isOpen={cityModalOpen}
+        onClose={() => setCityModalOpen(false)}
+        selectedCityId={selectedCity.id}
+        onSelectCity={handleCitySelect}
+      />
     </>
   );
 }

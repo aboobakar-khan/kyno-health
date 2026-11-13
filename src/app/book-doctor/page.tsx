@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Banner from "@/components/layout/Banner";
 import Footer from "@/components/layout/Footer";
-import MobileBottomBar from "@/components/layout/MobileBottomBar";
 import {
   Check,
   Phone,
@@ -781,7 +780,6 @@ export default function BookDoctorPage() {
       </main>
 
       <Footer />
-      <MobileBottomBar />
     </div>
   );
 }

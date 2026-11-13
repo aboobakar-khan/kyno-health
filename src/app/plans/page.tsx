@@ -3,7 +3,6 @@
 import Navbar from "@/components/layout/Navbar";
 import Banner from "@/components/layout/Banner";
 import Footer from "@/components/layout/Footer";
-import MobileBottomBar from "@/components/layout/MobileBottomBar";
 import {
   Check,
   ArrowRight,
@@ -287,7 +286,6 @@ export default function PlansPage() {
       </main>
 
       <Footer />
-      <MobileBottomBar />
     </div>
   );
 }
