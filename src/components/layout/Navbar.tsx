@@ -12,6 +12,8 @@ import {
   Phone,
   ShieldCheck,
   MapPin,
+  CalendarCheck,
+  Stethoscope,
 } from "lucide-react";
 
 export default function Navbar() {
@@ -65,27 +67,51 @@ export default function Navbar() {
     };
   }, [mobileMenuOpen]);
 
+  // Curated primary links for clean desktop navigation
+  const primaryLinks = [
+    {
+      label: "Caretaker at Home",
+      href: "/caretaker-at-home",
+      submenu: [
+        { title: "Elderly Care at Home", href: "/caretaker-at-home/elderly-care" },
+        { title: "24/7 Live-In Caretaker", href: "/caretaker-at-home/24-hour-live-in" },
+        { title: "12-Hour Day / Night Shift", href: "/caretaker-at-home/12-hour-shift" },
+        { title: "Post-Surgical Care", href: "/caretaker-at-home/post-surgery" },
+        { title: "Bedridden Patient Care", href: "/caretaker-at-home/bedridden-care" },
+        { title: "Paralysis & Stroke Support", href: "/caretaker-at-home/stroke-paralysis" }
+      ]
+    },
+    {
+      label: "Clinical Services",
+      href: "/services",
+      submenu: [
+        { title: "Doctor Visit in 20 Mins (₹1999)", href: "/book-doctor" },
+        { title: "Critical Care Nursing", href: "/services/nurse-at-home" },
+        { title: "Physiotherapy at Home", href: "/services/physiotherapy" },
+        { title: "ICU Setup & Oxygen at Home", href: "/services/icu-setup" },
+        { title: "Diagnostic Blood Tests & ECG", href: "/services/lab-tests-at-home" },
+        { title: "Geriatric & Dementia Care", href: "/conditions/geriatric-care" }
+      ]
+    },
+    {
+      label: "Plans & Pricing",
+      href: "/plans"
+    }
+  ];
+
   return (
     <>
-      {/* ── TOP NAVBAR ── */}
-      <header className="sticky top-0 z-50 w-full bg-[#0F2F28] border-b border-white/10 transition-colors">
-        <div className="mx-auto flex h-[72px] sm:h-[78px] max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:px-10">
-          {/* Mobile Left: Hamburger + Logo Wordmark */}
-          <div className="flex items-center gap-3 lg:gap-0">
-            <button
-              onClick={() => setMobileMenuOpen(true)}
-              className="lg:hidden flex items-center justify-center p-2 text-[#FAF8F5] hover:opacity-80 active:scale-95 transition-all"
-              aria-label="Toggle navigation menu"
-              aria-expanded={mobileMenuOpen}
-            >
-              <Menu className="h-6 w-6 stroke-[1.75]" />
-            </button>
-
+      {/* ── MAIN LUXURY NAVBAR ── */}
+      <header className="sticky top-0 z-50 w-full bg-[#0F2F28] border-b border-white/10 shadow-sm transition-colors">
+        <div className="mx-auto flex h-[70px] sm:h-[74px] max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:px-10">
+          
+          {/* Left: Logo & City Selector */}
+          <div className="flex items-center gap-3 sm:gap-4">
             <a
               href="/"
               className="flex items-center gap-2.5 text-[#FAF8F5] hover:opacity-95 transition-opacity"
             >
-              {/* Kyno Health Emblem: Medical heart + cross */}
+              {/* Kyno Health Emblem */}
               <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-white/10 p-1">
                 <svg viewBox="0 0 36 36" className="w-6 h-6" fill="none">
                   <path
@@ -114,23 +140,26 @@ export default function Navbar() {
               </div>
             </a>
 
-            {/* City Selector Pill Button */}
+            {/* Subtle Divider */}
+            <div className="hidden sm:block h-5 w-[1px] bg-white/20" />
+
+            {/* City Selector Pill Button (Clean Luxury Pill) */}
             <button
               type="button"
               onClick={() => setCityModalOpen(true)}
-              className="ml-2 sm:ml-3 flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-[#FAF8F5] text-xs font-medium transition-all cursor-pointer active:scale-95 shadow-sm"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-[#FAF8F5] text-xs font-medium transition-all cursor-pointer active:scale-95"
               aria-label="Select city for healthcare services"
             >
-              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
               <MapPin className="w-3.5 h-3.5 text-[#34D399]" />
-              <span className="font-semibold text-[11px] sm:text-xs">{selectedCity.name.split(" ")[0]}</span>
-              <ChevronDown className="w-3 h-3 text-white/70" />
+              <span className="font-semibold text-xs tracking-wide">{selectedCity.name.split(" ")[0]}</span>
+              <ChevronDown className="w-3 h-3 text-white/60" />
             </button>
           </div>
 
-          {/* Desktop Nav Links with Micro-Interactions & Submenus */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 h-full">
-            {navData.links.map((link) => {
+          {/* Desktop Nav Links (Clean, Spacious, Centered) */}
+          <nav className="hidden lg:flex items-center gap-8 xl:gap-10 h-full">
+            {primaryLinks.map((link) => {
               const hasSubmenu = Boolean(link.submenu && link.submenu.length > 0);
               const isHovered = hoveredMenu === link.label;
 
@@ -143,11 +172,13 @@ export default function Navbar() {
                 >
                   <a
                     href={link.href}
-                    className={`text-[14px] xl:text-[14.5px] font-medium text-[#FAF8F5] transition-colors py-2 relative flex items-center ${
-                      isHovered ? "text-white" : "hover:text-white"
+                    className={`text-[14px] xl:text-[14.5px] font-medium text-[#FAF8F5] transition-colors py-2 relative flex items-center gap-1 ${
+                      isHovered ? "text-white" : "hover:text-[#34D399]"
                     }`}
                   >
                     <span>{link.label}</span>
+                    {hasSubmenu && <ChevronDown className="w-3 h-3 text-white/60" />}
+                    
                     {/* Animated green underline */}
                     {isHovered && (
                       <motion.span
@@ -168,13 +199,13 @@ export default function Navbar() {
                         transition={{ duration: 0.2, ease: cubicEase }}
                         className="absolute top-full left-0 z-50 pt-2"
                       >
-                        <div className="bg-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.18)] border border-black/5 p-6 sm:p-8">
-                          <div className="grid grid-cols-2 gap-x-10 gap-y-3.5 min-w-[460px]">
+                        <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.18)] border border-black/5 p-6 sm:p-7 min-w-[380px]">
+                          <div className="space-y-2">
                             {link.submenu?.map((sub) => (
                               <a
                                 key={sub.title}
                                 href={sub.href}
-                                className="text-[14px] font-medium text-[#132D2E] hover:text-[#00875A] transition-colors py-1 flex items-center justify-between group"
+                                className="text-[14px] font-medium text-[#132D2E] hover:text-[#00875A] hover:bg-[#F4F8F6] px-3 py-2 rounded-xl transition-all flex items-center justify-between group"
                               >
                                 <span>{sub.title}</span>
                                 <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-[#00875A]" />
@@ -190,242 +221,200 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Desktop Right CTAs: Contact + 24/7 Helpline + Book Doctor + Book Caretaker */}
-          <div className="hidden lg:flex items-center gap-3.5 xl:gap-4">
+          {/* Desktop Right CTAs: Clean, Calm Hierarchy */}
+          <div className="hidden lg:flex items-center gap-5 xl:gap-6">
             <a
               href="/contact"
-              className="text-[13.5px] font-medium text-[#FAF8F5] hover:text-[#34D399] transition-colors whitespace-nowrap"
+              className="text-[13.5px] font-medium text-[#FAF8F5]/80 hover:text-white transition-colors whitespace-nowrap"
             >
-              Contact Us
+              Contact
             </a>
 
             <a
               href="tel:+919953104104"
-              className="flex items-center gap-1.5 text-[13px] font-semibold text-[#FB923C] hover:text-white px-3 py-1.5 rounded-full bg-white/5 border border-[#FB923C]/30 hover:border-[#FB923C] transition-all whitespace-nowrap"
+              className="flex items-center gap-2 text-[13px] font-medium text-[#FAF8F5]/90 hover:text-white transition-all whitespace-nowrap"
             >
-              <Phone className="h-3.5 w-3.5 animate-pulse text-[#FB923C]" />
-              <span>+91 99531 04104</span>
+              <Phone className="h-3.5 w-3.5 text-[#FB923C]" />
+              <span className="font-mono text-xs">+91 99531 04104</span>
             </a>
 
+            {/* Single Primary Luxury Button */}
             <a
-              href="/book-doctor"
-              className="rounded-full bg-[#00875A] text-white px-4 py-2 text-xs xl:text-sm font-semibold shadow-sm hover:bg-[#00704A] transition-all whitespace-nowrap flex items-center gap-1.5"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-              <span>Book Doctor (20m)</span>
-            </a>
-
-            <a
-              href={navData.cta.join.href}
-              className="rounded-full bg-[#FB923C] text-white px-4 py-2 text-xs xl:text-sm font-semibold shadow-sm hover:bg-[#EA580C] transition-all whitespace-nowrap"
-            >
-              {navData.cta.join.label}
-            </a>
-          </div>
-
-          {/* Mobile Right: Direct Phone call & Book Doctor */}
-          <div className="lg:hidden flex items-center gap-2">
-            <a
-              href="/book-doctor"
-              className="px-2.5 py-1 rounded-full bg-[#00875A] text-white text-[11px] font-bold shadow-sm flex items-center gap-1"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-              <span>Doctor 20m</span>
-            </a>
-            <a
-              href="tel:+919953104104"
-              className="flex items-center justify-center w-8 h-8 rounded-full bg-[#FB923C]/20 text-[#FB923C] border border-[#FB923C]/30"
-              aria-label="Call emergency helpline"
-            >
-              <Phone className="w-3.5 h-3.5" />
-            </a>
-            <a
-              href={navData.cta.join.href}
-              className="rounded-full bg-[#FB923C] text-white px-3 py-1 text-xs font-semibold hover:bg-[#EA580C] active:scale-95 transition-all whitespace-nowrap"
+              href="/book-caretaker"
+              className="rounded-full bg-[#FB923C] hover:bg-[#EA580C] text-white px-6 py-2.5 text-xs xl:text-sm font-semibold shadow-sm transition-all whitespace-nowrap active:scale-95"
             >
               Book Care
             </a>
           </div>
+
+          {/* Mobile Right: Hamburger Only (Zero Mess) */}
+          <div className="lg:hidden flex items-center gap-2.5">
+            <a
+              href="tel:+919953104104"
+              className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 text-white"
+              aria-label="Call emergency helpline"
+            >
+              <Phone className="w-3.5 h-3.5 text-[#FB923C]" />
+            </a>
+
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              className="flex items-center justify-center p-1.5 text-[#FAF8F5] hover:opacity-80 active:scale-95 transition-all"
+              aria-label="Toggle navigation menu"
+              aria-expanded={mobileMenuOpen}
+            >
+              <Menu className="h-6 w-6 stroke-[1.75]" />
+            </button>
+          </div>
         </div>
       </header>
 
-      {/* ── MOBILE DRAWER NAVIGATION MENU ── */}
+      {/* ── MOBILE FULL-SCREEN NAVIGATION DRAWER ── */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[100] lg:hidden flex flex-col bg-[#FAF8F5]"
+            transition={{ duration: 0.25, ease: cubicEase }}
+            className="fixed inset-0 z-50 flex flex-col bg-[#FAF8F5] lg:hidden"
           >
-            {/* Drawer Header with Logo & Close Button */}
-            <div className="flex items-center justify-between px-6 h-[72px] bg-[#0F2F28] border-b border-white/10 flex-shrink-0">
-              <a
-                href="/"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center gap-2 text-[#FAF8F5]"
-              >
-                <div className="relative flex items-center justify-center w-7 h-7 rounded-md bg-white/10 p-1">
-                  <svg viewBox="0 0 36 36" className="w-5 h-5" fill="none">
-                    <path
-                      d="M18 30.5s-10-6.2-13.5-13.2a7.5 7.5 0 0 1 12.5-4.5l1 1.2 1-1.2a7.5 7.5 0 0 1 12.5 4.5c-3.5 7-13.5 13.2-13.5 13.2z"
-                      stroke="#34D399"
-                      strokeWidth="2.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M12.5 18h5.5m-2.75-2.75v5.5"
-                      stroke="#FB923C"
-                      strokeWidth="2.8"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </div>
-                <div className="flex items-baseline">
-                  <span className="font-sans text-[20px] font-bold text-[#FAF8F5]">Kyno</span>
-                  <span className="font-sans text-[20px] font-medium text-[#FB923C] ml-1">health</span>
-                </div>
-              </a>
+            {/* Drawer Header */}
+            <div className="flex h-[72px] items-center justify-between px-6 border-b border-[#0F2F28]/10 bg-[#0F2F28] text-white">
+              <div className="flex items-center gap-2">
+                <span className="font-sans text-[20px] font-bold text-[#FAF8F5]">Kyno</span>
+                <span className="font-sans text-[20px] font-medium text-[#FB923C]">health</span>
+              </div>
 
               <button
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-[#FAF8F5] hover:bg-white/20 active:scale-95 transition-all"
-                aria-label="Close menu"
+                className="p-2 text-white hover:opacity-75 transition-opacity"
+                aria-label="Close navigation menu"
               >
-                <X className="w-5 h-5" />
+                <X className="h-6 w-6 stroke-[1.75]" />
               </button>
             </div>
 
-            {/* Drawer Body: Main Categories Only (Submenus revealed only on click) */}
-            <div className="flex-1 overflow-y-auto px-6 py-6 pb-28">
-              {/* Quick Call Box in Mobile Drawer */}
-              <div className="mb-6 p-4 rounded-xl bg-[#E6F4EA] border border-[#34D399]/30 flex items-center justify-between">
-                <div>
-                  <div className="text-xs font-semibold uppercase tracking-wider text-[#0F2F28]/70">
-                    24/7 Gurgaon Helpline
-                  </div>
-                  <div className="text-[17px] font-bold text-[#0F2F28] mt-0.5">
-                    +91 99531 04104
-                  </div>
-                </div>
-                <a
-                  href="tel:+919953104104"
-                  className="px-3.5 py-2 rounded-lg bg-[#0F2F28] text-white text-xs font-semibold flex items-center gap-1.5"
+            {/* Drawer Body */}
+            <div className="flex-1 overflow-y-auto px-6 py-6 flex flex-col justify-between">
+              <div className="space-y-6">
+                {/* City Picker Card */}
+                <div
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    setCityModalOpen(true);
+                  }}
+                  className="p-4 rounded-2xl bg-white border border-[#0F2F28]/10 shadow-sm flex items-center justify-between cursor-pointer"
                 >
-                  <Phone className="w-3.5 h-3.5 text-[#FB923C]" />
-                  <span>Call Now</span>
-                </a>
-              </div>
+                  <div className="flex items-center gap-2.5">
+                    <MapPin className="w-4 h-4 text-[#00875A]" />
+                    <div>
+                      <div className="text-[11px] text-gray-500 uppercase tracking-wider font-semibold">
+                        Service Location
+                      </div>
+                      <div className="text-sm font-bold text-[#0F2F28]">
+                        {selectedCity.name}
+                      </div>
+                    </div>
+                  </div>
+                  <span className="text-xs font-semibold text-[#00875A] underline">Change</span>
+                </div>
 
-              <nav
-                className="flex flex-col divide-y divide-[#132D2E]/10"
-                aria-label="Mobile navigation"
-              >
-                {navData.links.map((link) => {
-                  const hasSubmenu = Boolean(link.submenu && link.submenu.length > 0);
-                  const isExpanded = openAccordion === link.label;
+                {/* Primary Action Booking Cards */}
+                <div className="grid grid-cols-2 gap-3">
+                  <a
+                    href="/book-doctor"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="p-4 rounded-2xl bg-[#00875A] text-white flex flex-col justify-between shadow-sm"
+                  >
+                    <Stethoscope className="w-5 h-5 mb-2" />
+                    <div>
+                      <div className="text-xs font-bold leading-tight">Doctor at Home</div>
+                      <div className="text-[10px] text-white/80 mt-0.5">20-Min Arrival • ₹1999</div>
+                    </div>
+                  </a>
 
-                  if (!hasSubmenu) {
+                  <a
+                    href="/book-caretaker"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="p-4 rounded-2xl bg-[#FB923C] text-white flex flex-col justify-between shadow-sm"
+                  >
+                    <CalendarCheck className="w-5 h-5 mb-2" />
+                    <div>
+                      <div className="text-xs font-bold leading-tight">Book Caretaker</div>
+                      <div className="text-[10px] text-white/80 mt-0.5">12h / 24h Verified GDA</div>
+                    </div>
+                  </a>
+                </div>
+
+                {/* Nav Links Accordion */}
+                <div className="space-y-3 pt-2">
+                  <div className="text-xs font-bold uppercase tracking-wider text-gray-400">
+                    Clinical Services &amp; Plans
+                  </div>
+
+                  {navData.links.map((link) => {
+                    const hasSubmenu = Boolean(link.submenu && link.submenu.length > 0);
+                    const isOpen = openAccordion === link.label;
+
                     return (
-                      <div key={link.label} className="py-2">
-                        <a
-                          href={link.href}
-                          onClick={() => setMobileMenuOpen(false)}
-                          className="flex items-center justify-between py-3.5 px-2 text-[17px] font-medium text-[#132D2E] hover:text-[#00875A] transition-colors"
-                        >
-                          <span>{link.label}</span>
-                          <ArrowRight className="w-4 h-4 text-[#132D2E]/40" />
-                        </a>
+                      <div key={link.label} className="border-b border-[#0F2F28]/10 pb-3">
+                        {hasSubmenu ? (
+                          <>
+                            <button
+                              onClick={() => setOpenAccordion(isOpen ? null : link.label)}
+                              className="flex w-full items-center justify-between py-1 text-left text-base font-semibold text-[#132D2E]"
+                            >
+                              <span>{link.label}</span>
+                              <ChevronDown
+                                className={`h-4 w-4 text-gray-500 transition-transform ${
+                                  isOpen ? "rotate-180" : ""
+                                }`}
+                              />
+                            </button>
+                            {isOpen && (
+                              <div className="mt-2 space-y-2 pl-3 pt-1">
+                                {link.submenu?.map((sub) => (
+                                  <a
+                                    key={sub.title}
+                                    href={sub.href}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="block py-1 text-sm text-[#132D2E]/80 hover:text-[#00875A]"
+                                  >
+                                    {sub.title}
+                                  </a>
+                                ))}
+                              </div>
+                            )}
+                          </>
+                        ) : (
+                          <a
+                            href={link.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block py-1 text-base font-semibold text-[#132D2E]"
+                          >
+                            {link.label}
+                          </a>
+                        )}
                       </div>
                     );
-                  }
+                  })}
+                </div>
+              </div>
 
-                  return (
-                    <div key={link.label} className="py-2">
-                      <button
-                        onClick={() =>
-                          setOpenAccordion(isExpanded ? null : link.label)
-                        }
-                        className="flex w-full items-center justify-between py-3.5 px-2 text-left text-[17px] font-medium text-[#132D2E] hover:text-[#00875A] active:text-[#00875A] transition-colors"
-                        aria-expanded={isExpanded}
-                      >
-                        <span>{link.label}</span>
-                        <span
-                          className={`transition-transform duration-300 ${
-                            isExpanded
-                              ? "rotate-180 text-[#00875A]"
-                              : "text-[#132D2E]/40"
-                          }`}
-                        >
-                          <ChevronDown className="w-5 h-5" />
-                        </span>
-                      </button>
-
-                      {/* Smooth Sub-menu Expand / Collapse */}
-                      <AnimatePresence initial={false}>
-                        {isExpanded && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{
-                              duration: 0.28,
-                              ease: [0.22, 1, 0.36, 1],
-                            }}
-                            className="overflow-hidden"
-                          >
-                            <div className="ml-3 pl-5 pb-3 pt-1 border-l-2 border-[#34D399]/35 flex flex-col gap-3">
-                              {link.submenu?.map((sub) => (
-                                <a
-                                  key={sub.title}
-                                  href={sub.href}
-                                  onClick={() => setMobileMenuOpen(false)}
-                                  className="text-[15px] font-normal text-[#132D2E]/75 hover:text-[#132D2E] active:text-[#00875A] py-1 transition-colors block"
-                                >
-                                  {sub.title}
-                                </a>
-                              ))}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  );
-                })}
-              </nav>
-
-              {/* Action Buttons in Drawer */}
-              <div className="mt-8 flex flex-col gap-3">
-                <a
-                  href={navData.cta.join.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center rounded-full bg-[#FB923C] py-4 text-center text-sm font-semibold text-white shadow-md hover:bg-[#EA580C] active:scale-[0.99] transition-all"
-                >
-                  {navData.cta.join.label}
-                </a>
-
+              {/* Bottom Support */}
+              <div className="pt-6 border-t border-[#0F2F28]/10 space-y-3">
                 <a
                   href="tel:+919953104104"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 rounded-full border border-[#0F2F28]/25 py-3.5 text-center text-sm font-semibold text-[#0F2F28] hover:bg-[#0F2F28]/5 transition-all"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-[#0F2F28] py-3 text-white text-xs font-bold shadow-sm"
                 >
                   <Phone className="w-4 h-4 text-[#FB923C]" />
-                  <span>Call 24/7 Helpline (+91 99531 04104)</span>
+                  <span>Call 24/7 Helpline: +91 99531 04104</span>
                 </a>
 
-                <a
-                  href="/contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 rounded-full border border-[#0F2F28]/20 py-3 text-center text-sm font-medium text-[#0F2F28] hover:bg-[#0F2F28]/5 transition-all"
-                >
-                  <span>Contact Support &amp; Gurgaon HQ</span>
-                </a>
-
-                <div className="mt-4 pt-4 border-t border-[#132D2E]/10 flex items-center justify-center gap-2 text-xs text-[#132D2E]/60">
-                  <ShieldCheck className="w-4 h-4 text-[#2E7D32]" />
-                  <span>100% Background &amp; Police Verified Caretakers</span>
+                <div className="text-center text-[11px] text-gray-500 flex items-center justify-center gap-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#00875A]" />
+                  <span>NABH Aligned • 100% Police &amp; Aadhaar Verified</span>
                 </div>
               </div>
             </div>
