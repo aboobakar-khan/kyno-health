@@ -1,99 +1,119 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Check, X, ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 
 export default function Outcomes() {
   const memberStories = [
     {
-      id: "chelsea",
-      name: "Chelsea",
-      quote: "Completely changed my physical and mental health.",
-      image: "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2Fe25ec9e1b4c3403bb8f9cc3a40636f78?width=640&quality=75&format=webp",
-      alt: "Abubakar Health Member Chelsea",
+      id: "rajiv",
+      name: "Rajiv Malhotra",
+      location: "DLF Phase 5, Gurgaon",
+      quote: "Finding a certified GDA caretaker for my 82-year-old father gave our family tremendous peace of mind.",
+      image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=640&quality=75&auto=format&fit=crop",
+      alt: "Kyno Health Patient Family Rajiv Malhotra in Gurgaon",
       showCta: true,
     },
     {
-      id: "bethany",
-      name: "Bethany",
-      quote: "I started getting answers through extensive testing.",
-      image: "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2F677582783fa94c31a634ffbf187f306f?width=640&quality=75&format=webp",
-      alt: "Abubakar Health Member Bethany",
+      id: "meenakshi",
+      name: "Meenakshi K.",
+      location: "Golf Course Road, Gurgaon",
+      quote: "Post-knee surgery recovery at home was smooth, hygienic, and completely complication-free.",
+      image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=640&quality=75&auto=format&fit=crop",
+      alt: "Kyno Health Patient Meenakshi K.",
       showCta: false,
     },
     {
-      id: "julie",
-      name: "Julie",
-      quote: "Wow I might actually be able to fix this problem that I've dealt with my whole life.",
-      image: "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2Fe27c31c07f794a62a8f85d2b1e85b054?width=640&quality=75&format=webp",
-      alt: "Abubakar Health Member Julie",
+      id: "amitava",
+      name: "Amitava Sengupta",
+      location: "Sushant Lok 1, Gurgaon",
+      quote: "Strict Q2H repositioning protocols saved my bedridden father from painful bed sores.",
+      image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=640&quality=75&auto=format&fit=crop",
+      alt: "Kyno Health Patient Amitava Sengupta",
       showCta: false,
     },
     {
-      id: "christina",
-      name: "Christina",
-      quote: "They don't just put a band-aid on a symptom.",
-      image: "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2Fe319d6282e194708b92df890ceaf2531?width=640&quality=75&format=webp",
-      alt: "Abubakar Health Member Christina",
+      id: "sunita",
+      name: "Sunita Deshmukh",
+      location: "Sector 46, Gurugram",
+      quote: "Kyno Health's doctor arrived at our doorstep in 22 minutes at 11 PM with a portable ECG machine.",
+      image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=640&quality=75&auto=format&fit=crop",
+      alt: "Kyno Health Emergency Home Care in Gurgaon",
       showCta: false,
     },
   ];
 
   const comparisonRows = [
     {
-      feature: "Finds the root cause",
-      pcp: "x",
-      functional: "check",
-      concierge: "Varies",
-      parsley: "check",
+      feature: "100% Police & Identity Verified",
+      maid: "x",
+      hospital: "check",
+      agency: "Varies",
+      kyno: "check",
     },
     {
-      feature: "Accepts insurance",
-      pcp: "check",
-      functional: "x",
-      concierge: "x",
-      parsley: "check",
+      feature: "Trained GDA Bedside Care & Hygiene",
+      maid: "x",
+      hospital: "check",
+      agency: "x",
+      kyno: "check",
     },
     {
-      feature: "Typical cost",
-      pcp: "$",
-      functional: "$$$",
-      concierge: "$$$$$",
-      parsley: "$$",
+      feature: "20-Min Emergency Doctor At Doorstep",
+      maid: "x",
+      hospital: "In-facility only",
+      agency: "x",
+      kyno: "check",
     },
     {
-      feature: "Care team and nutrition coach",
-      pcp: "x",
-      functional: "x",
-      concierge: "x",
-      parsley: "check",
+      feature: "Daily Clinical Vitals Monitoring",
+      maid: "x",
+      hospital: "check",
+      agency: "x",
+      kyno: "check",
     },
     {
-      feature: "Tracks progress",
-      pcp: "x",
-      functional: "x",
-      concierge: "x",
-      parsley: "check",
+      feature: "Standby 4-Hour Replacement Guarantee",
+      maid: "x",
+      hospital: "N/A",
+      agency: "3-7 Days",
+      kyno: "check",
+    },
+    {
+      feature: "Cost & Transparency",
+      maid: "₹",
+      hospital: "₹₹₹₹₹",
+      agency: "₹₹₹",
+      kyno: "₹₹ (Direct)",
+    },
+    {
+      feature: "Dignified Recovery at Home",
+      maid: "check",
+      hospital: "x",
+      agency: "check",
+      kyno: "check",
     },
   ];
 
   return (
     <div className="bg-[#FAF8F5] text-[#132D2E]">
-      {/* ── PART 1: 89% REAL RESULTS WITH VIDEO STORY CARDS ───────────── */}
+      {/* ── PART 1: 96% REAL RESULTS WITH VIDEO STORY CARDS ───────────── */}
       <section className="py-20 lg:py-28 overflow-hidden border-b border-[#132D2E]/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-center lg:gap-14">
             {/* Left Column: Stat Headline */}
             <div className="lg:w-[320px] lg:flex-shrink-0 mb-10 lg:mb-0">
-              <p className="text-xs font-semibold tracking-widest uppercase text-[#4CAF7D] mb-3">
-                REAL RESULTS
+              <p className="text-xs font-semibold tracking-widest uppercase text-[#00875A] mb-3">
+                PROVEN CLINICAL OUTCOMES
               </p>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-light leading-[1.18] text-[#132D2E]">
-                89% of Abubakar Health members improve or eliminate symptoms within a year
+                96% of families report faster recovery and dignified comfort at home
               </h2>
+              <p className="mt-4 text-xs sm:text-sm text-[#132D2E]/75 leading-relaxed">
+                Over 50,000+ bedside hours delivered with NABH-aligned patient safety protocols across Gurgaon and Delhi NCR.
+              </p>
             </div>
 
-            {/* Right Column: 9:16 Video / Portrait Member Stories Carousel */}
+            {/* Right Column: Member Stories Carousel */}
             <div className="flex-1 overflow-x-auto pb-4 scrollbar-none snap-x snap-mandatory flex gap-4 sm:gap-6">
               {memberStories.map((story) => (
                 <div
@@ -113,18 +133,21 @@ export default function Outcomes() {
 
                     {/* Floating Video Play Badge Button */}
                     <button
-                      className="absolute top-4 right-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/25 backdrop-blur-md text-white transition-all duration-300 group-hover:scale-110 group-hover:bg-[#4CAF7D] cursor-pointer"
-                      aria-label={`Play ${story.name}'s story video`}
+                      className="absolute top-4 right-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/25 backdrop-blur-md text-white transition-all duration-300 group-hover:scale-110 group-hover:bg-[#00875A] cursor-pointer"
+                      aria-label={`Play ${story.name}'s story`}
                     >
                       <Play className="h-4 w-4 fill-white translate-x-0.5" />
                     </button>
 
                     {/* Content Layer at bottom */}
                     <div className="absolute bottom-0 inset-x-0 p-5 text-white z-10 flex flex-col justify-end">
-                      <p className="font-sans text-xs tracking-wider uppercase text-white/70 font-semibold mb-1">
+                      <p className="font-sans text-xs tracking-wider uppercase text-[#34D399] font-semibold mb-0.5">
+                        {story.location}
+                      </p>
+                      <p className="font-sans text-xs font-semibold text-white/90 mb-1">
                         {story.name}
                       </p>
-                      <p className="font-serif text-lg sm:text-[19px] font-light leading-snug text-white">
+                      <p className="font-serif text-base sm:text-[17px] font-light leading-snug text-white">
                         &ldquo;{story.quote}&rdquo;
                       </p>
                     </div>
@@ -133,9 +156,9 @@ export default function Outcomes() {
                       <div className="mt-4">
                         <a
                           href="/reviews"
-                          className="inline-block rounded-full bg-[#C86D48] text-white px-5 py-2 text-xs font-medium hover:bg-[#B55D3A] transition-colors"
+                          className="inline-block rounded-full bg-[#FB923C] text-white px-5 py-2 text-xs font-medium hover:bg-[#EA580C] transition-colors"
                         >
-                          See all reviews
+                          See all Gurgaon reviews
                         </a>
                       </div>
                     )}
@@ -147,30 +170,33 @@ export default function Outcomes() {
         </div>
       </section>
 
-      {/* ── PART 2: HOW ABUBAKAR HEALTH COMPARES (Exact Match to Phone Screenshot) ── */}
+      {/* ── PART 2: HOW KYNO HEALTH COMPARES ── */}
       <section className="py-16 md:py-24 lg:py-36 overflow-visible relative">
         <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 lg:mb-20">
             <p className="text-xs sm:text-[13px] font-semibold tracking-[0.2em] uppercase text-[#132D2E]/60 mb-3 sm:mb-4">
-              HOW ABUBAKAR HEALTH COMPARES
+              WHY CHOOSE KYNO HEALTH
             </p>
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-[58px] font-light leading-[1.15] text-[#132D2E] tracking-tight">
-              Get more out of medicine than<br className="hidden sm:inline" /> you ever thought possible
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-[54px] font-light leading-[1.15] text-[#132D2E] tracking-tight">
+              Hospital-grade clinical standards vs traditional home care
             </h2>
+            <p className="mt-4 text-sm sm:text-base text-[#132D2E]/75">
+              Compare why families in Gurgaon choose Kyno Health over unverified domestic maid agencies and prolonged hospital inpatient stays.
+            </p>
           </div>
 
-          {/* ── MOBILE 3-COLUMN TABLE (Exact Match to User's Phone Screenshot cb8fbc3b.jpg) ── */}
+          {/* ── MOBILE 3-COLUMN TABLE ── */}
           <div className="block md:hidden border-t border-[#132D2E]/20 relative pb-12">
             {/* Table Header: 3 Columns */}
             <div className="grid grid-cols-3 items-stretch text-[#132D2E]">
-              <div className="p-3 text-center leading-snug flex items-center justify-center text-[14px] sm:text-[15px] font-normal border-b border-[#132D2E]/20">
-                Primary Care<br />Provider
+              <div className="p-3 text-center leading-snug flex items-center justify-center text-[13px] font-normal border-b border-[#132D2E]/20">
+                Unverified<br />Maid Agency
               </div>
-              <div className="p-3 text-center leading-snug flex items-center justify-center text-[14px] sm:text-[15px] font-normal border-b border-[#132D2E]/20">
-                Functional<br />Medicine<br />Clinic
+              <div className="p-3 text-center leading-snug flex items-center justify-center text-[13px] font-normal border-b border-[#132D2E]/20">
+                Hospital Ward<br />/ Inpatient
               </div>
-              <div className="p-3 text-center text-[#132D2E] text-[15px] font-medium leading-snug flex items-center justify-center bg-[#BEE3D6] border-b border-[#132D2E]/20">
-                Abubakar Health
+              <div className="p-3 text-center text-[#132D2E] text-[14px] font-semibold leading-snug flex items-center justify-center bg-[#BEE3D6] border-b border-[#132D2E]/20">
+                Kyno Health
               </div>
             </div>
 
@@ -181,48 +207,47 @@ export default function Outcomes() {
                   key={row.feature}
                   className="grid grid-cols-3 items-stretch text-[#132D2E]"
                 >
-                  {/* Column 1: Primary Care Provider */}
+                  {/* Column 1: Maid */}
                   <div className="p-3 flex items-center justify-center text-center border-b border-[#132D2E]/20">
-                    {row.pcp === "check" ? (
-                      <svg className="w-6 h-6 text-[#132D2E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    {row.maid === "check" ? (
+                      <svg className="w-5 h-5 text-[#00875A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M20 6L9 17l-5-5" />
                       </svg>
-                    ) : row.pcp === "x" ? (
-                      <svg className="w-6 h-6 text-[#132D2E]/35" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    ) : row.maid === "x" ? (
+                      <svg className="w-5 h-5 text-[#132D2E]/35" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M18 6L6 18M6 6l12 12" />
                       </svg>
                     ) : (
-                      <span className="text-base font-medium text-[#132D2E]">{row.pcp}</span>
+                      <span className="text-xs font-medium text-[#132D2E]">{row.maid}</span>
                     )}
                   </div>
 
-                  {/* Column 2: Functional Medicine Clinic */}
+                  {/* Column 2: Hospital */}
                   <div className="p-3 flex items-center justify-center text-center border-b border-[#132D2E]/20">
-                    {row.functional === "check" ? (
-                      <svg className="w-6 h-6 text-[#132D2E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    {row.hospital === "check" ? (
+                      <svg className="w-5 h-5 text-[#00875A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M20 6L9 17l-5-5" />
                       </svg>
-                    ) : row.functional === "x" ? (
-                      <svg className="w-6 h-6 text-[#132D2E]/35" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    ) : row.hospital === "x" ? (
+                      <svg className="w-5 h-5 text-[#132D2E]/35" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M18 6L6 18M6 6l12 12" />
                       </svg>
                     ) : (
-                      <span className="text-base font-medium text-[#132D2E]">{row.functional}</span>
+                      <span className="text-xs font-medium text-[#132D2E]">{row.hospital}</span>
                     )}
                   </div>
 
-                  {/* Column 3: Abubakar Health (Solid Mint Column with stacked feature label) */}
-                  <div className="p-3.5 flex flex-col items-center justify-center text-center bg-[#BEE3D6] border-b border-[#132D2E]/20">
-                    {/* Stacked Feature Label inside Mint Column */}
-                    <span className="text-[12px] text-[#132D2E]/80 leading-tight mb-2 font-normal">
+                  {/* Column 3: Kyno Health (Mint Column with stacked feature label) */}
+                  <div className="p-3 flex flex-col items-center justify-center text-center bg-[#BEE3D6] border-b border-[#132D2E]/20">
+                    <span className="text-[11px] text-[#132D2E]/80 leading-tight mb-1.5 font-normal">
                       {row.feature}
                     </span>
-                    {row.parsley === "check" ? (
-                      <svg className="w-6 h-6 text-[#132D2E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    {row.kyno === "check" ? (
+                      <svg className="w-6 h-6 text-[#00875A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M20 6L9 17l-5-5" />
                       </svg>
                     ) : (
-                      <span className="text-base font-medium text-[#132D2E]">{row.parsley}</span>
+                      <span className="text-xs font-bold text-[#00875A]">{row.kyno}</span>
                     )}
                   </div>
                 </div>
@@ -230,11 +255,11 @@ export default function Outcomes() {
             </div>
           </div>
 
-          {/* ── DESKTOP 5-COLUMN TABLE (hidden on mobile, visible md:block) ── */}
+          {/* ── DESKTOP 5-COLUMN TABLE ── */}
           <div className="hidden md:block relative pb-10">
             <div className="overflow-x-auto pb-4 scrollbar-none">
               <div className="min-w-[850px] border-t border-[#132D2E]/20 relative">
-                {/* Continuous 100% Solid Mint Slab for Abubakar Health Column */}
+                {/* Continuous Solid Mint Column for Kyno Health */}
                 <div
                   className="absolute right-0 top-0 bottom-0 w-[calc(100%*2/12)] bg-[#BEE3D6] pointer-events-none z-0"
                   aria-hidden="true"
@@ -243,17 +268,17 @@ export default function Outcomes() {
                 {/* Table Header */}
                 <div className="grid grid-cols-12 items-stretch text-sm font-medium text-[#132D2E] relative z-10">
                   <div className="col-span-4 p-6 md:p-8 border-b border-[#132D2E]/20" />
-                  <div className="col-span-2 p-6 md:p-8 text-center leading-snug flex flex-col justify-end text-[16px] sm:text-[18px] lg:text-[19px] font-normal border-b border-[#132D2E]/20">
-                    Primary Care<br />Provider
+                  <div className="col-span-2 p-6 md:p-8 text-center leading-snug flex flex-col justify-end text-[16px] font-normal border-b border-[#132D2E]/20">
+                    Domestic Maid<br />/ Help
                   </div>
-                  <div className="col-span-2 p-6 md:p-8 text-center leading-snug flex flex-col justify-end text-[16px] sm:text-[18px] lg:text-[19px] font-normal border-b border-[#132D2E]/20">
-                    Functional<br />Medicine Clinic
+                  <div className="col-span-2 p-6 md:p-8 text-center leading-snug flex flex-col justify-end text-[16px] font-normal border-b border-[#132D2E]/20">
+                    Hospital Inpatient<br />/ ER Stay
                   </div>
-                  <div className="col-span-2 p-6 md:p-8 text-center leading-snug flex flex-col justify-end text-[16px] sm:text-[18px] lg:text-[19px] font-normal border-b border-[#132D2E]/20">
-                    Concierge<br />Clinic
+                  <div className="col-span-2 p-6 md:p-8 text-center leading-snug flex flex-col justify-end text-[16px] font-normal border-b border-[#132D2E]/20">
+                    Traditional<br />Agency
                   </div>
-                  <div className="col-span-2 p-6 md:p-8 text-center text-[#132D2E] text-[18px] sm:text-[20px] font-medium leading-snug flex items-center justify-center">
-                    Abubakar Health
+                  <div className="col-span-2 p-6 md:p-8 text-center text-[#132D2E] text-[18px] sm:text-[20px] font-bold leading-snug flex items-center justify-center">
+                    Kyno Health
                   </div>
                 </div>
 
@@ -265,63 +290,63 @@ export default function Outcomes() {
                       className="grid grid-cols-12 items-stretch text-[#132D2E] relative z-10"
                     >
                       {/* Feature Label */}
-                      <div className="col-span-4 p-6 md:p-8 font-light text-lg sm:text-[21px] lg:text-[22px] text-[#132D2E] leading-normal flex items-center border-b border-[#132D2E]/20">
+                      <div className="col-span-4 p-5 md:p-6 font-light text-base sm:text-[18px] text-[#132D2E] leading-normal flex items-center border-b border-[#132D2E]/20">
                         {row.feature}
                       </div>
 
-                      {/* Primary Care Provider */}
-                      <div className="col-span-2 p-6 md:p-8 flex items-center justify-center text-center border-b border-[#132D2E]/20">
-                        {row.pcp === "check" ? (
-                          <svg className="w-7 h-7 text-[#132D2E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      {/* Domestic Maid */}
+                      <div className="col-span-2 p-5 md:p-6 flex items-center justify-center text-center border-b border-[#132D2E]/20">
+                        {row.maid === "check" ? (
+                          <svg className="w-6 h-6 text-[#00875A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M20 6L9 17l-5-5" />
                           </svg>
-                        ) : row.pcp === "x" ? (
+                        ) : row.maid === "x" ? (
                           <svg className="w-6 h-6 text-[#132D2E]/35" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M18 6L6 18M6 6l12 12" />
                           </svg>
                         ) : (
-                          <span className="text-lg sm:text-[20px] font-medium text-[#132D2E]">{row.pcp}</span>
+                          <span className="text-base font-medium text-[#132D2E]">{row.maid}</span>
                         )}
                       </div>
 
-                      {/* Functional Medicine Clinic */}
-                      <div className="col-span-2 p-6 md:p-8 flex items-center justify-center text-center border-b border-[#132D2E]/20">
-                        {row.functional === "check" ? (
-                          <svg className="w-7 h-7 text-[#132D2E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      {/* Hospital Inpatient */}
+                      <div className="col-span-2 p-5 md:p-6 flex items-center justify-center text-center border-b border-[#132D2E]/20">
+                        {row.hospital === "check" ? (
+                          <svg className="w-6 h-6 text-[#00875A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M20 6L9 17l-5-5" />
                           </svg>
-                        ) : row.functional === "x" ? (
+                        ) : row.hospital === "x" ? (
                           <svg className="w-6 h-6 text-[#132D2E]/35" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M18 6L6 18M6 6l12 12" />
                           </svg>
                         ) : (
-                          <span className="text-lg sm:text-[20px] font-medium text-[#132D2E]">{row.functional}</span>
+                          <span className="text-xs sm:text-sm font-medium text-[#132D2E]">{row.hospital}</span>
                         )}
                       </div>
 
-                      {/* Concierge Clinic */}
-                      <div className="col-span-2 p-6 md:p-8 flex items-center justify-center text-center border-b border-[#132D2E]/20">
-                        {row.concierge === "check" ? (
-                          <svg className="w-7 h-7 text-[#132D2E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      {/* Traditional Agency */}
+                      <div className="col-span-2 p-5 md:p-6 flex items-center justify-center text-center border-b border-[#132D2E]/20">
+                        {row.agency === "check" ? (
+                          <svg className="w-6 h-6 text-[#00875A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M20 6L9 17l-5-5" />
                           </svg>
-                        ) : row.concierge === "x" ? (
+                        ) : row.agency === "x" ? (
                           <svg className="w-6 h-6 text-[#132D2E]/35" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M18 6L6 18M6 6l12 12" />
                           </svg>
                         ) : (
-                          <span className="text-lg sm:text-[20px] font-medium text-[#132D2E]">{row.concierge}</span>
+                          <span className="text-xs sm:text-sm font-medium text-[#132D2E]">{row.agency}</span>
                         )}
                       </div>
 
-                      {/* Abubakar Health Column */}
-                      <div className="col-span-2 p-6 md:p-8 flex items-center justify-center text-center">
-                        {row.parsley === "check" ? (
-                          <svg className="w-7 h-7 text-[#132D2E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      {/* Kyno Health Column */}
+                      <div className="col-span-2 p-5 md:p-6 flex items-center justify-center text-center">
+                        {row.kyno === "check" ? (
+                          <svg className="w-7 h-7 text-[#00875A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M20 6L9 17l-5-5" />
                           </svg>
                         ) : (
-                          <span className="text-lg sm:text-[20px] font-medium text-[#132D2E] tracking-wider">{row.parsley}</span>
+                          <span className="text-base sm:text-lg font-bold text-[#00875A]">{row.kyno}</span>
                         )}
                       </div>
                     </div>
@@ -330,13 +355,13 @@ export default function Outcomes() {
               </div>
             </div>
 
-            {/* Desktop Sticky Floating Button: Remains pinned while scrolling table */}
+            {/* Desktop Sticky Floating Button */}
             <div className="sticky bottom-8 z-30 flex justify-center pointer-events-none mt-6">
               <a
-                href="/join/care?focus=insurance"
-                className="pointer-events-auto inline-flex items-center gap-2 rounded-full bg-[#1E3B3A] hover:bg-[#132D2E] px-8 py-3.5 text-[15px] font-medium text-white shadow-xl hover:shadow-2xl transition-all"
+                href="/book-caretaker"
+                className="pointer-events-auto inline-flex items-center gap-2 rounded-full bg-[#FB923C] hover:bg-[#EA580C] px-8 py-3.5 text-[15px] font-semibold text-white shadow-xl hover:shadow-2xl transition-all"
               >
-                <span>Verify insurance</span>
+                <span>Book Caretaker in Gurgaon</span>
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>

@@ -1,24 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, PhoneCall, ShieldCheck, Clock, Award } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#DCCBAF] min-h-[620px] lg:min-h-[700px] flex items-center">
+    <section className="relative overflow-hidden bg-[#D8E6DF] min-h-[620px] lg:min-h-[700px] flex items-center">
       {/* Right Background Image */}
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute inset-0 bg-cover bg-no-repeat bg-right"
           style={{
-            backgroundImage: `url('https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2Fbfd79fe7d0d04888857d71a22f9308de?width=1920&quality=75&format=webp')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=1920&auto=format&fit=crop')`,
           }}
         />
         {/* Soft edge blend overlay */}
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `linear-gradient(90deg, rgba(220, 203, 175, 1) 0%, rgba(220, 203, 175, 0.95) 45%, rgba(220, 203, 175, 0.2) 75%, transparent 100%)`,
+            backgroundImage: `linear-gradient(90deg, rgba(216, 230, 223, 1) 0%, rgba(216, 230, 223, 0.96) 48%, rgba(216, 230, 223, 0.4) 75%, transparent 100%)`,
           }}
         />
       </div>
@@ -30,49 +30,65 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="max-w-xl lg:max-w-2xl"
         >
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-[58px] font-light leading-[1.12] text-[#132D2E] tracking-tight">
-            Medical care that uncovers the root cause of your symptoms
+          {/* Top Location / Status Pill */}
+          <div className="inline-flex items-center gap-2 rounded-full bg-[#0F2F28]/10 border border-[#0F2F28]/15 px-3.5 py-1 text-xs font-semibold text-[#0F2F28] mb-6">
+            <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
+            <span>Gurgaon &amp; Delhi NCR • 24/7 Immediate Dispatch</span>
+          </div>
+
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-[56px] font-light leading-[1.14] text-[#0F2F28] tracking-tight">
+            Hospital-grade caretaker &amp; medical care at home in Gurgaon
           </h1>
 
-          <p className="mt-6 text-base sm:text-lg text-[#132D2E]/85 leading-relaxed font-normal">
-            Work with a board-certified functional medicine clinician, nutrition coach, and dedicated care team focused on root cause care, so you can feel better and stay well. Now accepting insurance nationwide.
+          <p className="mt-6 text-base sm:text-lg text-[#0F2F28]/85 leading-relaxed font-normal">
+            Certified General Duty Assistants (GDAs), 12h/24h live-in caretakers, and emergency doctors dispatched to your doorstep in 20–30 minutes across Gurugram. Compassionate recovery for seniors, bedridden patients, and post-surgery care.
           </p>
 
           {/* Action Buttons */}
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
-              href="/join/care?focus=insurance&entry=home-hero-primary"
-              className="inline-flex items-center justify-center rounded-full bg-[#132D2E] px-8 py-4 text-sm font-medium text-white shadow-sm transition-all hover:bg-[#1B3340] active:scale-95"
+              href="/book-caretaker"
+              className="inline-flex items-center justify-center rounded-full bg-[#FB923C] px-8 py-4 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#EA580C] active:scale-95"
             >
-              Verify insurance
+              Book Caretaker at Home
             </a>
             <a
-              href="/join/care?entry=home-hero-secondary"
-              className="inline-flex items-center justify-center rounded-full border-2 border-[#132D2E] px-8 py-3.5 text-sm font-medium text-[#132D2E] transition-all hover:bg-[#132D2E] hover:text-white"
+              href="tel:+919953104104"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#0F2F28] px-7 py-3.5 text-sm font-semibold text-[#0F2F28] transition-all hover:bg-[#0F2F28] hover:text-white"
             >
-              Join now
+              <PhoneCall className="w-4 h-4 text-[#FB923C]" />
+              <span>Call Helpline: +91 99531 04104</span>
             </a>
           </div>
 
-          {/* Feature Checkmarks Strip */}
-          <div className="mt-10 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-[#132D2E] font-normal">
+          {/* Trust Badges Strip (NABH, Police Verified, 20-min Doctor, 24/7 replacement) */}
+          <div className="mt-10 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-[#0F2F28] font-medium">
             <div className="flex items-center gap-2">
-              <span className="flex h-4 w-4 items-center justify-center rounded-full bg-[#132D2E] text-white">
-                <Check className="h-2.5 w-2.5" />
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0F2F28] text-white">
+                <Award className="h-3 w-3 text-[#34D399]" />
               </span>
-              <span>Board-certified clinicians</span>
+              <span>NABH-Aligned Protocols</span>
             </div>
+
             <div className="flex items-center gap-2">
-              <span className="flex h-4 w-4 items-center justify-center rounded-full bg-[#132D2E] text-white">
-                <Check className="h-2.5 w-2.5" />
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0F2F28] text-white">
+                <ShieldCheck className="h-3 w-3 text-[#34D399]" />
               </span>
-              <span>Nationwide telehealth</span>
+              <span>100% Police Verified</span>
             </div>
+
             <div className="flex items-center gap-2">
-              <span className="flex h-4 w-4 items-center justify-center rounded-full bg-[#132D2E] text-white">
-                <Check className="h-2.5 w-2.5" />
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0F2F28] text-white">
+                <Clock className="h-3 w-3 text-[#FB923C]" />
               </span>
-              <span>HSA/FSA eligible</span>
+              <span>20-Min Doctor On-Call</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0F2F28] text-white">
+                <Check className="h-3 w-3 text-[#34D399]" />
+              </span>
+              <span>Zero Brokerage Fee</span>
             </div>
           </div>
         </motion.div>

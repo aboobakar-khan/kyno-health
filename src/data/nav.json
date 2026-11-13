@@ -1,59 +1,58 @@
 {
   "links": [
     {
-      "label": "Complete Care Membership",
-      "href": "/care",
+      "label": "Caretaker at Home",
+      "href": "/caretaker-at-home",
       "submenu": [
-        { "title": "Complete Care", "href": "/care" },
-        { "title": "Pricing & Insurance", "href": "/insurance" },
-        { "title": "How It Works", "href": "/how-it-works" },
-        { "title": "Our Clinicians", "href": "/providers" },
-        { "title": "Nutrition Coaching", "href": "/nutrition-coaching" },
-        { "title": "Reviews", "href": "/reviews" }
+        { "title": "Elderly Care at Home", "href": "/caretaker-at-home/elderly-care" },
+        { "title": "24/7 Live-In Caretaker", "href": "/caretaker-at-home/24-hour-live-in" },
+        { "title": "12-Hour Day / Night Shift", "href": "/caretaker-at-home/12-hour-shift" },
+        { "title": "Post-Surgical Care", "href": "/caretaker-at-home/post-surgery" },
+        { "title": "Bedridden Patient Care", "href": "/caretaker-at-home/bedridden-care" },
+        { "title": "Paralysis & Stroke Support", "href": "/caretaker-at-home/stroke-paralysis" }
       ]
     },
     {
-      "label": "Clinical Lab Review",
-      "href": "/labs",
+      "label": "Clinical Services",
+      "href": "/services",
       "submenu": [
-        { "title": "Clinical Lab Review", "href": "/labs" },
-        { "title": "How It Works", "href": "/labs/how-it-works" },
-        { "title": "What We Test", "href": "/labs/what-we-test" },
-        { "title": "Why Our Providers", "href": "/labs/why-our-providers" }
+        { "title": "Doctor Visit at Home (20 Mins)", "href": "/services/doctor-at-home" },
+        { "title": "Critical Care Nursing", "href": "/services/nurse-at-home" },
+        { "title": "Physiotherapy at Home", "href": "/services/physiotherapy" },
+        { "title": "Diagnostic Blood Tests & ECG", "href": "/services/lab-tests-at-home" },
+        { "title": "ICU Setup & Oxygen at Home", "href": "/services/icu-setup" }
       ]
     },
     {
-      "label": "Pricing & Insurance",
-      "href": "/insurance"
+      "label": "Care Plans & Pricing",
+      "href": "/plans"
     },
     {
-      "label": "What We Treat",
-      "href": "/care/conditions",
+      "label": "Specialties & Conditions",
+      "href": "/conditions",
       "submenu": [
-        { "title": "Gut & Digestive Health", "href": "/care/improve-gut-health" },
-        { "title": "Metabolic Health", "href": "/care/metabolic-health" },
-        { "title": "Hormone Health", "href": "/care/hormonal-imbalance-treatment" },
-        { "title": "Longevity & Healthspan", "href": "/care/longevity" },
-        { "title": "Autoimmune & Inflammation", "href": "/care/autoimmune-disease-treatment" },
-        { "title": "Unexplained Symptoms", "href": "/care/unexplained-illness" },
-        { "title": "Perimenopause & Menopause", "href": "/care/menopause-peri" },
-        { "title": "Mental Health", "href": "/care/mental-health" },
-        { "title": "Fertility, Pregnancy & Postpartum", "href": "/care/reproductive-health" },
-        { "title": "Detox & Environmental Exposure", "href": "/care/detox" },
-        { "title": "Heart Health", "href": "/care/metabolic-heart-rate" }
+        { "title": "Geriatric & Senior Wellness", "href": "/conditions/geriatric-care" },
+        { "title": "Orthopedic & Joint Recovery", "href": "/conditions/orthopedic-rehab" },
+        { "title": "Neurology & Dementia Care", "href": "/conditions/dementia-alzheimers" },
+        { "title": "Cardiac & Post-CABG Care", "href": "/conditions/cardiac-recovery" },
+        { "title": "Oncology Palliative Care", "href": "/conditions/palliative-care" },
+        { "title": "Bed Sore Care & Prevention", "href": "/conditions/bed-sore-management" },
+        { "title": "Catheter & Ryle's Tube Care", "href": "/conditions/tube-feeding-care" },
+        { "title": "Chronic Disease Management", "href": "/conditions/chronic-disease" }
       ]
     },
     {
-      "label": "Supplements",
-      "href": "/store"
+      "label": "Gurgaon Hubs",
+      "href": "/gurgaon-locations"
     }
   ],
   "cta": {
-    "login": { "label": "Log in", "href": "/login" },
-    "join": { "label": "Join now", "href": "/join/care" }
+    "emergency": { "label": "+91 9953104104", "href": "tel:+919953104104" },
+    "login": { "label": "Call 24/7 Helpline", "href": "tel:+919953104104" },
+    "join": { "label": "Book Caretaker", "href": "/book-caretaker" }
   },
   "announcement": {
-    "text": "Abubakar Health is in-network nationwide and FSA/HSA eligible.",
-    "cta": { "label": "Verify insurance", "href": "/join/care?focus=insurance&entry=fsa-hsa-banner" }
+    "text": "NABH-aligned hospital-grade care at home in Gurgaon. 24/7 emergency doctor & verified caretaker dispatch.",
+    "cta": { "label": "Call +91 9953104104", "href": "tel:+919953104104" }
   }
 }

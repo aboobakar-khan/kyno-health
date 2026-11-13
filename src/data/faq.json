@@ -1,27 +1,32 @@
 [
   {
-    "id": "complete-care-included",
-    "question": "What's included in a Complete Care membership?",
-    "answer": "Complete Care is an annual functional medicine program that pairs you with a dedicated clinician for ongoing medical care throughout the year. Membership includes 5 provider visits, access to advanced diagnostics — like in-depth lab testing (billed to insurance) or specialty tests — a personalized care plan, functional nutrition coaching visits, and exclusive perks. Your care team, led by your board-certified clinician, supports you in establishing, implementing, and adjusting your care plan as your health evolves."
+    "id": "caretaker-duties",
+    "question": "What duties does a Kyno Health caretaker perform at home?",
+    "answer": "A Kyno Health caretaker (certified General Duty Assistant / GDA) provides dedicated daily living assistance including personal hygiene (sponge bath/assisted showering), feeding support, timely medication administration reminders, wheelchair and bed transfers, patient repositioning every 2 hours to prevent bed sores, diaper changes, and compassionate companionship. Note: clinical interventions like IV drips, wound suturing, and catheter insertions are performed by our registered Nurses or Visiting Doctors."
   },
   {
-    "id": "insurance",
-    "question": "Does Abubakar Health take insurance?",
-    "answer": "Yes – Abubakar Health accepts insurance in all 50 states. You can <a href=\"/join/care\" class=\"underline underline-offset-4 decoration-[#132D2E]/40 hover:decoration-[#132D2E]\">check your eligibility</a> in minutes to see if your plan is in-network. Membership fees for those using insurance are lower at $150/month or $1,500/year (2 months free). Insurance helps support eligible medical costs: provider visits, lab testing, and prescription medications. Copays and deductibles apply. Contact your insurance provider directly for specific cost estimates."
+    "id": "verification-training",
+    "question": "How are Kyno Health caretakers background-verified and trained?",
+    "answer": "Every Kyno Health caretaker undergoes a stringent 5-point verification check: permanent address verification, Aadhaar identity authentication, mandatory local police clearance, medical screening, and reference verification from past hospitals or families. They receive structured training in geriatric care, patient handling ergonomics, emergency escalation protocols, and hygiene standards overseen by senior doctors and nursing supervisors."
   },
   {
-    "id": "vs-telehealth",
-    "question": "How is this different from other telehealth providers or my PCP?",
-    "answer": "Other telehealth providers and traditional primary care are built for acute, episodic care — they're excellent at treating what's right in front of them. But Abubakar Health is built for the complex, multi-system, chronic symptoms that the one-off visits of conventional care consistently miss. We go deeper, stay longer, and look at the whole picture to not just help you to feel well in the present, but maintain optimal health for years to come."
+    "id": "shift-options",
+    "question": "What shift options are available for home caretaker service in Gurgaon?",
+    "answer": "We offer flexible models tailored to your family's needs: <strong>12-Hour Day Shift</strong> (e.g., 8 AM - 8 PM), <strong>12-Hour Night Shift</strong> (e.g., 8 PM - 8 AM), and <strong>24-Hour Live-In Care</strong> where the caretaker stays in the patient's home. We also provide on-demand temporary replacements within 4 hours if your assigned caretaker falls sick or takes scheduled leave."
   },
   {
-    "id": "lab-review-vs-complete",
-    "question": "How does Abubakar Health’s Clinical Lab Review visit differ from the Complete Care program?",
-    "answer": "Our Clinical Lab Review is a single 30-minute virtual visit with a board-certified clinician focused on interpreting your blood test results to give you with a clear action plan and next steps. It's a great starting point if you want to better understand your lab test results or want to experience Abubakar Health's functional medicine care before committing to the annual program.<br/><br/>Complete Care is an annual functional medicine program that pairs you with a dedicated clinician for ongoing medical care throughout the year. Membership includes 5 provider visits, access to advanced diagnostics — like in-depth lab testing (billed to insurance) or specialty tests — a personalized care plan, functional nutrition coaching visits, and exclusive perks. Your care team, led by your board-certified clinician, supports you in establishing, implementing, and adjusting your care plan as your health evolves."
+    "id": "emergency-doctor",
+    "question": "What happens if my family member faces a sudden medical emergency at home?",
+    "answer": "Unlike traditional maid agencies or unmonitored attendants, Kyno Health is backed by a full-fledged clinical medical team. In case of sudden vitals fluctuation or distress, our caretakers immediately alert the Kyno Medical Command Center, and an on-call certified Doctor can be dispatched to your Gurgaon residence within 20 to 30 minutes, equipped with portable diagnostic vitals and emergency medication."
   },
   {
-    "id": "supplements",
-    "question": "Can I purchase Abubakar Health supplements without being a member?",
-    "answer": "Yes! Abubakar Health supplements are available for purchase through our online store by both members and non-members. Members receive a 20% discount on Abubakar Health-branded supplements, in addition to a 5% discount for any subscriptions."
+    "id": "pricing-plans",
+    "question": "How much does a caretaker at home cost in Gurgaon?",
+    "answer": "Kyno Health offers transparent, upfront pricing with no hidden agent commissions. Our 12-hour caretaker shift begins at approximately <strong>₹1,200/day</strong> (or monthly package of ₹28,000), and 24-hour live-in plans start at <strong>₹1,800/day</strong> (or monthly package of ₹42,000). Doctor home visits are priced from ₹999. Call our Gurgaon Care Coordinator at <a href=\"tel:+919953104104\" class=\"underline underline-offset-4 decoration-[#132D2E]/40 hover:decoration-[#132D2E]\">+91 99531 04104</a> for a customized care assessment."
+  },
+  {
+    "id": "service-locations",
+    "question": "Which sectors and areas in Gurgaon do you cover?",
+    "answer": "We cover the entire Gurugram & Delhi NCR region, including DLF Phase 1, 2, 3, 4, and 5, DLF Phase 1-5, Golf Course Road, Golf Course Extension Road, Sohna Road, Sushant Lok 1 & 2, Sector 46 (HUDA Colony), Sector 56, Sector 57, South City 1 & 2, Nirvana Country, Cyber City, and New Gurgaon sectors."
   }
 ]

@@ -8,6 +8,8 @@ import {
   Menu,
   X,
   ChevronDown,
+  Phone,
+  ShieldCheck,
 } from "lucide-react";
 
 export default function Navbar() {
@@ -32,7 +34,7 @@ export default function Navbar() {
   return (
     <>
       {/* ── TOP NAVBAR ── */}
-      <header className="sticky top-0 z-50 w-full bg-[#132D2E] border-b border-white/5 transition-colors">
+      <header className="sticky top-0 z-50 w-full bg-[#0F2F28] border-b border-white/10 transition-colors">
         <div className="mx-auto flex h-[72px] sm:h-[78px] max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:px-10">
           {/* Mobile Left: Hamburger + Logo Wordmark */}
           <div className="flex items-center gap-3 lg:gap-0">
@@ -47,16 +49,40 @@ export default function Navbar() {
 
             <a
               href="/"
-              className="flex items-center text-[#FAF8F5] hover:opacity-90 transition-opacity"
+              className="flex items-center gap-2.5 text-[#FAF8F5] hover:opacity-95 transition-opacity"
             >
-              <span className="font-sans text-[20px] sm:text-[22px] font-semibold tracking-[-0.03em] text-[#FAF8F5]">
-                Abubakar Health
-              </span>
+              {/* Kyno Health Emblem: Medical heart + cross */}
+              <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-white/10 p-1">
+                <svg viewBox="0 0 36 36" className="w-6 h-6" fill="none">
+                  <path
+                    d="M18 30.5s-10-6.2-13.5-13.2a7.5 7.5 0 0 1 12.5-4.5l1 1.2 1-1.2a7.5 7.5 0 0 1 12.5 4.5c-3.5 7-13.5 13.2-13.5 13.2z"
+                    stroke="#34D399"
+                    strokeWidth="2.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M12.5 18h5.5m-2.75-2.75v5.5"
+                    stroke="#FB923C"
+                    strokeWidth="2.8"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+
+              <div className="flex items-baseline tracking-tight">
+                <span className="font-sans text-[20px] sm:text-[22px] font-bold tracking-[-0.03em] text-[#FAF8F5]">
+                  Kyno
+                </span>
+                <span className="font-sans text-[20px] sm:text-[22px] font-medium tracking-[-0.03em] text-[#FB923C] ml-1">
+                  health
+                </span>
+              </div>
             </a>
           </div>
 
           {/* Desktop Nav Links with Micro-Interactions & Submenus */}
-          <nav className="hidden lg:flex items-center gap-7 xl:gap-8 h-full">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 h-full">
             {navData.links.map((link) => {
               const hasSubmenu = Boolean(link.submenu && link.submenu.length > 0);
               const isHovered = hoveredMenu === link.label;
@@ -75,17 +101,17 @@ export default function Navbar() {
                     }`}
                   >
                     <span>{link.label}</span>
-                    {/* Animated green underline matching original decoration-clover */}
+                    {/* Animated green underline */}
                     {isHovered && (
                       <motion.span
                         layoutId="nav-underline"
-                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#4CAF7D]"
+                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#34D399]"
                         transition={{ duration: 0.2, ease: cubicEase }}
                       />
                     )}
                   </a>
 
-                  {/* Dropdown Menu (Exact 2-column white card) */}
+                  {/* Dropdown Menu */}
                   <AnimatePresence>
                     {hasSubmenu && isHovered && (
                       <motion.div
@@ -95,32 +121,19 @@ export default function Navbar() {
                         transition={{ duration: 0.2, ease: cubicEase }}
                         className="absolute top-full left-0 z-50 pt-2"
                       >
-                        <div className="bg-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.18)] border border-black/5 p-8 sm:p-10">
-                          {link.label === "What We Treat" ? (
-                            <div className="grid grid-cols-2 gap-x-12 gap-y-4 min-w-[500px]">
-                              {link.submenu?.map((sub) => (
-                                <a
-                                  key={sub.title}
-                                  href={sub.href}
-                                  className="text-[14px] font-medium text-[#132D2E] hover:text-[#4CAF7D] transition-colors py-1"
-                                >
-                                  {sub.title}
-                                </a>
-                              ))}
-                            </div>
-                          ) : (
-                            <div className="grid grid-cols-2 gap-x-12 gap-y-5 min-w-[420px]">
-                              {link.submenu?.map((sub) => (
-                                <a
-                                  key={sub.title}
-                                  href={sub.href}
-                                  className="text-[14.5px] font-medium text-[#132D2E] hover:text-[#4CAF7D] transition-colors py-1 whitespace-nowrap"
-                                >
-                                  {sub.title}
-                                </a>
-                              ))}
-                            </div>
-                          )}
+                        <div className="bg-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.18)] border border-black/5 p-6 sm:p-8">
+                          <div className="grid grid-cols-2 gap-x-10 gap-y-3.5 min-w-[460px]">
+                            {link.submenu?.map((sub) => (
+                              <a
+                                key={sub.title}
+                                href={sub.href}
+                                className="text-[14px] font-medium text-[#132D2E] hover:text-[#00875A] transition-colors py-1 flex items-center justify-between group"
+                              >
+                                <span>{sub.title}</span>
+                                <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-[#00875A]" />
+                              </a>
+                            ))}
+                          </div>
                         </div>
                       </motion.div>
                     )}
@@ -130,37 +143,45 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Desktop Right CTAs: [Join now] button + [Log in ->] link */}
-          <div className="hidden lg:flex items-center gap-5 xl:gap-6">
+          {/* Desktop Right CTAs: 24/7 Helpline + [Book Caretaker] button */}
+          <div className="hidden lg:flex items-center gap-4 xl:gap-5">
+            <a
+              href="tel:+919953104104"
+              className="flex items-center gap-2 text-[13.5px] font-semibold text-[#FB923C] hover:text-white px-3.5 py-1.5 rounded-full bg-white/5 border border-[#FB923C]/30 hover:border-[#FB923C] transition-all whitespace-nowrap"
+            >
+              <Phone className="h-3.5 w-3.5 animate-pulse text-[#FB923C]" />
+              <span>+91 99531 04104</span>
+            </a>
+
             <a
               href={navData.cta.join.href}
-              className="rounded-full bg-white text-[#132D2E] px-6 py-2.5 text-sm font-medium shadow-sm hover:bg-[#FAF8F5] transition-all whitespace-nowrap"
+              className="rounded-full bg-[#FB923C] text-white px-5 py-2.5 text-sm font-semibold shadow-sm hover:bg-[#EA580C] transition-all whitespace-nowrap"
             >
               {navData.cta.join.label}
             </a>
-
-            <a
-              href={navData.cta.login.href}
-              className="text-sm font-medium text-[#FAF8F5] flex items-center gap-1.5 hover:text-white hover:underline hover:underline-offset-[7px] hover:decoration-[#4CAF7D] transition-all whitespace-nowrap"
-            >
-              <span>{navData.cta.login.label}</span>
-              <ArrowRight className="h-4 w-4" />
-            </a>
           </div>
 
-          {/* Mobile Right: Pill button [Join now] matching phone screenshot */}
-          <div className="lg:hidden flex items-center">
+          {/* Mobile Right: Direct Phone call & Book Caretaker */}
+          <div className="lg:hidden flex items-center gap-2">
+            <a
+              href="tel:+919953104104"
+              className="flex items-center justify-center w-9 h-9 rounded-full bg-[#FB923C]/20 text-[#FB923C] border border-[#FB923C]/30"
+              aria-label="Call emergency helpline"
+            >
+              <Phone className="w-4 h-4" />
+            </a>
+
             <a
               href={navData.cta.join.href}
-              className="rounded-full border-2 border-white/90 text-white px-5 py-2 text-sm font-medium hover:bg-white/10 active:scale-95 transition-all"
+              className="rounded-full bg-[#FB923C] text-white px-4 py-1.5 text-xs font-semibold hover:bg-[#EA580C] active:scale-95 transition-all"
             >
-              Join now
+              Book Care
             </a>
           </div>
         </div>
       </header>
 
-      {/* ── MOBILE DRAWER NAVIGATION MENU (Ivory Background Matching Real Parsley Health) ── */}
+      {/* ── MOBILE DRAWER NAVIGATION MENU ── */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -171,14 +192,35 @@ export default function Navbar() {
             className="fixed inset-0 z-[100] lg:hidden flex flex-col bg-[#FAF8F5]"
           >
             {/* Drawer Header with Logo & Close Button */}
-            <div className="flex items-center justify-between px-6 h-[72px] bg-[#132D2E] border-b border-white/10 flex-shrink-0">
+            <div className="flex items-center justify-between px-6 h-[72px] bg-[#0F2F28] border-b border-white/10 flex-shrink-0">
               <a
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className="font-sans text-[20px] font-semibold tracking-[-0.03em] text-[#FAF8F5]"
+                className="flex items-center gap-2 text-[#FAF8F5]"
               >
-                Abubakar Health
+                <div className="relative flex items-center justify-center w-7 h-7 rounded-md bg-white/10 p-1">
+                  <svg viewBox="0 0 36 36" className="w-5 h-5" fill="none">
+                    <path
+                      d="M18 30.5s-10-6.2-13.5-13.2a7.5 7.5 0 0 1 12.5-4.5l1 1.2 1-1.2a7.5 7.5 0 0 1 12.5 4.5c-3.5 7-13.5 13.2-13.5 13.2z"
+                      stroke="#34D399"
+                      strokeWidth="2.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M12.5 18h5.5m-2.75-2.75v5.5"
+                      stroke="#FB923C"
+                      strokeWidth="2.8"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </div>
+                <div className="flex items-baseline">
+                  <span className="font-sans text-[20px] font-bold text-[#FAF8F5]">Kyno</span>
+                  <span className="font-sans text-[20px] font-medium text-[#FB923C] ml-1">health</span>
+                </div>
               </a>
+
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-[#FAF8F5] hover:bg-white/20 active:scale-95 transition-all"
@@ -190,6 +232,25 @@ export default function Navbar() {
 
             {/* Drawer Body: Main Categories Only (Submenus revealed only on click) */}
             <div className="flex-1 overflow-y-auto px-6 py-6 pb-28">
+              {/* Quick Call Box in Mobile Drawer */}
+              <div className="mb-6 p-4 rounded-xl bg-[#E6F4EA] border border-[#34D399]/30 flex items-center justify-between">
+                <div>
+                  <div className="text-xs font-semibold uppercase tracking-wider text-[#0F2F28]/70">
+                    24/7 Gurgaon Helpline
+                  </div>
+                  <div className="text-[17px] font-bold text-[#0F2F28] mt-0.5">
+                    +91 99531 04104
+                  </div>
+                </div>
+                <a
+                  href="tel:+919953104104"
+                  className="px-3.5 py-2 rounded-lg bg-[#0F2F28] text-white text-xs font-semibold flex items-center gap-1.5"
+                >
+                  <Phone className="w-3.5 h-3.5 text-[#FB923C]" />
+                  <span>Call Now</span>
+                </a>
+              </div>
+
               <nav
                 className="flex flex-col divide-y divide-[#132D2E]/10"
                 aria-label="Mobile navigation"
@@ -199,13 +260,12 @@ export default function Navbar() {
                   const isExpanded = openAccordion === link.label;
 
                   if (!hasSubmenu) {
-                    /* Direct Main Link (e.g. Pricing & Insurance, Supplements) */
                     return (
                       <div key={link.label} className="py-2">
                         <a
                           href={link.href}
                           onClick={() => setMobileMenuOpen(false)}
-                          className="flex items-center justify-between py-3.5 px-2 text-[17px] font-medium text-[#132D2E] hover:text-[#4CAF7D] transition-colors"
+                          className="flex items-center justify-between py-3.5 px-2 text-[17px] font-medium text-[#132D2E] hover:text-[#00875A] transition-colors"
                         >
                           <span>{link.label}</span>
                           <ArrowRight className="w-4 h-4 text-[#132D2E]/40" />
@@ -214,21 +274,20 @@ export default function Navbar() {
                     );
                   }
 
-                  /* Main Category with Submenu Accordion */
                   return (
                     <div key={link.label} className="py-2">
                       <button
                         onClick={() =>
                           setOpenAccordion(isExpanded ? null : link.label)
                         }
-                        className="flex w-full items-center justify-between py-3.5 px-2 text-left text-[17px] font-medium text-[#132D2E] hover:text-[#4CAF7D] active:text-[#4CAF7D] transition-colors"
+                        className="flex w-full items-center justify-between py-3.5 px-2 text-left text-[17px] font-medium text-[#132D2E] hover:text-[#00875A] active:text-[#00875A] transition-colors"
                         aria-expanded={isExpanded}
                       >
                         <span>{link.label}</span>
                         <span
                           className={`transition-transform duration-300 ${
                             isExpanded
-                              ? "rotate-180 text-[#4CAF7D]"
+                              ? "rotate-180 text-[#00875A]"
                               : "text-[#132D2E]/40"
                           }`}
                         >
@@ -249,13 +308,13 @@ export default function Navbar() {
                             }}
                             className="overflow-hidden"
                           >
-                            <div className="ml-3 pl-5 pb-3 pt-1 border-l-2 border-[#4CAF7D]/35 flex flex-col gap-3">
+                            <div className="ml-3 pl-5 pb-3 pt-1 border-l-2 border-[#34D399]/35 flex flex-col gap-3">
                               {link.submenu?.map((sub) => (
                                 <a
                                   key={sub.title}
                                   href={sub.href}
                                   onClick={() => setMobileMenuOpen(false)}
-                                  className="text-[15px] font-normal text-[#132D2E]/75 hover:text-[#132D2E] active:text-[#4CAF7D] py-1 transition-colors block"
+                                  className="text-[15px] font-normal text-[#132D2E]/75 hover:text-[#132D2E] active:text-[#00875A] py-1 transition-colors block"
                                 >
                                   {sub.title}
                                 </a>
@@ -274,31 +333,23 @@ export default function Navbar() {
                 <a
                   href={navData.cta.join.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center rounded-full bg-[#132D2E] py-4 text-center text-sm font-medium text-white shadow-md hover:bg-[#1B3340] active:scale-[0.99] transition-all"
+                  className="flex items-center justify-center rounded-full bg-[#FB923C] py-4 text-center text-sm font-semibold text-white shadow-md hover:bg-[#EA580C] active:scale-[0.99] transition-all"
                 >
                   {navData.cta.join.label}
                 </a>
 
                 <a
-                  href={navData.cta.login.href}
+                  href="tel:+919953104104"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 rounded-full border border-[#132D2E]/25 py-3.5 text-center text-sm font-medium text-[#132D2E] hover:bg-[#132D2E]/5 transition-all"
+                  className="flex items-center justify-center gap-2 rounded-full border border-[#0F2F28]/25 py-3.5 text-center text-sm font-semibold text-[#0F2F28] hover:bg-[#0F2F28]/5 transition-all"
                 >
-                  <span>{navData.cta.login.label}</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <Phone className="w-4 h-4 text-[#FB923C]" />
+                  <span>Call 24/7 Helpline (+91 99531 04104)</span>
                 </a>
 
-                {/* LinkedIn / Abubakar Health Profile Pill */}
-                <div className="mt-4 pt-4 border-t border-[#132D2E]/10 text-center">
-                  <a
-                    href="https://www.linkedin.com/in/aboobakarkhan/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs text-[#132D2E]/60 hover:text-[#132D2E] transition-colors"
-                  >
-                    <span>Connect with Abubakar Khan on LinkedIn</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
+                <div className="mt-4 pt-4 border-t border-[#132D2E]/10 flex items-center justify-center gap-2 text-xs text-[#132D2E]/60">
+                  <ShieldCheck className="w-4 h-4 text-[#2E7D32]" />
+                  <span>100% Background &amp; Police Verified Caretakers</span>
                 </div>
               </div>
             </div>

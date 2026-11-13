@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import conditionsData from "@/data/conditions.json";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Stethoscope } from "lucide-react";
 
 export default function Conditions() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -20,33 +20,42 @@ export default function Conditions() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center">
           {/* Left Column: Heading, Primary CTA & Slider Controls */}
           <div className="lg:col-span-4 flex flex-col items-start pr-4">
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] font-light leading-[1.18] text-[#132D2E] max-w-[340px]">
-              We get to the root of complex and chronic conditions
+            <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#00875A] mb-3">
+              <Stethoscope className="w-4 h-4" />
+              <span>Clinical Departments</span>
+            </div>
+
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-light leading-[1.18] text-[#132D2E] max-w-[360px]">
+              Specialized clinical care brought right to your bedside
             </h2>
+
+            <p className="mt-4 text-sm text-[#132D2E]/75 leading-relaxed">
+              From continuous geriatric and bedridden assistance to ICU nursing and 20-minute doctor emergency visits across Gurgaon.
+            </p>
 
             <div className="mt-8">
               <a
-                href="/care/conditions"
-                className="inline-flex items-center gap-2 rounded-full bg-[#24524A] px-7 py-3.5 text-sm font-medium text-white shadow-sm hover:bg-[#1A3D37] transition-colors"
+                href="/services"
+                className="inline-flex items-center gap-2 rounded-full bg-[#0F2F28] px-7 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-[#1A423A] transition-colors"
               >
-                <span>See what we treat</span>
+                <span>View all departments</span>
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
 
             {/* Slider Navigation Arrows */}
-            <div className="mt-12 flex items-center gap-3" aria-label="Conditions carousel controls">
+            <div className="mt-10 flex items-center gap-3" aria-label="Departments carousel controls">
               <button
                 onClick={() => scroll("left")}
-                aria-label="Previous condition slide"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-[#24524A]/30 text-[#24524A] hover:border-[#24524A] hover:bg-[#24524A]/5 transition-colors cursor-pointer"
+                aria-label="Previous department"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-[#0F2F28]/25 text-[#0F2F28] hover:border-[#0F2F28] hover:bg-[#0F2F28]/5 transition-colors cursor-pointer"
               >
                 <ArrowLeft className="h-5 w-5" />
               </button>
               <button
                 onClick={() => scroll("right")}
-                aria-label="Next condition slide"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-[#24524A]/30 text-[#24524A] hover:border-[#24524A] hover:bg-[#24524A]/5 transition-colors cursor-pointer"
+                aria-label="Next department"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-[#0F2F28]/25 text-[#0F2F28] hover:border-[#0F2F28] hover:bg-[#0F2F28]/5 transition-colors cursor-pointer"
               >
                 <ArrowRight className="h-5 w-5" />
               </button>
@@ -63,11 +72,11 @@ export default function Conditions() {
               {conditionsData.map((item) => (
                 <div
                   key={item.id}
-                  className="flex-none w-[280px] sm:w-[320px] rounded-2xl border border-[#24524A]/25 bg-white p-6 sm:p-7 flex flex-col justify-between shadow-sm hover:shadow-md transition-all snap-start"
+                  className="flex-none w-[280px] sm:w-[320px] rounded-2xl border border-[#0F2F28]/15 bg-white p-6 sm:p-7 flex flex-col justify-between shadow-sm hover:shadow-md transition-all snap-start"
                 >
                   <div>
                     {/* Circular Photo */}
-                    <div className="h-20 w-20 sm:h-24 sm:w-24 rounded-full overflow-hidden bg-[#FAF8F5] mb-6">
+                    <div className="h-20 w-20 sm:h-24 sm:w-24 rounded-2xl overflow-hidden bg-[#FAF8F5] mb-5 border border-black/5">
                       <img
                         src={item.image}
                         alt={item.title}
@@ -87,11 +96,11 @@ export default function Conditions() {
                     </p>
                   </div>
 
-                  {/* Bottom Text Link with Arrow (clean underline, no divider line) */}
-                  <div className="mt-8 pt-2">
+                  {/* Bottom Text Link with Arrow */}
+                  <div className="mt-6 pt-2 border-t border-[#132D2E]/10">
                     <a
                       href={item.href}
-                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-[#24524A] underline underline-offset-4 decoration-[#24524A]/40 hover:decoration-[#24524A] transition-all"
+                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#00875A] hover:text-[#0F2F28] transition-colors"
                     >
                       <span>{item.cta}</span>
                       <ArrowRight className="h-3.5 w-3.5" />
@@ -101,17 +110,6 @@ export default function Conditions() {
               ))}
             </div>
           </div>
-        </div>
-
-        {/* Centered Bottom CTA */}
-        <div className="mt-14 text-center">
-          <a
-            href="/join/care"
-            className="inline-flex items-center gap-2 rounded-full bg-[#24524A] px-8 py-3.5 text-sm font-medium text-white shadow-md hover:bg-[#1A3D37] transition-all"
-          >
-            <span>Book your visit</span>
-            <ArrowRight className="h-4 w-4" />
-          </a>
         </div>
       </div>
     </section>

@@ -1,43 +1,51 @@
 {
   "completeCare": [
-    { "label": "Complete Care", "href": "/care" },
-    { "label": "Pricing & Insurance", "href": "/insurance" },
-    { "label": "How It Works", "href": "/how-it-works" },
-    { "label": "Our Clinicians", "href": "/providers" },
-    { "label": "Nutrition Coaching", "href": "/nutrition-coaching" }
+    { "label": "Caretaker at Home Gurgaon", "href": "/caretaker-at-home" },
+    { "label": "12-Hour Day / Night Shift", "href": "/caretaker-at-home/12-hour-shift" },
+    { "label": "24-Hour Live-In Caretaker", "href": "/caretaker-at-home/24-hour-live-in" },
+    { "label": "Elderly & Senior Care", "href": "/caretaker-at-home/elderly-care" },
+    { "label": "Post-Operative Recovery", "href": "/caretaker-at-home/post-surgery" },
+    { "label": "Bedridden Patient Assistance", "href": "/caretaker-at-home/bedridden-care" }
   ],
   "clinicalLabReview": [
-    { "label": "Clinical Lab Review", "href": "/labs" },
-    { "label": "How It Works", "href": "/labs/how-it-works" },
-    { "label": "What We Test", "href": "/labs/what-we-test" },
-    { "label": "Why Our Providers", "href": "/labs/why-our-providers" }
+    { "label": "Doctor at Home (20-Min Visit)", "href": "/services/doctor-at-home" },
+    { "label": "Certified Nurse at Home", "href": "/services/nurse-at-home" },
+    { "label": "Physiotherapy at Home", "href": "/services/physiotherapy" },
+    { "label": "Doorstep Blood Tests & ECG", "href": "/services/lab-tests-at-home" },
+    { "label": "ICU Setup & Medical Equipment", "href": "/services/icu-setup" }
   ],
   "aboutUs": [
-    { "label": "About Abubakar Health", "href": "/company" },
-    { "label": "What We Offer", "href": "/our-services" },
-    { "label": "Abubakar Health Symptom Index", "href": "/quiz" },
-    { "label": "Dr. Robin Berzin", "href": "/robin-berzin-md" },
-    { "label": "Reviews", "href": "/reviews" }
+    { "label": "About Kyno Health", "href": "/about" },
+    { "label": "Our Medical Leadership", "href": "/doctors" },
+    { "label": "Caretaker Verification Process", "href": "/verification-process" },
+    { "label": "NABH Clinical Guidelines", "href": "/quality-standards" },
+    { "label": "Patient & Family Reviews", "href": "/reviews" }
   ],
   "resources": [
-    { "label": "Supplement Store", "href": "/store" },
-    { "label": "Blog", "href": "/blog" },
-    { "label": "Press", "href": "/press" },
-    { "label": "Careers", "href": "/careers" },
+    { "label": "Care Plans & Pricing", "href": "/plans" },
+    { "label": "Gurgaon Health Blog", "href": "/blog" },
+    { "label": "Elder Care Guide", "href": "/guides/elder-care" },
+    { "label": "Post-Surgery Recovery Checklist", "href": "/guides/post-surgery" },
     { "label": "FAQs", "href": "/faq" },
-    { "label": "Contact Us", "href": "/contact" }
+    { "label": "Emergency Helpline: +91 9953104104", "href": "tel:+919953104104" }
   ],
   "centers": [
-    { "label": "NYC", "href": "/ny" },
-    { "label": "Virtual", "href": "/locations" }
+    { "label": "Gurgaon Sector 46 Hub", "href": "/gurgaon/sector-46" },
+    { "label": "DLF Phase 1-5 & Cyber City", "href": "/gurgaon/dlf" },
+    { "label": "Golf Course Road & Extension", "href": "/gurgaon/golf-course-road" },
+    { "label": "Sohna Road & South City", "href": "/gurgaon/sohna-road" },
+    { "label": "Sushant Lok & Sector 56", "href": "/gurgaon/sushant-lok" }
   ],
   "legal": [
-    { "label": "Clinical Membership", "href": "/clinical-membership-terms" },
-    { "label": "Terms & Conditions", "href": "/membership-terms" },
-    { "label": "Terms of Use", "href": "/terms-of-use" },
+    { "label": "Patient Charter & Service Terms", "href": "/terms" },
     { "label": "Privacy Policy", "href": "/privacy" },
-    { "label": "Notice of Privacy Practices", "href": "/notice-of-privacy-practices" },
-    { "label": "Accessibility Statement", "href": "/accessibility" }
+    { "label": "Caretaker Code of Conduct", "href": "/code-of-conduct" },
+    { "label": "NABH Compliance Statement", "href": "/compliance" },
+    { "label": "Refund & Cancellation Policy", "href": "/refund-policy" }
   ],
-  "copyright": "© Abubakar Health, all rights reserved 126 5th Ave, Fl 2, New York, NY 10011"
+  "address": "1094, HUDA Colony, Sector 46, Gurugram, Haryana - 122018",
+  "phone": "+91 99531 04104",
+  "email": "support@kynohealth.com",
+  "hours": "24 hours a day, 7 days a week, 365 days a year",
+  "copyright": "© Kyno Health (Kyno Care Pvt. Ltd.). All rights reserved. 1094, HUDA Colony, Sector 46, Gurugram, Haryana - 122018."
 }

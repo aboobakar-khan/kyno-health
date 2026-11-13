@@ -1,7 +1,7 @@
 "use client";
 
 import footerData from "@/data/footer.json";
-import HipaaLogo from "./HipaaLogo";
+import { Phone, Mail, MapPin, Clock, ShieldCheck } from "lucide-react";
 
 export default function Footer() {
   const socialIcons = (
@@ -39,380 +39,342 @@ export default function Footer() {
           </a>
         </li>
 
-        {/* LinkedIn -> Aboobakar Khan profile */}
+        {/* LinkedIn */}
         <li className="w-8 h-8 flex items-center justify-center flex-shrink-0">
           <a
-            href="https://www.linkedin.com/in/aboobakarkhan/"
-            aria-label="Aboobakar Khan LinkedIn"
+            href="https://www.linkedin.com/company/kynohealth/"
+            aria-label="Kyno Health LinkedIn"
             className="hover:text-gray-300 transition-colors"
             rel="noopener noreferrer"
             target="_blank"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" className="w-5 h-5">
               <path fill="#fff" fillRule="evenodd" d="M2.556 23h17.888A2.556 2.556 0 0 0 23 20.444V2.556A2.556 2.556 0 0 0 20.444 0H2.556A2.556 2.556 0 0 0 0 2.556v17.888A2.556 2.556 0 0 0 2.556 23" clipRule="evenodd" />
-              <path fill="#284849" fillRule="evenodd" d="M19.805 19.806h-3.413v-5.814c0-1.594-.605-2.484-1.867-2.484-1.372 0-2.09.927-2.09 2.484v5.814H9.148V8.732h3.289v1.491s.989-1.83 3.339-1.83 4.03 1.435 4.03 4.401zM5.223 7.28a2.036 2.036 0 0 1-2.029-2.043c0-1.129.908-2.044 2.029-2.044S7.25 4.11 7.25 5.238A2.035 2.035 0 0 1 5.223 7.28M3.524 19.806h3.43V8.732h-3.43z" clipRule="evenodd" />
-            </svg>
-          </a>
-        </li>
-
-        {/* YouTube */}
-        <li className="w-8 h-8 flex items-center justify-center flex-shrink-0">
-          <a
-            href="https://www.youtube.com/"
-            aria-label="YouTube"
-            className="hover:text-gray-300 transition-colors"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" className="w-6 h-6">
-              <path fill="#fff" d="M29.76 13.642s-.233-1.654-.955-2.381c-.914-.956-1.936-.961-2.405-1.017C23.044 10 18.005 10 18.005 10h-.01s-5.039 0-8.395.244c-.469.056-1.49.06-2.405 1.017-.722.727-.951 2.381-.951 2.381S6 15.588 6 17.528v1.819c0 1.94.24 3.886.24 3.886s.233 1.654.95 2.381c.915.956 2.115.924 2.65 1.027 1.92.182 8.16.239 8.16.239s5.044-.01 8.4-.249c.469-.056 1.49-.06 2.405-1.017.722-.727.956-2.381.956-2.381s.239-1.94.239-3.886v-1.819c0-1.94-.24-3.886-.24-3.886m-14.24 7.913v-6.746l6.483 3.385z" />
+              <path fill="#0F2F28" fillRule="evenodd" d="M19.805 19.806h-3.413v-5.814c0-1.594-.605-2.484-1.867-2.484-1.372 0-2.09.927-2.09 2.484v5.814H9.148V8.732h3.289v1.491s.989-1.83 3.339-1.83 4.03 1.435 4.03 4.401zM5.223 7.28a2.036 2.036 0 0 1-2.029-2.043c0-1.129.908-2.044 2.029-2.044S7.25 4.11 7.25 5.238A2.035 2.035 0 0 1 5.223 7.28M3.524 19.806h3.43V8.732h-3.43z" clipRule="evenodd" />
             </svg>
           </a>
         </li>
       </ul>
 
-      {/* Official Vector HIPAA Compliant Emblem */}
-      <div className="pl-1">
-        <HipaaLogo className="h-8 w-auto text-white" />
+      {/* NABH & Police Verification Trust Badge */}
+      <div className="pl-2 border-l border-white/20 flex items-center gap-1.5 text-xs text-[#34D399] font-medium">
+        <ShieldCheck className="w-4 h-4 text-[#34D399]" />
+        <span>NABH Standard</span>
       </div>
     </div>
   );
 
-  const newsletterForm = (
-    <form onSubmit={(e) => e.preventDefault()}>
-      <h3 className="text-[14.5px] font-semibold text-[#6FB29F] mb-3">
-        Sign up for our newsletter
-      </h3>
-      <div className="flex max-w-[310px]">
-        <input
-          type="email"
-          placeholder="Enter your email"
-          required
-          className="flex w-full px-4 py-2.5 h-11 shadow-sm border border-[#4CAF7D]/25 rounded-l-full bg-white text-[#27484A] placeholder:text-[#27484A]/60 text-sm focus:outline-none"
-        />
-        <button
-          type="submit"
-          className="inline-flex items-center justify-center rounded-r-full font-semibold min-h-[44px] text-white bg-[#5DA188] hover:bg-[#4E8F77] h-11 min-w-[85px] px-4 text-sm transition-colors cursor-pointer whitespace-nowrap shadow-sm"
-        >
-          Sign Up
-        </button>
+  const contactCard = (
+    <div className="rounded-2xl bg-white/5 border border-white/10 p-5 text-white/90 text-xs sm:text-sm space-y-3">
+      <div className="flex items-start gap-2.5">
+        <MapPin className="w-4 h-4 text-[#FB923C] flex-shrink-0 mt-0.5" />
+        <span className="leading-snug">
+          1094, HUDA Colony, Sector 46, Gurugram, Haryana - 122018
+        </span>
       </div>
-    </form>
+      <div className="flex items-center gap-2.5">
+        <Phone className="w-4 h-4 text-[#34D399] flex-shrink-0" />
+        <a href="tel:+919953104104" className="font-semibold text-white hover:text-[#34D399] transition-colors">
+          +91 99531 04104 (24/7 Helpline)
+        </a>
+      </div>
+      <div className="flex items-center gap-2.5">
+        <Mail className="w-4 h-4 text-[#34D399] flex-shrink-0" />
+        <a href="mailto:support@kynohealth.com" className="hover:text-[#34D399] transition-colors">
+          support@kynohealth.com
+        </a>
+      </div>
+      <div className="flex items-center gap-2.5">
+        <Clock className="w-4 h-4 text-[#FB923C] flex-shrink-0" />
+        <span>Operating 24 Hours / 7 Days a Week</span>
+      </div>
+    </div>
   );
 
   return (
-    <footer className="relative bg-[#274849] text-white py-12 px-5 sm:px-10 lg:py-16 w-full">
-      <div className="max-w-[1040px] mx-auto">
+    <footer className="relative bg-[#0A241F] text-white py-12 px-5 sm:px-10 lg:py-16 w-full">
+      <div className="max-w-[1200px] mx-auto">
         {/* ── TOP HORIZONTAL DIVIDER LINE ── */}
-        <div className="border-t border-[#4C7D75]/60 mb-10 sm:mb-12" />
+        <div className="border-t border-[#34D399]/20 mb-10 sm:mb-12" />
 
-        {/* ── MOBILE / PHONE FOOTER (Matches Uploaded Screenshot af62f399.jpg) ── */}
+        {/* ── MOBILE / PHONE FOOTER ── */}
         <div className="block lg:hidden">
-          {/* Wordmark (Bold) */}
-          <div className="mb-8">
-            <a href="/" className="inline-block hover:opacity-90 transition-opacity">
-              <span className="font-sans text-[26px] font-bold tracking-[-0.03em] text-white">
-                Abubakar Health
-              </span>
+          {/* Wordmark */}
+          <div className="mb-6 flex items-center gap-2.5">
+            <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-white/10 p-1">
+              <svg viewBox="0 0 36 36" className="w-6 h-6" fill="none">
+                <path
+                  d="M18 30.5s-10-6.2-13.5-13.2a7.5 7.5 0 0 1 12.5-4.5l1 1.2 1-1.2a7.5 7.5 0 0 1 12.5 4.5c-3.5 7-13.5 13.2-13.5 13.2z"
+                  stroke="#34D399"
+                  strokeWidth="2.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M12.5 18h5.5m-2.75-2.75v5.5"
+                  stroke="#FB923C"
+                  strokeWidth="2.8"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
+            <div className="flex items-baseline">
+              <span className="font-sans text-[24px] font-bold text-white">Kyno</span>
+              <span className="font-sans text-[24px] font-medium text-[#FB923C] ml-1">health</span>
+            </div>
+          </div>
+
+          <div className="mb-8">{contactCard}</div>
+
+          {/* 2-Column Responsive Layout */}
+          <div className="flex flex-row gap-6 sm:gap-10 mb-10">
+            {/* Left Column: Caretaker Services & Gurgaon Centers */}
+            <div className="flex-1 flex flex-col gap-6">
+              <div>
+                <h3 className="text-[15px] font-semibold text-[#34D399] mb-3">
+                  Caretaker Services
+                </h3>
+                <ul className="space-y-2">
+                  {footerData.completeCare.map((item) => (
+                    <li key={item.label}>
+                      <a
+                        href={item.href}
+                        className="text-[13.5px] text-white/90 hover:text-[#34D399] transition-colors leading-[1.5] block"
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-[15px] font-semibold text-[#34D399] mb-3">
+                  Gurgaon Hubs
+                </h3>
+                <ul className="space-y-2">
+                  {footerData.centers.map((item) => (
+                    <li key={item.label}>
+                      <a
+                        href={item.href}
+                        className="text-[13.5px] text-white/90 hover:text-[#34D399] transition-colors leading-[1.5] block"
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Right Column: Clinical Services & About Us */}
+            <div className="flex-1 flex flex-col gap-6">
+              <div>
+                <h3 className="text-[15px] font-semibold text-[#34D399] mb-3">
+                  Clinical Services
+                </h3>
+                <ul className="space-y-2">
+                  {footerData.clinicalLabReview.map((item) => (
+                    <li key={item.label}>
+                      <a
+                        href={item.href}
+                        className="text-[13.5px] text-white/90 hover:text-[#34D399] transition-colors leading-[1.5] block"
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-[15px] font-semibold text-[#34D399] mb-3">
+                  About Us
+                </h3>
+                <ul className="space-y-2">
+                  {footerData.aboutUs.map((item) => (
+                    <li key={item.label}>
+                      <a
+                        href={item.href}
+                        className="text-[13.5px] text-white/90 hover:text-[#34D399] transition-colors leading-[1.5] block"
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Action Buttons on Mobile */}
+          <div className="flex flex-col gap-3 mb-8">
+            <a
+              href="/book-caretaker"
+              className="inline-flex items-center justify-center rounded-full bg-[#FB923C] text-white hover:bg-[#EA580C] transition-colors py-3.5 px-6 text-sm font-semibold text-center shadow-md"
+            >
+              Book Caretaker in Gurgaon
+            </a>
+            <a
+              href="tel:+919953104104"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 text-white hover:bg-white/10 transition-colors py-3 px-6 text-sm font-semibold text-center"
+            >
+              <Phone className="w-4 h-4 text-[#FB923C]" />
+              <span>Call Helpline: +91 99531 04104</span>
             </a>
           </div>
 
-          {/* 2-Column Responsive Layout */}
-          <div className="flex flex-row gap-6 sm:gap-10 mb-12">
-            {/* Left Column: About Us, Centers, and Action Buttons */}
-            <div className="flex-1 flex flex-col gap-8">
-              {/* About Us */}
-              <div>
-                <h3 className="text-[15px] font-semibold text-[#6FB29F] mb-3.5 whitespace-nowrap">
-                  About Us
-                </h3>
-                <ul className="space-y-2.5">
-                  {footerData.aboutUs.map((item) => (
-                    <li key={item.label}>
-                      <a
-                        href={item.href}
-                        className="text-[14px] text-white font-medium hover:text-[#6FB29F] transition-colors leading-[1.6] block"
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Centers */}
-              <div>
-                <h3 className="text-[15px] font-semibold text-[#6FB29F] mb-3.5 whitespace-nowrap">
-                  Centers
-                </h3>
-                <ul className="space-y-2.5">
-                  {footerData.centers.map((item) => (
-                    <li key={item.label}>
-                      <a
-                        href={item.href}
-                        className="text-[14px] text-white font-medium hover:text-[#6FB29F] transition-colors leading-[1.6] block"
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Action Buttons: Join Abubakar Health & Speak with an advisor */}
-              <div className="flex flex-col gap-3 pt-2">
-                <a
-                  href="/join/care"
-                  className="inline-flex items-center justify-center rounded-full bg-[#EBCFB8] text-[#284849] hover:bg-white transition-colors py-3 px-5 text-sm font-semibold w-full max-w-[280px] text-center shadow-sm"
-                >
-                  Join Abubakar Health
-                </a>
-
-                <a
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-full border border-[#EACEB7] text-white hover:border-white transition-colors py-3 px-5 text-sm font-semibold w-full max-w-[280px] text-center"
-                >
-                  Speak with an advisor
-                </a>
-              </div>
-            </div>
-
-            {/* Right Column: Resources, Complete Care, Clinical Lab Review */}
-            <div className="flex-1 flex flex-col gap-8">
-              {/* Resources */}
-              <div>
-                <h3 className="text-[15px] font-semibold text-[#6FB29F] mb-3.5 whitespace-nowrap">
-                  Resources
-                </h3>
-                <ul className="space-y-2.5">
-                  {footerData.resources.map((item) => (
-                    <li key={item.label}>
-                      <a
-                        href={item.href}
-                        className="text-[14px] text-white font-medium hover:text-[#6FB29F] transition-colors leading-[1.6] block"
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Complete Care */}
-              <div>
-                <h3 className="text-[15px] font-semibold text-[#6FB29F] mb-3.5 whitespace-nowrap">
-                  Complete Care
-                </h3>
-                <ul className="space-y-2.5">
-                  {footerData.completeCare.map((item) => (
-                    <li key={item.label}>
-                      <a
-                        href={item.href}
-                        className="text-[14px] text-white font-medium hover:text-[#6FB29F] transition-colors leading-[1.6] block"
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Clinical Lab Review */}
-              <div>
-                <h3 className="text-[15px] font-semibold text-[#6FB29F] mb-3.5 whitespace-nowrap">
-                  Clinical Lab Review
-                </h3>
-                <ul className="space-y-2.5">
-                  {footerData.clinicalLabReview.map((item) => (
-                    <li key={item.label}>
-                      <a
-                        href={item.href}
-                        className="text-[14px] text-white font-medium hover:text-[#6FB29F] transition-colors leading-[1.6] block"
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Newsletter Signup on Mobile */}
-          <div className="mb-8">{newsletterForm}</div>
-
-          {/* Share Abubakar Health on Mobile */}
-          <div className="mb-8">
-            <h3 className="text-[14.5px] font-semibold text-[#6FB29F] mb-3.5">
-              Share Abubakar Health
-            </h3>
-            {socialIcons}
-          </div>
+          <div className="mb-6">{socialIcons}</div>
         </div>
 
-        {/* ── DESKTOP 4-COLUMN FOOTER NAVIGATION (hidden lg:flex) ── */}
-        <div className="hidden lg:flex flex-row justify-between gap-8 pb-4">
-          {/* COLUMN 1: Brand Wordmark, Newsletter, Socials & HIPAA */}
-          <div className="min-w-[280px] flex-shrink-0">
-            <div className="mb-6">
-              <a href="/" className="inline-block hover:opacity-90 transition-opacity">
-                <span className="font-sans text-[28px] font-bold tracking-[-0.03em] text-white">
-                  Abubakar Health
-                </span>
-              </a>
+        {/* ── DESKTOP 4-COLUMN FOOTER NAVIGATION ── */}
+        <div className="hidden lg:grid grid-cols-12 gap-8 pb-8">
+          {/* COLUMN 1: Brand Wordmark, Address, Contact & Accreditation */}
+          <div className="col-span-4 pr-4">
+            <div className="mb-6 flex items-center gap-2.5">
+              <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-white/10 p-1">
+                <svg viewBox="0 0 36 36" className="w-6 h-6" fill="none">
+                  <path
+                    d="M18 30.5s-10-6.2-13.5-13.2a7.5 7.5 0 0 1 12.5-4.5l1 1.2 1-1.2a7.5 7.5 0 0 1 12.5 4.5c-3.5 7-13.5 13.2-13.5 13.2z"
+                    stroke="#34D399"
+                    strokeWidth="2.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M12.5 18h5.5m-2.75-2.75v5.5"
+                    stroke="#FB923C"
+                    strokeWidth="2.8"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+              <div className="flex items-baseline">
+                <span className="font-sans text-[26px] font-bold text-white">Kyno</span>
+                <span className="font-sans text-[26px] font-medium text-[#FB923C] ml-1">health</span>
+              </div>
             </div>
 
-            <div className="mb-8">{newsletterForm}</div>
+            {contactCard}
 
-            <div>
-              <h3 className="text-[14.5px] font-semibold text-[#6FB29F] mb-3.5">
-                Share Abubakar Health
+            <div className="mt-6">{socialIcons}</div>
+          </div>
+
+          {/* COLUMN 2: Caretaker Services */}
+          <div className="col-span-3">
+            <h3 className="text-[15px] font-semibold text-[#34D399] mb-3.5 whitespace-nowrap">
+              Caretaker at Home
+            </h3>
+            <ul className="space-y-2.5">
+              {footerData.completeCare.map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    className="text-[13.5px] text-white/85 hover:text-[#34D399] transition-colors leading-[1.6]"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* COLUMN 3: Clinical Services & Doctors */}
+          <div className="col-span-3">
+            <h3 className="text-[15px] font-semibold text-[#34D399] mb-3.5 whitespace-nowrap">
+              Clinical &amp; Medical Services
+            </h3>
+            <ul className="space-y-2.5">
+              {footerData.clinicalLabReview.map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    className="text-[13.5px] text-white/85 hover:text-[#34D399] transition-colors leading-[1.6]"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-6">
+              <h3 className="text-[15px] font-semibold text-[#34D399] mb-3 whitespace-nowrap">
+                About &amp; Clinical Leadership
               </h3>
-              {socialIcons}
+              <ul className="space-y-2">
+                {footerData.aboutUs.map((item) => (
+                  <li key={item.label}>
+                    <a
+                      href={item.href}
+                      className="text-[13px] text-white/80 hover:text-[#34D399] transition-colors leading-[1.5]"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
-          {/* COLUMNS 2, 3, 4: Tight Centered Layout */}
-          <div className="flex flex-1 justify-between gap-8">
-            {/* COLUMN 2: Complete Care & Clinical Lab Review */}
-            <div className="min-w-[130px] max-w-[180px]">
-              <div>
-                <h3 className="text-[14.5px] font-semibold text-[#6FB29F] mb-3 whitespace-nowrap">
-                  Complete Care
-                </h3>
-                <ul className="space-y-2">
-                  {footerData.completeCare.map((item) => (
-                    <li key={item.label}>
-                      <a
-                        href={item.href}
-                        className="text-[13.5px] text-white font-medium hover:text-[#6FB29F] transition-colors leading-[1.8]"
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          {/* COLUMN 4: Gurgaon Hubs & CTA */}
+          <div className="col-span-2">
+            <h3 className="text-[15px] font-semibold text-[#34D399] mb-3.5 whitespace-nowrap">
+              Gurgaon Hubs
+            </h3>
+            <ul className="space-y-2">
+              {footerData.centers.map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    className="text-[13px] text-white/85 hover:text-[#34D399] transition-colors leading-[1.5]"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
 
-              <div className="mt-7">
-                <h3 className="text-[14.5px] font-semibold text-[#6FB29F] mb-3 whitespace-nowrap">
-                  Clinical Lab Review
-                </h3>
-                <ul className="space-y-2">
-                  {footerData.clinicalLabReview.map((item) => (
-                    <li key={item.label}>
-                      <a
-                        href={item.href}
-                        className="text-[13.5px] text-white font-medium hover:text-[#6FB29F] transition-colors leading-[1.8]"
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            <div className="mt-8 space-y-3">
+              <a
+                href="/book-caretaker"
+                className="inline-flex items-center justify-center rounded-full bg-[#FB923C] text-white hover:bg-[#EA580C] transition-colors py-2.5 px-5 text-xs font-semibold w-full text-center shadow-sm"
+              >
+                Book Caretaker
+              </a>
 
-            {/* COLUMN 3: About Us + CTAs */}
-            <div className="min-w-[140px] max-w-[195px]">
-              <div>
-                <h3 className="text-[14.5px] font-semibold text-[#6FB29F] mb-3 whitespace-nowrap">
-                  About Us
-                </h3>
-                <ul className="space-y-2">
-                  {footerData.aboutUs.map((item) => (
-                    <li key={item.label}>
-                      <a
-                        href={item.href}
-                        className="text-[13.5px] text-white font-medium hover:text-[#6FB29F] transition-colors leading-[1.8]"
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-7 space-y-3">
-                <a
-                  href="/join/care"
-                  className="inline-flex items-center justify-center rounded-full bg-[#EBCFB8] text-[#284849] hover:bg-white transition-colors py-2.5 px-5 text-sm font-semibold w-full text-center whitespace-nowrap shadow-sm"
-                >
-                  Join Abubakar Health
-                </a>
-
-                <a
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-full border border-[#EACEB7] text-white hover:border-white transition-colors py-2.5 px-5 text-sm font-semibold w-full text-center whitespace-nowrap"
-                >
-                  Speak with an advisor
-                </a>
-              </div>
-            </div>
-
-            {/* COLUMN 4: Resources & Centers */}
-            <div className="min-w-[130px] max-w-[170px]">
-              <div>
-                <h3 className="text-[14.5px] font-semibold text-[#6FB29F] mb-3 whitespace-nowrap">
-                  Resources
-                </h3>
-                <ul className="space-y-2">
-                  {footerData.resources.map((item) => (
-                    <li key={item.label}>
-                      <a
-                        href={item.href}
-                        className="text-[13.5px] text-white font-medium hover:text-[#6FB29F] transition-colors leading-[1.8]"
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-7">
-                <h3 className="text-[14.5px] font-semibold text-[#6FB29F] mb-3 whitespace-nowrap">
-                  Centers
-                </h3>
-                <ul className="space-y-2">
-                  {footerData.centers.map((item) => (
-                    <li key={item.label}>
-                      <a
-                        href={item.href}
-                        className="text-[13.5px] text-white font-medium hover:text-[#6FB29F] transition-colors leading-[1.8]"
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <a
+                href="tel:+919953104104"
+                className="inline-flex items-center justify-center gap-1.5 rounded-full border border-white/20 text-white hover:border-[#34D399] transition-colors py-2 px-4 text-xs font-medium w-full text-center"
+              >
+                <Phone className="w-3 h-3 text-[#FB923C]" />
+                <span>+91 99531 04104</span>
+              </a>
             </div>
           </div>
         </div>
 
         {/* ── BOTTOM HORIZONTAL DIVIDER LINE ── */}
-        <div className="border-t border-[#4C7D75]/60 mt-10 pt-6">
-          <div className="flex flex-col lg:items-end gap-1.5">
+        <div className="border-t border-[#34D399]/20 mt-10 pt-6">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-3">
             {/* Copyright */}
-            <div className="text-[11.5px] sm:text-[12px] text-white/95 text-center lg:text-right font-normal">
+            <div className="text-[11.5px] sm:text-[12px] text-white/80 text-center lg:text-left font-normal">
               {footerData.copyright}
             </div>
 
-            {/* Legal Links with Close Vertical Divider Lines */}
-            <div className="flex flex-row flex-wrap lg:flex-nowrap items-center justify-center lg:justify-end text-[11.5px] sm:text-[12px] text-white/90">
+            {/* Legal Links */}
+            <div className="flex flex-row flex-wrap items-center justify-center text-[11.5px] sm:text-[12px] text-white/80">
               {footerData.legal.map((item, idx) => (
                 <span key={item.label} className="inline-flex items-center">
                   <a
                     href={item.href}
-                    className="hover:text-gray-300 transition-colors whitespace-nowrap"
+                    className="hover:text-[#34D399] transition-colors whitespace-nowrap"
                   >
                     {item.label}
                   </a>
                   {idx < footerData.legal.length - 1 && (
                     <span
                       aria-hidden="true"
-                      className="text-[#4C7D75] mx-1 sm:mx-1.5 font-light select-none"
+                      className="text-white/30 mx-1.5 font-light select-none"
                     >
                       |
                     </span>

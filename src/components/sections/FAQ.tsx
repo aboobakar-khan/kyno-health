@@ -6,8 +6,8 @@ import faqData from "@/data/faq.json";
 import { Plus, Minus } from "lucide-react";
 
 export default function FAQ() {
-  // Default to second question open or first question open (as in screenshot where "Does Abubakar Health take insurance?" is open)
-  const [openId, setOpenId] = useState<string | null>("insurance");
+  // Default to first question open
+  const [openId, setOpenId] = useState<string | null>("caretaker-duties");
 
   const toggle = (id: string) => {
     setOpenId(openId === id ? null : id);

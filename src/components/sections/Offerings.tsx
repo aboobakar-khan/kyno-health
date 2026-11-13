@@ -1,39 +1,52 @@
 "use client";
 
 import { useState } from "react";
+import { Phone, ShieldCheck } from "lucide-react";
 
 export default function Offerings() {
   const [activeCard, setActiveCard] = useState<number>(0);
 
-  const roadmapItems = [
-    "5 medical visits",
-    "2 functional nutrition coach visits",
-    "Labs and prescriptions",
-    "Supplements (optional)",
-    "Specialty tests (optional)",
-    "Care team support",
+  const roadmapItems12h = [
+    "Certified General Duty Assistant (GDA)",
+    "Personal hygiene, sponge bath & diaper care",
+    "Bed sore prevention (Q2H repositioning)",
+    "Medication reminders & feeding assistance",
+    "Daily vitals logging (BP, Pulse, SpO2)",
+    "4-Hour standby replacement guarantee",
+  ];
+
+  const roadmapItems24h = [
+    "Full-time resident GDA at patient bedside",
+    "Post-surgical, stroke & bedridden recovery",
+    "Wheelchair transfers & fall prevention",
+    "Night-time monitoring & comfort support",
+    "Weekly supervising doctor review call",
+    "20-Min emergency doctor on-call across Gurgaon",
   ];
 
   return (
-    <section className="bg-[#132D2E] py-16 md:py-20 lg:py-28 text-[#132D2E] overflow-hidden">
+    <section className="bg-[#0F2F28] py-16 md:py-20 lg:py-28 text-[#132D2E] overflow-hidden">
       <div className="mx-auto max-w-[1340px] px-5 sm:px-8 lg:px-10">
-        {/* Section Header: Experience the Abubakar Health Difference / Two ways to get started */}
+        {/* Section Header */}
         <div className="flex flex-col items-center gap-3 text-center mb-10 sm:mb-14 lg:mb-16">
-          <p className="text-xs font-semibold tracking-widest uppercase text-[#FAF8F5]/80 font-sans">
-            Experience the Abubakar Health Difference
+          <p className="text-xs font-semibold tracking-widest uppercase text-[#34D399] font-sans">
+            TRANSPARENT CARE PACKAGES
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] font-light leading-tight text-[#FAF8F5]">
-            Two ways to get started
+            Flexible care plans designed around your family&apos;s needs
           </h2>
+          <p className="max-w-xl text-sm sm:text-base text-[#FAF8F5]/80">
+            No broker commissions, no locked long-term contracts. Transparent daily and monthly rates with certified clinical oversight.
+          </p>
         </div>
 
         {/* Desktop Interactive Expanding Accordion Cards (xl:flex) */}
         <div
           role="radiogroup"
-          aria-label="Choose your Abubakar Health experience"
-          className="hidden xl:flex w-full gap-3 items-stretch min-h-[604px]"
+          aria-label="Choose your Kyno Health care plan"
+          className="hidden xl:flex w-full gap-4 items-stretch min-h-[604px]"
         >
-          {/* ── CARD 0: Complete Care Membership ── */}
+          {/* ── CARD 0: 12-Hour Caretaker Shift ── */}
           <div
             role="radio"
             aria-checked={activeCard === 0}
@@ -49,20 +62,20 @@ export default function Offerings() {
           >
             {/* Top Area */}
             <div>
-              <p className="text-xs font-semibold tracking-widest uppercase text-[#132D2E]/70 mb-3 font-sans">
-                ONGOING CARE
+              <p className="text-xs font-semibold tracking-widest uppercase text-[#00875A] mb-3 font-sans">
+                MOST POPULAR FOR DAY / NIGHT SUPPORT
               </p>
               <h3
                 className={`font-serif font-light leading-tight text-[#132D2E] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                   activeCard === 0
-                    ? "text-3xl sm:text-4xl lg:text-[40px]"
+                    ? "text-3xl sm:text-4xl lg:text-[38px]"
                     : "text-2xl sm:text-[28px] leading-[1.15]"
                 }`}
               >
-                Complete Care Membership
+                12-Hour Caretaker Shift
               </h3>
 
-              {/* Description when Collapsed (smoothly visible) */}
+              {/* Description when Collapsed */}
               <div
                 className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                   activeCard === 0
@@ -71,18 +84,11 @@ export default function Offerings() {
                 }`}
               >
                 <p className="font-sans text-sm text-[#132D2E]/80 leading-relaxed font-normal">
-                  Our{" "}
-                  <a
-                    href="/care"
-                    className="underline underline-offset-4 decoration-[#132D2E]/40 hover:decoration-[#132D2E]"
-                  >
-                    annual program
-                  </a>{" "}
-                  with a dedicated care team and personalized care plan. Medical visits, labs, and prescriptions billed to insurance.
+                  Dedicated 12-hour day (8 AM–8 PM) or night (8 PM–8 AM) assistance by background-verified GDAs. Ideal for semi-dependent seniors and post-op care.
                 </p>
               </div>
 
-              {/* Horizontal Timeline Roadmap when Expanded (smoothly visible) */}
+              {/* Horizontal Timeline Roadmap when Expanded */}
               <div
                 className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                   activeCard === 0
@@ -90,19 +96,19 @@ export default function Offerings() {
                     : "max-h-0 opacity-0 mt-0 mb-0 pointer-events-none"
                 }`}
               >
-                <ol className="relative grid grid-cols-6 gap-x-3" aria-label="What's included in this plan">
+                <ol className="relative grid grid-cols-6 gap-x-3" aria-label="What is included in this plan">
                   {/* Connecting Line */}
                   <span
                     aria-hidden="true"
-                    className="absolute left-[5.5px] right-[5.5px] top-[5px] h-px bg-[#132D2E]/25"
+                    className="absolute left-[5.5px] right-[5.5px] top-[5px] h-px bg-[#00875A]/25"
                   />
-                  {roadmapItems.map((item, idx) => (
+                  {roadmapItems12h.map((item, idx) => (
                     <li key={idx} className="relative flex flex-col items-start gap-3 pr-2">
                       <span
                         aria-hidden="true"
-                        className="relative z-10 block h-[11px] w-[11px] rounded-full bg-[#4CAF7D] ring-2 ring-[#FAF8F5]"
+                        className="relative z-10 block h-[11px] w-[11px] rounded-full bg-[#00875A] ring-2 ring-[#FAF8F5]"
                       />
-                      <span className="font-sans text-[12px] sm:text-[13px] leading-[1.4] text-[#132D2E] font-normal">
+                      <span className="font-sans text-[12px] leading-[1.4] text-[#132D2E] font-normal">
                         {item}
                       </span>
                     </li>
@@ -113,7 +119,6 @@ export default function Offerings() {
 
             {/* Bottom Area: Pricing & CTA */}
             <div className="mt-auto pt-6">
-              {/* Divider in collapsed state */}
               <span
                 aria-hidden="true"
                 className={`block h-px w-full bg-[#132D2E]/15 transition-opacity duration-500 mb-6 ${
@@ -126,41 +131,31 @@ export default function Offerings() {
                   activeCard === 0 ? "lg:grid-cols-12 lg:items-end" : "flex flex-col"
                 }`}
               >
-                {/* Pricing & Join Now Button */}
                 <div
                   className={`flex flex-col items-start text-left ${
                     activeCard === 0 ? "lg:col-span-7" : "w-full"
                   }`}
                 >
                   <p className="font-sans text-base sm:text-[18px] text-[#132D2E] leading-snug">
-                    <span className="font-medium">$150/month or $1,500/year</span>
-                    {activeCard === 0 && (
-                      <>
-                        <span className="text-sm text-[#132D2E]/70 font-normal"> (in-network)</span>
-                        <span aria-hidden="true"> &bull; </span>
-                        <span className="text-sm text-[#132D2E]/60">$275/month (self-pay)</span>
-                      </>
-                    )}
-                    {activeCard !== 0 && (
-                      <span className="text-xs text-[#132D2E]/70 font-normal"> (in-network)</span>
-                    )}
+                    <span className="font-bold text-xl sm:text-2xl text-[#0F2F28]">₹1,200/day</span>
+                    <span className="text-sm text-[#132D2E]/70 font-normal"> or ₹28,000/month</span>
                   </p>
-                  <p className="mt-1 font-sans text-xs sm:text-sm font-normal text-[#C86D48]">
-                    Insurance accepted, HSA/FSA eligible
+                  <p className="mt-1 font-sans text-xs sm:text-sm font-semibold text-[#00875A]">
+                    Zero agency commission • Police-verified GDA
                   </p>
                   {activeCard === 0 && (
-                    <p className="mt-1 font-sans text-xs text-[#132D2E]/60 transition-opacity duration-300">
-                      12-month membership commitment
+                    <p className="mt-1 font-sans text-xs text-[#132D2E]/60">
+                      Flexible 7-day trial or monthly packages available across Gurgaon
                     </p>
                   )}
                   <a
-                    href="/join/care"
+                    href="/book-caretaker?plan=12h"
                     onClick={(e) => activeCard !== 0 && e.stopPropagation()}
-                    className={`mt-5 inline-flex items-center justify-center rounded-full bg-[#132D2E] py-3.5 text-sm font-medium text-white shadow-sm hover:bg-[#1B3340] transition-all ${
+                    className={`mt-5 inline-flex items-center justify-center rounded-full bg-[#FB923C] py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-[#EA580C] transition-all ${
                       activeCard === 0 ? "px-10" : "w-full px-6"
                     }`}
                   >
-                    Join now
+                    Book 12-Hour Care
                   </a>
                 </div>
 
@@ -173,21 +168,14 @@ export default function Offerings() {
                   }`}
                 >
                   <p className="font-sans text-xs sm:text-[13px] leading-relaxed text-[#132D2E]/80 font-normal">
-                    Our{" "}
-                    <a
-                      href="/care"
-                      className="underline underline-offset-4 decoration-[#132D2E]/40 hover:decoration-[#132D2E]"
-                    >
-                      annual program
-                    </a>{" "}
-                    with a dedicated care team and personalized care plan. Medical visits, labs, and prescriptions billed to insurance.
+                    Includes dedicated personal hygiene assistance, mobility support, medication management, and daily supervisor check-ins.
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* ── CARD 1: Clinical Lab Review ── */}
+          {/* ── CARD 1: 24-Hour Live-In Caretaker ── */}
           <div
             role="radio"
             aria-checked={activeCard === 1}
@@ -203,20 +191,20 @@ export default function Offerings() {
           >
             {/* Top Area */}
             <div>
-              <p className="text-xs font-semibold tracking-widest uppercase text-[#132D2E]/70 mb-3 font-sans">
-                LAB INSIGHTS
+              <p className="text-xs font-semibold tracking-widest uppercase text-[#00875A] mb-3 font-sans">
+                ROUND-THE-CLOCK ASSISTANCE
               </p>
               <h3
                 className={`font-serif font-light leading-tight text-[#132D2E] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                   activeCard === 1
-                    ? "text-3xl sm:text-4xl lg:text-[40px]"
+                    ? "text-3xl sm:text-4xl lg:text-[38px]"
                     : "text-2xl sm:text-[28px] leading-[1.15]"
                 }`}
               >
-                Clinical Lab Review
+                24-Hour Live-In Caretaker
               </h3>
 
-              {/* Description when Collapsed (smoothly visible at top) */}
+              {/* Description when Collapsed */}
               <div
                 className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                   activeCard === 1
@@ -225,21 +213,41 @@ export default function Offerings() {
                 }`}
               >
                 <p className="font-sans text-sm text-[#132D2E]/80 leading-relaxed font-normal">
-                  Not ready for Complete Care yet? Meet with a clinician to{" "}
-                  <a
-                    href="/labs"
-                    className="underline underline-offset-4 decoration-[#132D2E]/40 hover:decoration-[#132D2E]"
-                  >
-                    review your lab results
-                  </a>{" "}
-                  and get a clear picture of your health. Bring any bloodwork from the past 6 months.
+                  Resident 24/7 bedside companion for bedridden, dementia, or severe post-operative patients with weekly doctor oversight.
                 </p>
+              </div>
+
+              {/* Horizontal Timeline Roadmap when Expanded */}
+              <div
+                className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                  activeCard === 1
+                    ? "max-h-[220px] opacity-100 mt-10 mb-8"
+                    : "max-h-0 opacity-0 mt-0 mb-0 pointer-events-none"
+                }`}
+              >
+                <ol className="relative grid grid-cols-6 gap-x-3" aria-label="What is included in this plan">
+                  {/* Connecting Line */}
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-[5.5px] right-[5.5px] top-[5px] h-px bg-[#00875A]/25"
+                  />
+                  {roadmapItems24h.map((item, idx) => (
+                    <li key={idx} className="relative flex flex-col items-start gap-3 pr-2">
+                      <span
+                        aria-hidden="true"
+                        className="relative z-10 block h-[11px] w-[11px] rounded-full bg-[#00875A] ring-2 ring-[#FAF8F5]"
+                      />
+                      <span className="font-sans text-[12px] leading-[1.4] text-[#132D2E] font-normal">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ol>
               </div>
             </div>
 
             {/* Bottom Area: Pricing & CTA */}
             <div className="mt-auto pt-6">
-              {/* Divider in collapsed state */}
               <span
                 aria-hidden="true"
                 className={`block h-px w-full bg-[#132D2E]/15 transition-opacity duration-500 mb-6 ${
@@ -252,35 +260,33 @@ export default function Offerings() {
                   activeCard === 1 ? "lg:grid-cols-12 lg:items-end" : "flex flex-col"
                 }`}
               >
-                {/* Pricing & Review Your Labs Button */}
                 <div
                   className={`flex flex-col items-start text-left ${
                     activeCard === 1 ? "lg:col-span-7" : "w-full"
                   }`}
                 >
                   <p className="font-sans text-base sm:text-[18px] text-[#132D2E] leading-snug">
-                    <span className="font-medium">$250/visit</span>
-                    <span aria-hidden="true"> &bull; </span>
-                    <span className="text-sm text-[#132D2E]/60">Self-pay only</span>
+                    <span className="font-bold text-xl sm:text-2xl text-[#0F2F28]">₹1,800/day</span>
+                    <span className="text-sm text-[#132D2E]/70 font-normal"> or ₹42,000/month</span>
                   </p>
-                  <p className="mt-1 font-sans text-xs sm:text-sm font-normal text-[#C86D48]">
-                    HSA/FSA eligible
+                  <p className="mt-1 font-sans text-xs sm:text-sm font-semibold text-[#00875A]">
+                    Includes weekly supervising doctor audit
                   </p>
                   <p className="mt-1 font-sans text-xs text-[#132D2E]/60 leading-relaxed">
-                    $250 credit will be applied to Complete Care membership if you sign up post-visit
+                    24/7 dedicated support with 4-hour standby replacement on leaves
                   </p>
                   <a
-                    href="/join/labs"
+                    href="/book-caretaker?plan=24h"
                     onClick={(e) => activeCard !== 1 && e.stopPropagation()}
-                    className={`mt-5 inline-flex items-center justify-center rounded-full border-2 border-[#132D2E] py-3.5 text-sm font-medium text-[#132D2E] hover:bg-[#132D2E] hover:text-white transition-all ${
+                    className={`mt-5 inline-flex items-center justify-center rounded-full bg-[#0F2F28] py-3.5 text-sm font-semibold text-white hover:bg-[#1A423A] transition-all ${
                       activeCard === 1 ? "px-10" : "w-full px-6"
                     }`}
                   >
-                    Review your labs
+                    Book 24/7 Live-In Care
                   </a>
                 </div>
 
-                {/* Description when Expanded (smoothly visible at right bottom) */}
+                {/* Description when Expanded */}
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                     activeCard === 1
@@ -289,14 +295,7 @@ export default function Offerings() {
                   }`}
                 >
                   <p className="font-sans text-xs sm:text-[13px] leading-relaxed text-[#132D2E]/80 font-normal">
-                    Not ready for Complete Care yet? Meet with a clinician to{" "}
-                    <a
-                      href="/labs"
-                      className="underline underline-offset-4 decoration-[#132D2E]/40 hover:decoration-[#132D2E]"
-                    >
-                      review your lab results
-                    </a>{" "}
-                    and get a clear picture of your health. Bring any bloodwork from the past 6 months.
+                    Complete reassurance for families caring for loved ones with advanced dementia, stroke paralysis, or extensive post-op rehabilitation needs.
                   </p>
                 </div>
               </div>
@@ -304,130 +303,139 @@ export default function Offerings() {
           </div>
         </div>
 
-        {/* ── Mobile & Tablet View (xl:hidden): Pixel-perfect authentic stacked cards ── */}
+        {/* ── Mobile & Tablet View (xl:hidden) ── */}
         <div className="flex xl:hidden flex-col gap-6 w-full max-w-[640px] mx-auto">
-          {/* Mobile Card 1: Complete Care Membership */}
+          {/* Mobile Card 1: 12-Hour Caretaker Shift */}
           <div className="flex flex-col gap-7 sm:gap-8 bg-[#FAF8F5] rounded-2xl p-6 sm:p-8 shadow-md">
-            {/* Header */}
-            <div className="flex flex-col gap-3">
-              <p className="text-xs font-semibold tracking-widest uppercase text-[#132D2E]/70 font-sans">
-                ONGOING CARE
+            <div className="flex flex-col gap-2">
+              <p className="text-xs font-semibold tracking-widest uppercase text-[#00875A] font-sans">
+                FLEXIBLE DAY OR NIGHT CARE
               </p>
-              <h3 className="font-serif font-light tracking-[-0.01em] text-[#132D2E] text-[30px] sm:text-[34px] leading-[1.12]">
-                Complete Care Membership
+              <h3 className="font-serif font-light text-[#132D2E] text-[28px] sm:text-[32px] leading-[1.15]">
+                12-Hour Caretaker Shift
               </h3>
             </div>
 
-            {/* Body Description */}
-            <div className="font-sans text-[15px] leading-[1.6] tracking-[-0.01em] text-[#132D2E]/85">
+            <div className="font-sans text-[14px] leading-relaxed text-[#132D2E]/85">
               <p>
-                Our{" "}
-                <a
-                  href="/care"
-                  className="underline underline-offset-4 decoration-[#132D2E]/40 hover:decoration-[#132D2E]"
-                >
-                  annual program
-                </a>{" "}
-                with a dedicated care team and personalized care plan. Medical visits, labs, and prescriptions billed to insurance.
+                Dedicated 12-hour support for seniors and post-op patients. Includes personal hygiene, feeding, medication scheduling, and vitals tracking.
               </p>
             </div>
 
-            {/* Vertical 6-step Roadmap with connecting line */}
-            <ol className="relative flex flex-col gap-4 sm:gap-5" aria-label="What's included in this plan">
+            <ol className="relative flex flex-col gap-3.5 sm:gap-4" aria-label="What is included">
               <span
                 aria-hidden="true"
-                className="absolute left-[5px] top-[6px] bottom-[6px] w-px bg-[#132D2E]/30"
+                className="absolute left-[5px] top-[6px] bottom-[6px] w-px bg-[#00875A]/30"
               />
-              {roadmapItems.map((item, idx) => (
-                <li key={idx} className="relative flex items-start gap-3.5 sm:gap-4">
+              {roadmapItems12h.map((item, idx) => (
+                <li key={idx} className="relative flex items-start gap-3.5">
                   <span
                     aria-hidden="true"
-                    className="relative z-10 mt-[5px] block h-[11px] w-[11px] flex-none rounded-full bg-[#4CAF7D] ring-2 ring-[#FAF8F5]"
+                    className="relative z-10 mt-[5px] block h-[10px] w-[10px] flex-none rounded-full bg-[#00875A] ring-2 ring-[#FAF8F5]"
                   />
-                  <span className="font-sans text-[14px] leading-[1.5] tracking-[-0.01em] text-[#132D2E]">
+                  <span className="font-sans text-[13px] leading-snug text-[#132D2E]">
                     {item}
                   </span>
                 </li>
               ))}
             </ol>
 
-            {/* Pricing & CTA */}
-            <div className="flex flex-col gap-6">
-              <div className="flex w-full flex-col items-start text-left">
-                <span aria-hidden="true" className="mb-6 block h-px w-full bg-[#132D2E]/15" />
-                <p className="font-sans text-[18px] sm:text-[20px] leading-[1.4] tracking-[-0.01em] text-[#132D2E]">
-                  <span className="font-medium">$150/month or $1,500/year (in-network)</span>
-                  <span aria-hidden="true" className="text-[#132D2E]/40"> · </span>
-                  <span className="text-[14px] text-[#132D2E]/70">$275/month (self-pay)</span>
+            <div className="flex flex-col gap-5 pt-4 border-t border-[#132D2E]/15">
+              <div>
+                <p className="font-sans text-[20px] font-bold text-[#0F2F28]">
+                  ₹1,200/day <span className="text-sm font-normal text-[#132D2E]/70">or ₹28,000/month</span>
                 </p>
-                <p className="mt-1 font-sans text-[15px] leading-6 tracking-[-0.01em] text-[#C86D48] font-medium">
-                  Insurance accepted, HSA/FSA eligible
-                </p>
-                <p className="mt-1 font-sans text-[13px] sm:text-[14px] leading-[1.6] text-[#132D2E]/60">
-                  12-month membership commitment
+                <p className="mt-1 text-xs text-[#00875A] font-semibold">
+                  Zero agency brokerage fee • 4-hr backup replacement
                 </p>
               </div>
 
               <a
-                href="/join/care"
-                className="inline-flex items-center justify-center rounded-full bg-[#132D2E] text-white py-4 px-8 text-sm font-medium w-full sm:max-w-[280px] hover:bg-[#1B3340] active:scale-[0.99] transition-all shadow-sm"
+                href="/book-caretaker?plan=12h"
+                className="inline-flex items-center justify-center rounded-full bg-[#FB923C] text-white py-3.5 px-8 text-sm font-semibold hover:bg-[#EA580C] transition-all shadow-sm"
               >
-                Join now
+                Book 12-Hour Care
               </a>
             </div>
           </div>
 
-          {/* Mobile Card 2: Clinical Lab Review */}
+          {/* Mobile Card 2: 24-Hour Live-In Caretaker */}
           <div className="flex flex-col gap-7 sm:gap-8 bg-[#FAF8F5] rounded-2xl p-6 sm:p-8 shadow-md">
-            {/* Header */}
-            <div className="flex flex-col gap-3">
-              <p className="text-xs font-semibold tracking-widest uppercase text-[#132D2E]/70 font-sans">
-                LAB INSIGHTS
+            <div className="flex flex-col gap-2">
+              <p className="text-xs font-semibold tracking-widest uppercase text-[#00875A] font-sans">
+                24/7 BEDSIDE RECOVERY
               </p>
-              <h3 className="font-serif font-light tracking-[-0.01em] text-[#132D2E] text-[30px] sm:text-[34px] leading-[1.12]">
-                Clinical Lab Review
+              <h3 className="font-serif font-light text-[#132D2E] text-[28px] sm:text-[32px] leading-[1.15]">
+                24-Hour Live-In Caretaker
               </h3>
             </div>
 
-            {/* Body Description */}
-            <div className="font-sans text-[15px] leading-[1.6] tracking-[-0.01em] text-[#132D2E]/85">
+            <div className="font-sans text-[14px] leading-relaxed text-[#132D2E]/85">
               <p>
-                Not ready for Complete Care yet? Meet with a clinician to{" "}
-                <a
-                  href="/labs"
-                  className="underline underline-offset-4 decoration-[#132D2E]/40 hover:decoration-[#132D2E]"
-                >
-                  review your lab results
-                </a>{" "}
-                and get a clear picture of your health. Bring any bloodwork from the past 6 months.
+                Resident 24/7 caretaker staying with the patient. Ideal for bedridden, dementia, or severe post-surgical rehabilitation.
               </p>
             </div>
 
-            {/* Pricing & CTA */}
-            <div className="flex flex-col gap-6">
-              <div className="flex w-full flex-col items-start text-left">
-                <span aria-hidden="true" className="mb-6 block h-px w-full bg-[#132D2E]/15" />
-                <p className="font-sans text-[18px] sm:text-[20px] leading-[1.4] tracking-[-0.01em] text-[#132D2E]">
-                  <span className="font-medium">$250/visit</span>
-                  <span aria-hidden="true" className="text-[#132D2E]/40"> · </span>
-                  <span className="text-[14px] text-[#132D2E]/70">Self-pay only</span>
+            <ol className="relative flex flex-col gap-3.5 sm:gap-4" aria-label="What is included">
+              <span
+                aria-hidden="true"
+                className="absolute left-[5px] top-[6px] bottom-[6px] w-px bg-[#00875A]/30"
+              />
+              {roadmapItems24h.map((item, idx) => (
+                <li key={idx} className="relative flex items-start gap-3.5">
+                  <span
+                    aria-hidden="true"
+                    className="relative z-10 mt-[5px] block h-[10px] w-[10px] flex-none rounded-full bg-[#00875A] ring-2 ring-[#FAF8F5]"
+                  />
+                  <span className="font-sans text-[13px] leading-snug text-[#132D2E]">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ol>
+
+            <div className="flex flex-col gap-5 pt-4 border-t border-[#132D2E]/15">
+              <div>
+                <p className="font-sans text-[20px] font-bold text-[#0F2F28]">
+                  ₹1,800/day <span className="text-sm font-normal text-[#132D2E]/70">or ₹42,000/month</span>
                 </p>
-                <p className="mt-1 font-sans text-[15px] leading-6 tracking-[-0.01em] text-[#C86D48] font-medium">
-                  HSA/FSA eligible
-                </p>
-                <p className="mt-1 font-sans text-[13px] sm:text-[14px] leading-[1.6] text-[#132D2E]/60">
-                  $250 credit will be applied to Complete Care membership if you sign up post-visit
+                <p className="mt-1 text-xs text-[#00875A] font-semibold">
+                  Includes supervising doctor review &amp; emergency backup
                 </p>
               </div>
 
               <a
-                href="/join/labs"
-                className="inline-flex items-center justify-center rounded-full border-2 border-[#132D2E] text-[#132D2E] bg-transparent py-4 px-8 text-sm font-medium w-full sm:max-w-[280px] hover:bg-[#132D2E] hover:text-white active:scale-[0.99] transition-all"
+                href="/book-caretaker?plan=24h"
+                className="inline-flex items-center justify-center rounded-full bg-[#0F2F28] text-white py-3.5 px-8 text-sm font-semibold hover:bg-[#1A423A] transition-all shadow-sm"
               >
-                Review your labs
+                Book 24/7 Live-In Care
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Rapid Doctor Consultation Callout Banner */}
+        <div className="mt-12 p-6 sm:p-8 rounded-2xl bg-white/10 border border-white/15 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="text-white text-center sm:text-left">
+            <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#FB923C] mb-1">
+              <ShieldCheck className="w-4 h-4" />
+              <span>Need Immediate Doctor Evaluation?</span>
+            </div>
+            <h4 className="font-serif text-xl sm:text-2xl font-light">
+              Doctor Home Visit in Gurgaon within 20–30 Minutes
+            </h4>
+            <p className="text-xs sm:text-sm text-white/80 mt-1">
+              Experienced physicians arrive with portable diagnostics, ECG, and emergency kits for ₹999 / visit.
+            </p>
+          </div>
+
+          <a
+            href="tel:+919953104104"
+            className="flex-shrink-0 inline-flex items-center gap-2 rounded-full bg-[#FB923C] hover:bg-[#EA580C] text-white px-7 py-3 text-sm font-semibold transition-colors"
+          >
+            <Phone className="w-4 h-4" />
+            <span>Call +91 99531 04104</span>
+          </a>
         </div>
       </div>
     </section>
