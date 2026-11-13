@@ -143,8 +143,15 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Desktop Right CTAs: 24/7 Helpline + [Book Caretaker] button */}
+          {/* Desktop Right CTAs: Contact + 24/7 Helpline + [Book Caretaker] button */}
           <div className="hidden lg:flex items-center gap-4 xl:gap-5">
+            <a
+              href="/contact"
+              className="text-[13.5px] font-medium text-[#FAF8F5] hover:text-[#34D399] transition-colors whitespace-nowrap"
+            >
+              Contact Us
+            </a>
+
             <a
               href="tel:+919953104104"
               className="flex items-center gap-2 text-[13.5px] font-semibold text-[#FB923C] hover:text-white px-3.5 py-1.5 rounded-full bg-white/5 border border-[#FB923C]/30 hover:border-[#FB923C] transition-all whitespace-nowrap"
@@ -345,6 +352,14 @@ export default function Navbar() {
                 >
                   <Phone className="w-4 h-4 text-[#FB923C]" />
                   <span>Call 24/7 Helpline (+91 99531 04104)</span>
+                </a>
+
+                <a
+                  href="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-center gap-2 rounded-full border border-[#0F2F28]/20 py-3 text-center text-sm font-medium text-[#0F2F28] hover:bg-[#0F2F28]/5 transition-all"
+                >
+                  <span>Contact Support &amp; Gurgaon HQ</span>
                 </a>
 
                 <div className="mt-4 pt-4 border-t border-[#132D2E]/10 flex items-center justify-center gap-2 text-xs text-[#132D2E]/60">

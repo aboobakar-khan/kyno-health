@@ -1,204 +1,226 @@
 "use client";
 
-import { useState, Suspense } from "react";
+import { Suspense } from "react";
+import { usePathname } from "next/navigation";
 import Banner from "@/components/layout/Banner";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import MobileBottomBar from "@/components/layout/MobileBottomBar";
+import BookingForm from "@/components/interactive/BookingForm";
+import { pagesContent, PageData } from "@/data/pagesContent";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import {
-  ArrowLeft,
   ShieldCheck,
-  Activity,
-  HeartHandshake,
   Check,
-  Send,
-  PhoneCall,
+  ArrowRight,
+  Phone,
+  Sparkles,
+  HelpCircle,
 } from "lucide-react";
 
-function PathBadge() {
+function DynamicPageContent() {
   const pathname = usePathname();
-  if (!pathname || pathname === "/") return null;
+  // Strip leading and trailing slashes
+  const cleanPath = pathname ? pathname.replace(/^\/+|\/+$/g, "") : "";
+
+  // Lookup in pagesContent
+  const pageData: PageData = pagesContent[cleanPath] || {
+    category: "caretaker",
+    badge: "KYNO HEALTH • GURGAON",
+    title: cleanPath
+      ? cleanPath
+          .split("/")
+          .pop()
+          ?.split("-")
+          .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+          .join(" ") + " in Gurgaon"
+      : "Healthcare at Home in Gurgaon",
+    subtitle:
+      "Trained General Duty Assistants (GDAs), certified nurses, and emergency doctor visits delivered at your doorstep across Gurugram under strict NABH clinical guidelines.",
+    price: "From ₹1,200/day",
+    highlights: [
+      "100% Police & Identity Verified Caretakers",
+      "Assistance with bathing, sponge baths, diaper changing & hygiene",
+      "Medication reminders, feeding & fluid logging",
+      "Bed sore prevention (Q2H turning and positioning)",
+      "Daily vital signs tracking with doctor oversight",
+      "Rapid 4-hour replacement guarantee if caretaker is on leave",
+    ],
+    protocols: [
+      {
+        title: "Activities of Daily Living (ADLs)",
+        desc: "Personal grooming, oral care, sponge baths, and dignified bed or wheelchair transfers.",
+      },
+      {
+        title: "Doctor Emergency Escalation",
+        desc: "20-minute emergency doctor on-call across Gurgaon with portable diagnostics and ECG.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How soon can care begin in Gurgaon?",
+        a: "We deploy verified caretakers within 4 to 12 hours. Emergency doctors arrive within 20–30 minutes.",
+      },
+    ],
+  };
+
   return (
-    <div className="inline-flex items-center gap-2 rounded-lg bg-[#0F2F28]/5 border border-[#0F2F28]/10 px-3 py-1 text-xs font-mono text-[#0F2F28] mb-4">
-      <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
-      <span>Service Hub: {pathname}</span>
+    <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-[#132D2E]">
+      <Banner />
+      <Navbar />
+
+      <main className="flex-grow py-12 lg:py-20">
+        <div className="max-w-[1240px] mx-auto px-5 sm:px-8 lg:px-10">
+          {/* Breadcrumb Navigation */}
+          <nav className="mb-6 flex items-center gap-2 text-xs text-[#0F2F28]/60 font-mono">
+            <Link href="/" className="hover:text-[#0F2F28]">
+              Home
+            </Link>
+            <span>/</span>
+            <span className="text-[#00875A] font-semibold">{cleanPath}</span>
+          </nav>
+
+          {/* Hero Section of the Specific Page */}
+          <div className="rounded-3xl bg-[#0F2F28] text-white p-8 sm:p-12 lg:p-16 mb-12 shadow-xl relative overflow-hidden">
+            <div className="relative z-10 max-w-3xl">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#34D399]/20 text-[#34D399] px-3.5 py-1 text-xs font-bold uppercase tracking-wider mb-4 border border-[#34D399]/30">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>{pageData.badge}</span>
+              </span>
+
+              <h1 className="font-serif text-3xl sm:text-5xl lg:text-[52px] font-light leading-[1.15] text-white tracking-tight">
+                {pageData.title}
+              </h1>
+
+              <p className="mt-4 text-base sm:text-lg text-white/85 leading-relaxed font-normal">
+                {pageData.subtitle}
+              </p>
+
+              {pageData.price && (
+                <div className="mt-6 inline-flex items-center gap-3 bg-white/10 border border-white/15 px-4 py-2 rounded-2xl">
+                  <span className="text-xs text-white/70">Estimated Pricing:</span>
+                  <span className="text-base sm:text-lg font-bold text-[#FB923C]">{pageData.price}</span>
+                </div>
+              )}
+
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <a
+                  href="#schedule-form"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#FB923C] hover:bg-[#EA580C] text-white px-8 py-3.5 text-sm font-semibold shadow-md transition-all active:scale-95"
+                >
+                  <span>Book This Service</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+
+                <a
+                  href="tel:+919953104104"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 hover:border-white text-white px-7 py-3 text-sm font-semibold transition-all"
+                >
+                  <Phone className="w-4 h-4 text-[#FB923C]" />
+                  <span>Call 24/7: +91 99531 04104</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="absolute right-0 bottom-0 w-96 h-96 bg-[#34D399]/10 rounded-full blur-3xl pointer-events-none" />
+          </div>
+
+          {/* 2-Column Clinical Details & Interactive Form */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start mb-16">
+            <div className="lg:col-span-7 space-y-10">
+              {/* Highlights Checklist */}
+              <div className="bg-white rounded-3xl p-7 sm:p-9 shadow-sm border border-[#0F2F28]/10">
+                <h3 className="font-serif text-2xl font-light text-[#0F2F28] mb-5">
+                  Key Service Standards &amp; Inclusions
+                </h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  {pageData.highlights.map((h) => (
+                    <li key={h} className="flex items-start gap-2.5 text-xs sm:text-[13.5px] text-[#0F2F28]/85">
+                      <span className="flex h-5 w-5 rounded-full items-center justify-center bg-[#E6F4EA] text-[#00875A] flex-shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 stroke-[2.5]" />
+                      </span>
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Protocols / Workflow */}
+              <div className="bg-white rounded-3xl p-7 sm:p-9 shadow-sm border border-[#0F2F28]/10">
+                <h3 className="font-serif text-2xl font-light text-[#0F2F28] mb-5">
+                  Clinical Care Protocols
+                </h3>
+                <div className="space-y-4">
+                  {pageData.protocols.map((proto, idx) => (
+                    <div key={proto.title} className="flex items-start gap-3.5 pb-4 border-b border-[#0F2F28]/10 last:border-0 last:pb-0">
+                      <div className="w-7 h-7 rounded-full bg-[#0F2F28] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">
+                        {idx + 1}
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-sm text-[#0F2F28]">{proto.title}</h4>
+                        <p className="text-xs sm:text-[13px] text-[#0F2F28]/75 mt-1 leading-relaxed">
+                          {proto.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* FAQs if present */}
+              {pageData.faqs && pageData.faqs.length > 0 && (
+                <div className="bg-white rounded-3xl p-7 sm:p-9 shadow-sm border border-[#0F2F28]/10">
+                  <h3 className="font-serif text-2xl font-light text-[#0F2F28] mb-5 flex items-center gap-2">
+                    <HelpCircle className="w-5 h-5 text-[#00875A]" />
+                    <span>Frequently Asked Questions</span>
+                  </h3>
+                  <div className="space-y-4">
+                    {pageData.faqs.map((f) => (
+                      <div key={f.q} className="rounded-xl bg-[#FAF8F5] p-4 border border-[#0F2F28]/10">
+                        <h4 className="font-semibold text-xs sm:text-sm text-[#0F2F28] mb-1">{f.q}</h4>
+                        <p className="text-xs text-[#0F2F28]/75 leading-relaxed">{f.a}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Trust Signals */}
+              <div className="rounded-3xl bg-[#E6F4EA] p-6 border border-[#34D399]/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <ShieldCheck className="w-8 h-8 text-[#00875A] flex-shrink-0" />
+                  <div>
+                    <h4 className="font-bold text-sm text-[#0F2F28]">Strict 5-Point Verification</h4>
+                    <p className="text-xs text-[#0F2F28]/75">Police clearance, Aadhaar check, and medical fitness verification.</p>
+                  </div>
+                </div>
+                <Link
+                  href="/verification-process"
+                  className="px-4 py-2 rounded-full bg-[#0F2F28] text-white text-xs font-semibold hover:bg-[#1A423A] transition-colors whitespace-nowrap"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column: Live Interactive Booking Form (Span 5) */}
+            <div id="schedule-form" className="lg:col-span-5 sticky top-28">
+              <BookingForm initialService={cleanPath.includes("doctor") ? "doctor-visit" : "12h-caretaker"} />
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+      <MobileBottomBar />
     </div>
   );
 }
 
-export default function ComingSoonPage() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim()) {
-      setSubmitted(true);
-    }
-  };
-
-  const featureCards = [
-    {
-      icon: ShieldCheck,
-      title: "100% Police Verified GDAs",
-      desc: "Every caretaker undergoes 5-point verification, police clearance, and intensive hospital training.",
-      badge: "Verified Trust",
-    },
-    {
-      icon: Activity,
-      title: "20-Min Emergency Doctor",
-      desc: "On-call certified physicians dispatched across Gurgaon with portable diagnostics and emergency kits.",
-      badge: "Rapid Response",
-    },
-    {
-      icon: HeartHandshake,
-      title: "Doctor-Led Daily Oversight",
-      desc: "Senior clinicians from AIIMS and Medanta review patient vitals and oversee care coordination.",
-      badge: "Clinical Rigor",
-    },
-  ];
-
+export default function DynamicPageRoute() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-[#132D2E] selection:bg-[#BEE3D6] selection:text-[#132D2E]">
-      <Banner />
-      <Navbar />
-
-      <main className="flex-grow">
-        {/* ── HERO BANNER SECTION ── */}
-        <section className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28 border-b border-[#132D2E]/10">
-          <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-[#34D399]/20 via-[#FB923C]/10 to-transparent blur-3xl opacity-70" />
-
-          <div className="relative mx-auto max-w-4xl px-6 text-center">
-            {/* Status Pill */}
-            <div className="inline-flex items-center gap-2.5 rounded-full bg-[#0F2F28] text-white px-4 py-1.5 text-xs font-medium tracking-wide shadow-sm mb-6">
-              <span className="flex h-2 w-2 rounded-full bg-[#34D399] animate-ping" />
-              <span>Kyno Health Gurgaon • Booking &amp; Service Portal</span>
-            </div>
-
-            {/* Dynamic Path Indicator */}
-            <div>
-              <Suspense fallback={null}>
-                <PathBadge />
-              </Suspense>
-            </div>
-
-            {/* Display Editorial Headline */}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-[58px] font-light leading-[1.12] text-[#0F2F28] tracking-tight">
-              Hospital-grade healthcare,{" "}
-              <span className="italic font-normal">in the comfort of home.</span>
-            </h1>
-
-            {/* Subtitle */}
-            <p className="mt-6 text-base sm:text-lg lg:text-[19px] text-[#0F2F28]/80 max-w-2xl mx-auto leading-relaxed font-normal">
-              Our Gurgaon care coordination team is ready 24/7 to assign certified caretakers, schedule doctor home visits, or arrange nursing care for your loved ones.
-            </p>
-
-            {/* Email Priority Notification Form */}
-            <div className="mt-10 max-w-md mx-auto">
-              {submitted ? (
-                <div className="inline-flex items-center gap-3 rounded-full bg-[#E6F4EA] border border-[#34D399]/40 px-6 py-3.5 text-sm text-[#0F2F28] font-medium shadow-sm animate-fade-in">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#00875A] text-white">
-                    <Check className="w-3 h-3" />
-                  </span>
-                  <span>Thank you! Our Gurgaon care coordinator will reach out promptly.</span>
-                </div>
-              ) : (
-                <form
-                  onSubmit={handleSubmit}
-                  className="flex items-center rounded-full bg-white p-1.5 shadow-md border border-[#0F2F28]/15 focus-within:border-[#0F2F28] transition-all"
-                >
-                  <input
-                    type="tel"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter phone number for instant callback"
-                    required
-                    className="w-full rounded-l-full bg-transparent px-4 py-2 text-sm text-[#0F2F28] placeholder:text-[#0F2F28]/50 focus:outline-none"
-                  />
-                  <button
-                    type="submit"
-                    className="inline-flex items-center gap-1.5 rounded-full bg-[#FB923C] hover:bg-[#EA580C] text-white px-5 py-2.5 text-sm font-semibold transition-colors whitespace-nowrap cursor-pointer shadow-sm"
-                  >
-                    <span>Request Call</span>
-                    <Send className="w-3.5 h-3.5" />
-                  </button>
-                </form>
-              )}
-            </div>
-
-            {/* Action Buttons */}
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 rounded-full bg-[#0F2F28] text-white px-7 py-3.5 text-sm font-semibold hover:bg-[#1A423A] transition-colors shadow-sm"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                <span>Return to Home</span>
-              </Link>
-
-              <a
-                href="tel:+919953104104"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-[#FB923C] bg-white text-[#EA580C] px-6 py-3.5 text-sm font-semibold hover:bg-[#FB923C] hover:text-white transition-all shadow-sm"
-              >
-                <PhoneCall className="w-4 h-4" />
-                <span>Call Helpline: +91 99531 04104</span>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* ── PREVIEW CARDS SECTION ── */}
-        <section className="py-16 lg:py-20 bg-white">
-          <div className="mx-auto max-w-6xl px-6 lg:px-8">
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <p className="text-xs font-semibold tracking-widest uppercase text-[#00875A] mb-2">
-                WHAT TO EXPECT
-              </p>
-              <h2 className="font-serif text-3xl sm:text-4xl font-light text-[#0F2F28]">
-                The Kyno Health Care Standard
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {featureCards.map((card) => {
-                const Icon = card.icon;
-                return (
-                  <div
-                    key={card.title}
-                    className="rounded-2xl border border-[#0F2F28]/10 bg-[#FAF8F5] p-8 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow"
-                  >
-                    <div>
-                      <div className="flex items-center justify-between mb-6">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0F2F28] text-white">
-                          <Icon className="w-6 h-6 text-[#34D399]" />
-                        </div>
-                        <span className="text-[11px] font-semibold uppercase tracking-wider text-[#0F2F28]/70 bg-white px-2.5 py-1 rounded-full border border-[#0F2F28]/10">
-                          {card.badge}
-                        </span>
-                      </div>
-                      <h3 className="font-serif text-xl font-normal text-[#0F2F28] mb-3">
-                        {card.title}
-                      </h3>
-                      <p className="text-sm text-[#0F2F28]/75 leading-relaxed">
-                        {card.desc}
-                      </p>
-                    </div>
-
-                    <div className="mt-8 pt-4 border-t border-[#0F2F28]/10">
-                      <span className="text-xs font-semibold text-[#00875A] inline-flex items-center gap-1">
-                        <span>NABH-aligned protocol</span>
-                      </span>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <Footer />
-    </div>
+    <Suspense fallback={<div className="min-h-screen bg-[#FAF8F5] flex items-center justify-center text-sm text-[#0F2F28]">Loading Kyno Health care portal...</div>}>
+      <DynamicPageContent />
+    </Suspense>
   );
 }
