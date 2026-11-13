@@ -143,8 +143,8 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Desktop Right CTAs: Contact + 24/7 Helpline + [Book Caretaker] button */}
-          <div className="hidden lg:flex items-center gap-4 xl:gap-5">
+          {/* Desktop Right CTAs: Contact + 24/7 Helpline + Book Doctor + Book Caretaker */}
+          <div className="hidden lg:flex items-center gap-3.5 xl:gap-4">
             <a
               href="/contact"
               className="text-[13.5px] font-medium text-[#FAF8F5] hover:text-[#34D399] transition-colors whitespace-nowrap"
@@ -154,33 +154,47 @@ export default function Navbar() {
 
             <a
               href="tel:+919953104104"
-              className="flex items-center gap-2 text-[13.5px] font-semibold text-[#FB923C] hover:text-white px-3.5 py-1.5 rounded-full bg-white/5 border border-[#FB923C]/30 hover:border-[#FB923C] transition-all whitespace-nowrap"
+              className="flex items-center gap-1.5 text-[13px] font-semibold text-[#FB923C] hover:text-white px-3 py-1.5 rounded-full bg-white/5 border border-[#FB923C]/30 hover:border-[#FB923C] transition-all whitespace-nowrap"
             >
               <Phone className="h-3.5 w-3.5 animate-pulse text-[#FB923C]" />
               <span>+91 99531 04104</span>
             </a>
 
             <a
+              href="/book-doctor"
+              className="rounded-full bg-[#00875A] text-white px-4 py-2 text-xs xl:text-sm font-semibold shadow-sm hover:bg-[#00704A] transition-all whitespace-nowrap flex items-center gap-1.5"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+              <span>Book Doctor (20m)</span>
+            </a>
+
+            <a
               href={navData.cta.join.href}
-              className="rounded-full bg-[#FB923C] text-white px-5 py-2.5 text-sm font-semibold shadow-sm hover:bg-[#EA580C] transition-all whitespace-nowrap"
+              className="rounded-full bg-[#FB923C] text-white px-4 py-2 text-xs xl:text-sm font-semibold shadow-sm hover:bg-[#EA580C] transition-all whitespace-nowrap"
             >
               {navData.cta.join.label}
             </a>
           </div>
 
-          {/* Mobile Right: Direct Phone call & Book Caretaker */}
+          {/* Mobile Right: Direct Phone call & Book Doctor */}
           <div className="lg:hidden flex items-center gap-2">
             <a
+              href="/book-doctor"
+              className="px-2.5 py-1 rounded-full bg-[#00875A] text-white text-[11px] font-bold shadow-sm flex items-center gap-1"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+              <span>Doctor 20m</span>
+            </a>
+            <a
               href="tel:+919953104104"
-              className="flex items-center justify-center w-9 h-9 rounded-full bg-[#FB923C]/20 text-[#FB923C] border border-[#FB923C]/30"
+              className="flex items-center justify-center w-8 h-8 rounded-full bg-[#FB923C]/20 text-[#FB923C] border border-[#FB923C]/30"
               aria-label="Call emergency helpline"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-3.5 h-3.5" />
             </a>
-
             <a
               href={navData.cta.join.href}
-              className="rounded-full bg-[#FB923C] text-white px-4 py-1.5 text-xs font-semibold hover:bg-[#EA580C] active:scale-95 transition-all"
+              className="rounded-full bg-[#FB923C] text-white px-3 py-1 text-xs font-semibold hover:bg-[#EA580C] active:scale-95 transition-all whitespace-nowrap"
             >
               Book Care
             </a>

@@ -16,7 +16,7 @@
       "label": "Clinical Services",
       "href": "/services",
       "submenu": [
-        { "title": "Doctor Visit at Home (20 Mins)", "href": "/services/doctor-at-home" },
+        { "title": "Doctor Visit at Home (20 Mins)", "href": "/book-doctor" },
         { "title": "Critical Care Nursing", "href": "/services/nurse-at-home" },
         { "title": "Physiotherapy at Home", "href": "/services/physiotherapy" },
         { "title": "Diagnostic Blood Tests & ECG", "href": "/services/lab-tests-at-home" },

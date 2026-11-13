@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   CalendarCheck,
   ShieldCheck,
@@ -23,12 +23,7 @@ export default function BookingForm({
   const [patientCondition, setPatientCondition] = useState("elderly-care");
   const [sector, setSector] = useState("DLF Phase 5");
   const [shift, setShift] = useState(initialPlan === "24h" ? "24-Hours Live-In" : "Day Shift (8 AM - 8 PM)");
-  const [startDate, setStartDate] = useState("");
-
-  useEffect(() => {
-    const today = new Date();
-    setStartDate(today.toISOString().split("T")[0]);
-  }, []);
+  const [startDate, setStartDate] = useState("2026-11-14");
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -46,7 +41,7 @@ export default function BookingForm({
       case "24h-caretaker":
         return { rate: "₹1,800", period: "per day", monthly: "₹42,000/month", badge: "Doctor Supervised" };
       case "doctor-visit":
-        return { rate: "₹999", period: "per visit", monthly: "20-30 min arrival", badge: "Emergency Kit & ECG" };
+        return { rate: "₹1,999", period: "per visit", monthly: "20 min arrival (detailed 30m consultation + vitals + emergency meds)", badge: "Emergency Kit & ECG" };
       case "nurse-visit":
         return { rate: "₹499", period: "per visit", monthly: "IV / Injections / Dressings", badge: "GNM / B.Sc Nurse" };
       case "physiotherapy":
@@ -162,6 +157,30 @@ export default function BookingForm({
 
   return (
     <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-[#0F2F28]/10 max-w-2xl mx-auto">
+      {/* Quick link to 20-min Doctor Flow */}
+      <div className="mb-6 p-4 rounded-2xl bg-gradient-to-r from-[#0F2F28] to-[#1A4D43] text-white flex items-center justify-between gap-3 shadow-sm">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0 border border-[#34D399]">
+            <img src="/images/doctor-aryan.png" alt="Doctor" className="w-full h-full object-cover" />
+          </div>
+          <div>
+            <div className="text-xs font-bold text-[#34D399] uppercase tracking-wider flex items-center gap-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-ping" /> Urgent Home Doctor?
+            </div>
+            <div className="text-xs text-white/90 font-medium">
+              Need a doctor in 20 minutes? (₹1999 all-inclusive)
+            </div>
+          </div>
+        </div>
+        <a
+          href="/book-doctor"
+          className="px-3.5 py-1.5 rounded-full bg-[#00875A] hover:bg-[#00704A] text-white text-xs font-bold whitespace-nowrap shadow-sm transition-all flex items-center gap-1"
+        >
+          <span>Book Doctor</span>
+          <ArrowRight className="w-3 h-3" />
+        </a>
+      </div>
+
       <div className="flex items-center justify-between border-b border-[#0F2F28]/10 pb-5 mb-6">
         <div>
           <span className="text-xs font-semibold uppercase tracking-wider text-[#00875A] flex items-center gap-1.5">

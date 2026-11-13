@@ -45,19 +45,26 @@ export default function Hero() {
           </p>
 
           {/* Action Buttons */}
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center gap-3.5">
+            <a
+              href="/book-doctor"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#00875A] px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#00704A] active:scale-95"
+            >
+              <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+              <span>Book Doctor in 20 Mins (₹1999)</span>
+            </a>
             <a
               href="/book-caretaker"
-              className="inline-flex items-center justify-center rounded-full bg-[#FB923C] px-8 py-4 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#EA580C] active:scale-95"
+              className="inline-flex items-center justify-center rounded-full bg-[#FB923C] px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#EA580C] active:scale-95"
             >
-              Book Caretaker at Home
+              Book Caretaker (12h / 24h)
             </a>
             <a
               href="tel:+919953104104"
-              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#0F2F28] px-7 py-3.5 text-sm font-semibold text-[#0F2F28] transition-all hover:bg-[#0F2F28] hover:text-white"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#0F2F28] px-6 py-3 text-xs sm:text-sm font-semibold text-[#0F2F28] transition-all hover:bg-[#0F2F28] hover:text-white"
             >
               <PhoneCall className="w-4 h-4 text-[#FB923C]" />
-              <span>Call Helpline: +91 99531 04104</span>
+              <span>+91 99531 04104</span>
             </a>
           </div>
 

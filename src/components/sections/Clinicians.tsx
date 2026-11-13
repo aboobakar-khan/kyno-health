@@ -13,24 +13,28 @@ export default function Clinicians() {
   const medicalLeaders = [
     {
       name: "Dr. K. S. Sharma, MD",
+      image: "/images/doctor-kyno.jpg",
       role: "Medical Director & Senior Consultant",
       exp: "16+ Yrs Exp • Ex-AIIMS / Medanta",
-      desc: "Specialist in internal medicine, geriatric multi-morbidity, and emergency home intervention protocols.",
+      desc: "Specialist in internal medicine, geriatric multi-morbidity, and emergency home intervention protocols across Gurugram.",
     },
     {
-      name: "Aditya Gupta",
-      role: "Founder & Managing Director",
-      exp: "Healthcare Innovator",
-      desc: "Pioneering technology-driven 20-minute primary care and hospital-grade home health delivery across India.",
+      name: "Dr. Aryan Verma, MBBS",
+      image: "/images/doctor-aryan.png",
+      role: "Lead Emergency Physician",
+      exp: "8+ Yrs Acute Medicine",
+      desc: "Heads the 20-minute rapid response home doctor fleet with bedside ECG, vitals monitoring, and emergency injectables.",
     },
     {
       name: "Sr. Ananya Sen, B.Sc Nursing",
+      image: null,
       role: "Head of Nursing & GDA Training",
       exp: "12+ Yrs Critical Care Nursing",
-      desc: "Directs background verification, hospital ergonomics, and patient hygiene certification for all caretakers.",
+      desc: "Directs Haryana Police background checks, hospital ergonomics, and patient hygiene certification for all caretakers.",
     },
     {
       name: "Dr. Rohit Verma, MPT",
+      image: null,
       role: "Lead Consultant Physiotherapist",
       exp: "10+ Yrs Neuro & Ortho Rehab",
       desc: "Leads post-knee/hip replacement ambulation and stroke paralysis rehabilitation programs at home.",
@@ -125,9 +129,19 @@ export default function Clinicians() {
                 className="bg-white rounded-2xl p-6 shadow-sm border border-[#132D2E]/10 flex flex-col justify-between hover:shadow-md transition-shadow"
               >
                 <div>
-                  <div className="h-10 w-10 rounded-full bg-[#E7EFEA] flex items-center justify-center text-[#00875A] mb-4 font-semibold text-sm">
-                    {leader.name.split(" ")[1]?.[0] || "D"}
-                  </div>
+                  {leader.image ? (
+                    <div className="h-14 w-14 rounded-2xl overflow-hidden mb-4 border border-[#00875A]/20 shadow-sm">
+                      <img
+                        src={leader.image}
+                        alt={leader.name}
+                        className="h-full w-full object-cover object-top"
+                      />
+                    </div>
+                  ) : (
+                    <div className="h-12 w-12 rounded-2xl bg-[#E7EFEA] flex items-center justify-center text-[#00875A] mb-4 font-semibold text-sm">
+                      {leader.name.split(" ")[1]?.[0] || "D"}
+                    </div>
+                  )}
                   <h4 className="font-serif text-lg font-normal text-[#132D2E]">
                     {leader.name}
                   </h4>
@@ -143,6 +157,39 @@ export default function Clinicians() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Quick Doctor Dispatch Banner */}
+          <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#0F2F28] to-[#1A4D43] text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg">
+            <div className="flex items-center gap-4">
+              <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-[#34D399] hidden sm:block">
+                <img
+                  src="/images/doctor-aryan.png"
+                  alt="Doctor At Home 20 Mins"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#10B981]/20 text-[#34D399] text-[11px] font-bold uppercase tracking-wider mb-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#10B981] animate-ping" />
+                  <span>20-Minute Rapid Response Fleet</span>
+                </div>
+                <h4 className="text-xl sm:text-2xl font-serif font-light text-white">
+                  Need a Doctor at Home in Gurgaon Right Now?
+                </h4>
+                <p className="text-xs sm:text-sm text-white/80 mt-1">
+                  Full 30-min consultation, portable 12-lead ECG, vitals monitor &amp; emergency injectables. All-inclusive fee ₹1999.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 flex-shrink-0 w-full sm:w-auto">
+              <a
+                href="/book-doctor"
+                className="w-full sm:w-auto text-center px-6 py-3.5 rounded-full bg-[#00875A] hover:bg-[#00704A] text-white font-bold text-xs sm:text-sm shadow-md transition-all active:scale-95 whitespace-nowrap"
+              >
+                Book Doctor in 20 Mins (₹1999)
+              </a>
+            </div>
           </div>
         </div>
       </div>
