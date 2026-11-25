@@ -38,34 +38,7 @@
 }
 
 /* ── Fonts ─────────────────────────────────────────── */
-@font-face {
-  font-family: "Euclid Circular B";
-  src: url("https://static.parsley.health/fonts/euclid-circular-b/EuclidCircularB-Regular-WebS.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Euclid Circular B";
-  src: url("https://static.parsley.health/fonts/euclid-circular-b/EuclidCircularB-Medium-WebS.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Euclid Circular B";
-  src: url("https://static.parsley.health/fonts/euclid-circular-b/EuclidCircularB-Light-WebS.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Teodor";
-  src: url("https://static.parsley.health/fonts/Teodor-Light/Teodor-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
+/* Clean system font stacks configured in tailwind (Inter, system-ui, Georgia, serif) */
 
 /* ── Base ─────────────────────────────────────────── */
 * {

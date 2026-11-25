@@ -103,17 +103,17 @@ export default function Navbar() {
     <>
       {/* ── MAIN LUXURY NAVBAR ── */}
       <header className="sticky top-0 z-50 w-full bg-[#0F2F28] border-b border-white/10 shadow-sm transition-colors">
-        <div className="mx-auto flex h-[70px] sm:h-[74px] max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:px-10">
+        <div className="mx-auto flex h-[66px] sm:h-[74px] max-w-[1440px] items-center justify-between px-3 sm:px-6 lg:px-10">
           
           {/* Left: Logo & City Selector */}
-          <div className="flex items-center gap-3 sm:gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <a
               href="/"
-              className="flex items-center gap-2.5 text-[#FAF8F5] hover:opacity-95 transition-opacity"
+              className="flex items-center gap-2 sm:gap-2.5 text-[#FAF8F5] hover:opacity-95 transition-opacity"
             >
               {/* Kyno Health Emblem */}
-              <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-white/10 p-1">
-                <svg viewBox="0 0 36 36" className="w-6 h-6" fill="none">
+              <div className="relative flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white/10 p-1">
+                <svg viewBox="0 0 36 36" className="w-5 h-5 sm:w-6 sm:h-6" fill="none">
                   <path
                     d="M18 30.5s-10-6.2-13.5-13.2a7.5 7.5 0 0 1 12.5-4.5l1 1.2 1-1.2a7.5 7.5 0 0 1 12.5 4.5c-3.5 7-13.5 13.2-13.5 13.2z"
                     stroke="#34D399"
@@ -131,10 +131,10 @@ export default function Navbar() {
               </div>
 
               <div className="flex items-baseline tracking-tight">
-                <span className="font-sans text-[20px] sm:text-[22px] font-bold tracking-[-0.03em] text-[#FAF8F5]">
+                <span className="font-sans text-[18px] sm:text-[22px] font-bold tracking-[-0.03em] text-[#FAF8F5]">
                   Kyno
                 </span>
-                <span className="font-sans text-[20px] sm:text-[22px] font-medium tracking-[-0.03em] text-[#FB923C] ml-1">
+                <span className="font-sans text-[18px] sm:text-[22px] font-medium tracking-[-0.03em] text-[#FB923C] ml-0.5 sm:ml-1">
                   health
                 </span>
               </div>
@@ -147,13 +147,13 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setCityModalOpen(true)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-[#FAF8F5] text-xs font-medium transition-all cursor-pointer active:scale-95"
+              className="flex items-center gap-1 sm:gap-1.5 px-2 py-1 sm:px-3 sm:py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-[#FAF8F5] text-[11px] sm:text-xs font-medium transition-all cursor-pointer active:scale-95"
               aria-label="Select city for healthcare services"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
-              <MapPin className="w-3.5 h-3.5 text-[#34D399]" />
-              <span className="font-semibold text-xs tracking-wide">{selectedCity.name.split(" ")[0]}</span>
-              <ChevronDown className="w-3 h-3 text-white/60" />
+              <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#34D399]" />
+              <span className="font-semibold tracking-wide">{selectedCity.name.split(" ")[0]}</span>
+              <ChevronDown className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white/60" />
             </button>
           </div>
 
