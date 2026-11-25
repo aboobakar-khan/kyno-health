@@ -54,9 +54,9 @@ export default function Clinicians() {
                 className="h-full w-full object-cover object-top"
               />
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0B231E]/95 via-[#0B231E]/60 to-transparent p-6 text-white">
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#FB923C] text-[11px] font-semibold uppercase tracking-wider mb-2 text-white">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#FB923C] text-[11px] font-medium mb-2 text-white">
                   <Stethoscope className="w-3 h-3" />
-                  Medical Director
+                  <span>Medical Director</span>
                 </div>
                 <div className="font-serif text-xl sm:text-2xl font-normal">
                   Dr. K. S. Sharma, MD, MBBS
@@ -71,12 +71,12 @@ export default function Clinicians() {
 
           {/* Right: Content */}
           <div className="lg:col-span-6">
-            <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#00875A] mb-3">
+            <div className="inline-flex items-center gap-1.5 text-xs font-medium text-[#00875A] mb-3">
               <ShieldCheck className="w-4 h-4" />
-              <span>Physician-Led Home Healthcare</span>
+              <span>Physician-led home healthcare</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] font-light leading-[1.18] text-[#132D2E]">
-              Supervised by top hospital doctors, delivered at your doorstep.
+              Supervised by top hospital doctors, delivered at your doorstep
             </h2>
             <p className="mt-6 text-base sm:text-lg text-[#132D2E]/85 leading-relaxed font-normal">
               At Kyno Health, our home caretakers don&apos;t work in isolation. Every patient plan is reviewed and backstopped by senior clinicians with deep experience from India&apos;s leading institutions like AIIMS and Medanta.
@@ -170,12 +170,12 @@ export default function Clinicians() {
                 />
               </div>
               <div>
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#10B981]/20 text-[#34D399] text-[11px] font-bold uppercase tracking-wider mb-1.5">
-                  <span className="w-2 h-2 rounded-full bg-[#10B981] animate-ping" />
-                  <span>20-Minute Rapid Response Fleet</span>
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/15 text-[#34D399] text-xs font-medium mb-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
+                  <span>20-Minute rapid response fleet</span>
                 </div>
                 <h4 className="text-xl sm:text-2xl font-serif font-light text-white">
-                  Need a Doctor at Home in Gurgaon Right Now?
+                  Need a doctor at home in Gurgaon right now?
                 </h4>
                 <p className="text-xs sm:text-sm text-white/80 mt-1">
                   Full 30-min consultation, portable 12-lead ECG, vitals monitor &amp; emergency injectables. All-inclusive fee ₹1999.

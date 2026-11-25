@@ -28,8 +28,8 @@ export default function Banner() {
 
         {/* Center: Core Value */}
         <div className="hidden md:flex items-center gap-2 text-[11px] text-white/80">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
-          <span>20-Min Emergency Doctor Dispatch • 12h/24h Verified Caretakers</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
+          <span>20-Min emergency doctor dispatch • 12h/24h verified caretakers</span>
         </div>
 
         {/* Right: Hotline */}

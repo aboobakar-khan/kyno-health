@@ -102,8 +102,8 @@ export default function Outcomes() {
           <div className="flex flex-col lg:flex-row lg:items-center lg:gap-14">
             {/* Left Column: Stat Headline */}
             <div className="lg:w-[320px] lg:flex-shrink-0 mb-10 lg:mb-0">
-              <p className="text-xs font-semibold tracking-widest uppercase text-[#00875A] mb-3">
-                PROVEN CLINICAL OUTCOMES
+              <p className="text-xs font-medium text-[#00875A] mb-3">
+                Proven clinical outcomes
               </p>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-light leading-[1.18] text-[#132D2E]">
                 96% of families report faster recovery and dignified comfort at home
@@ -141,7 +141,7 @@ export default function Outcomes() {
 
                     {/* Content Layer at bottom */}
                     <div className="absolute bottom-0 inset-x-0 p-5 text-white z-10 flex flex-col justify-end">
-                      <p className="font-sans text-xs tracking-wider uppercase text-[#34D399] font-semibold mb-0.5">
+                      <p className="font-sans text-xs text-[#34D399] font-medium mb-0.5">
                         {story.location}
                       </p>
                       <p className="font-sans text-xs font-semibold text-white/90 mb-1">
@@ -174,8 +174,8 @@ export default function Outcomes() {
       <section className="py-16 md:py-24 lg:py-36 overflow-visible relative">
         <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 lg:mb-20">
-            <p className="text-xs sm:text-[13px] font-semibold tracking-[0.2em] uppercase text-[#132D2E]/60 mb-3 sm:mb-4">
-              WHY CHOOSE KYNO HEALTH
+            <p className="text-xs font-medium text-[#00875A] mb-3">
+              Why families choose Kyno Health
             </p>
             <h2 className="font-serif text-3xl sm:text-5xl lg:text-[54px] font-light leading-[1.15] text-[#132D2E] tracking-tight">
               Hospital-grade clinical standards vs traditional home care

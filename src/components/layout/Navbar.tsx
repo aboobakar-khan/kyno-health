@@ -147,12 +147,12 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setCityModalOpen(true)}
-              className="flex items-center gap-1 sm:gap-1.5 px-2 py-1 sm:px-3 sm:py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-[#FAF8F5] text-[11px] sm:text-xs font-medium transition-all cursor-pointer active:scale-95"
+              className="flex items-center gap-1 sm:gap-1.5 px-2 py-1 sm:px-3 sm:py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-[#FAF8F5] text-[11px] sm:text-xs font-medium transition-colors cursor-pointer active:scale-95"
               aria-label="Select city for healthcare services"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
               <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#34D399]" />
-              <span className="font-semibold tracking-wide">{selectedCity.name.split(" ")[0]}</span>
+              <span className="font-medium tracking-normal">{selectedCity.name.split(" ")[0]}</span>
               <ChevronDown className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white/60" />
             </button>
           </div>

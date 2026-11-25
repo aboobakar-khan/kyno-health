@@ -20,9 +20,9 @@ export default function Conditions() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center">
           {/* Left Column: Heading, Primary CTA & Slider Controls */}
           <div className="lg:col-span-4 flex flex-col items-start pr-4">
-            <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#00875A] mb-3">
+            <div className="inline-flex items-center gap-1.5 text-xs font-medium text-[#00875A] mb-3">
               <Stethoscope className="w-4 h-4" />
-              <span>Clinical Departments</span>
+              <span>Clinical departments</span>
             </div>
 
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-light leading-[1.18] text-[#132D2E] max-w-[360px]">

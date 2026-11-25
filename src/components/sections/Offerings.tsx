@@ -29,8 +29,8 @@ export default function Offerings() {
       <div className="mx-auto max-w-[1340px] px-5 sm:px-8 lg:px-10">
         {/* Section Header */}
         <div className="flex flex-col items-center gap-3 text-center mb-10 sm:mb-14 lg:mb-16">
-          <p className="text-xs font-semibold tracking-widest uppercase text-[#34D399] font-sans">
-            TRANSPARENT CARE PACKAGES
+          <p className="text-xs font-medium text-[#34D399]">
+            Transparent care packages
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] font-light leading-tight text-[#FAF8F5]">
             Flexible care plans designed around your family&apos;s needs
@@ -62,8 +62,8 @@ export default function Offerings() {
           >
             {/* Top Area */}
             <div>
-              <p className="text-xs font-semibold tracking-widest uppercase text-[#00875A] mb-3 font-sans">
-                MOST POPULAR FOR DAY / NIGHT SUPPORT
+              <p className="text-xs font-medium text-[#00875A] mb-3">
+                Day and night bedside assistance
               </p>
               <h3
                 className={`font-serif font-light leading-tight text-[#132D2E] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
@@ -191,8 +191,8 @@ export default function Offerings() {
           >
             {/* Top Area */}
             <div>
-              <p className="text-xs font-semibold tracking-widest uppercase text-[#00875A] mb-3 font-sans">
-                ROUND-THE-CLOCK ASSISTANCE
+              <p className="text-xs font-medium text-[#00875A] mb-3">
+                Round-the-clock bedside assistance
               </p>
               <h3
                 className={`font-serif font-light leading-tight text-[#132D2E] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
@@ -308,8 +308,8 @@ export default function Offerings() {
           {/* Mobile Card 1: 12-Hour Caretaker Shift */}
           <div className="flex flex-col gap-7 sm:gap-8 bg-[#FAF8F5] rounded-2xl p-6 sm:p-8 shadow-md">
             <div className="flex flex-col gap-2">
-              <p className="text-xs font-semibold tracking-widest uppercase text-[#00875A] font-sans">
-                FLEXIBLE DAY OR NIGHT CARE
+              <p className="text-xs font-medium text-[#00875A]">
+                Day or night care
               </p>
               <h3 className="font-serif font-light text-[#132D2E] text-[28px] sm:text-[32px] leading-[1.15]">
                 12-Hour Caretaker Shift
@@ -362,8 +362,8 @@ export default function Offerings() {
           {/* Mobile Card 2: 24-Hour Live-In Caretaker */}
           <div className="flex flex-col gap-7 sm:gap-8 bg-[#FAF8F5] rounded-2xl p-6 sm:p-8 shadow-md">
             <div className="flex flex-col gap-2">
-              <p className="text-xs font-semibold tracking-widest uppercase text-[#00875A] font-sans">
-                24/7 BEDSIDE RECOVERY
+              <p className="text-xs font-medium text-[#00875A]">
+                24/7 Bedside recovery
               </p>
               <h3 className="font-serif font-light text-[#132D2E] text-[28px] sm:text-[32px] leading-[1.15]">
                 24-Hour Live-In Caretaker
@@ -417,12 +417,12 @@ export default function Offerings() {
         {/* Rapid Doctor Consultation Callout Banner */}
         <div className="mt-12 p-6 sm:p-8 rounded-2xl bg-white/10 border border-white/15 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="text-white text-center sm:text-left">
-            <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#FB923C] mb-1">
+            <div className="inline-flex items-center gap-1.5 text-xs font-medium text-[#FB923C] mb-1">
               <ShieldCheck className="w-4 h-4" />
-              <span>Need Immediate Doctor Evaluation?</span>
+              <span>Immediate doctor evaluation</span>
             </div>
             <h4 className="font-serif text-xl sm:text-2xl font-light">
-              Doctor Home Visit in Gurgaon within 20–30 Minutes
+              Doctor home visit in Gurgaon within 20–30 minutes
             </h4>
             <p className="text-xs sm:text-sm text-white/80 mt-1">
               Experienced physicians arrive with portable diagnostics, ECG, and emergency kits for ₹999 / visit.

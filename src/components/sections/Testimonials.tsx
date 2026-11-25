@@ -18,8 +18,8 @@ export default function Testimonials() {
           {[...Array(5)].map((_, i) => (
             <Star key={i} className="w-5 h-5 fill-[#FB923C] text-[#FB923C]" />
           ))}
-          <span className="ml-2 text-xs font-semibold uppercase tracking-wider text-[#0F2F28]/70">
-            4.9 / 5 • 50,000+ Care Hours Delivered
+          <span className="ml-2 text-xs font-medium text-[#0F2F28]/70">
+            4.9 / 5 • 50,000+ care hours delivered
           </span>
         </motion.div>
 

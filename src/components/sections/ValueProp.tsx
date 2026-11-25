@@ -11,12 +11,12 @@ export default function ValueProp() {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
             {/* Left: Copy */}
             <div className="lg:col-span-6">
-              <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#00875A] mb-3">
+              <div className="inline-flex items-center gap-1.5 text-xs font-medium text-[#00875A] mb-3">
                 <HeartHandshake className="w-4 h-4" />
-                <span>Specialized Bedside Assistance</span>
+                <span>Specialized bedside assistance</span>
               </div>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] font-light leading-[1.18] text-[#132D2E]">
-                Empathetic, structured care — not just domestic help.
+                Empathetic, structured care — not just domestic help
               </h2>
               <p className="mt-6 text-base sm:text-lg text-[#132D2E]/80 leading-relaxed font-normal">
                 Our caretakers are certified General Duty Assistants (GDAs) trained in patient ergonomics, bed sore prevention (Q2H turning), personal hygiene, diaper care, and medication schedules. They provide loving companionship while maintaining rigorous patient safety standards.
@@ -55,17 +55,17 @@ export default function ValueProp() {
                   alt="Kyno Health Caretaker providing empathetic assistance at home in Gurgaon"
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-2xl border border-[#0F2F28]/10 shadow-md flex items-center justify-between">
+                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-2xl border border-[#0F2F28]/10 shadow-sm flex items-center justify-between">
                   <div>
-                    <span className="text-[11px] font-bold text-[#00875A] uppercase tracking-wider block">
-                      Clinical Turning Protocol
+                    <span className="text-[11px] font-medium text-[#00875A] block">
+                      Clinical turning protocol
                     </span>
                     <span className="text-xs font-semibold text-[#0F2F28]">
-                      Zero Bed Sore Guarantee with Q2H Repositioning
+                      Zero bed sore guarantee with Q2H repositioning
                     </span>
                   </div>
-                  <span className="px-2.5 py-1 rounded-full bg-[#00875A]/10 text-[#00875A] text-[11px] font-bold">
-                    NABH
+                  <span className="px-2 py-0.5 rounded-full bg-[#00875A]/10 text-[#00875A] text-[11px] font-medium">
+                    NABH aligned
                   </span>
                 </div>
               </div>
@@ -80,23 +80,23 @@ export default function ValueProp() {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
             {/* Left: Real Healthcare Photo */}
             <div className="lg:col-span-6 order-2 lg:order-1">
-              <div className="relative overflow-hidden rounded-3xl bg-[#EADEC8] shadow-xl border-4 border-white aspect-[4/3]">
+              <div className="relative overflow-hidden rounded-3xl bg-[#EADEC8] shadow-sm border border-[#0F2F28]/10 aspect-[4/3]">
                 <img
                   src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=1080&auto=format&fit=crop"
                   alt="Kyno Health Doctor visiting patient at home in Gurgaon"
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-2xl border border-[#0F2F28]/10 shadow-md flex items-center justify-between">
+                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-2xl border border-[#0F2F28]/10 shadow-sm flex items-center justify-between">
                   <div>
-                    <span className="text-[11px] font-bold text-[#FB923C] uppercase tracking-wider block">
-                      Rapid Medical Vehicle
+                    <span className="text-[11px] font-medium text-[#0F2F28]/70 block">
+                      Rapid medical vehicle
                     </span>
                     <span className="text-xs font-semibold text-[#0F2F28]">
                       On-demand doctor with 12-lead ECG &amp; vitals monitor
                     </span>
                   </div>
-                  <span className="px-2.5 py-1 rounded-full bg-[#FB923C]/10 text-[#EA580C] text-[11px] font-bold">
-                    20 Mins
+                  <span className="px-2 py-0.5 rounded-full bg-gray-100 text-[#0F2F28] text-[11px] font-medium">
+                    20 mins
                   </span>
                 </div>
               </div>
@@ -104,12 +104,12 @@ export default function ValueProp() {
 
             {/* Right: Copy */}
             <div className="lg:col-span-6 order-1 lg:order-2">
-              <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#FB923C] mb-3">
-                <Stethoscope className="w-4 h-4" />
-                <span>24/7 Clinical Emergency Support</span>
+              <div className="inline-flex items-center gap-1.5 text-xs font-medium text-[#0F2F28]/70 mb-3">
+                <Stethoscope className="w-4 h-4 text-[#FB923C]" />
+                <span>Clinical emergency support</span>
               </div>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] font-light leading-[1.18] text-[#132D2E]">
-                Hospital-grade reassurance with an on-call doctor in 20 minutes.
+                Hospital-grade reassurance with an on-call doctor in 20 minutes
               </h2>
               <p className="mt-6 text-base sm:text-lg text-[#132D2E]/80 leading-relaxed font-normal">
                 If your family member develops sudden breathing distress, high fever, or blood pressure fluctuation, you won&apos;t have to scramble or panic. Kyno Health connects your caretaker directly to our Medical Command Center.
