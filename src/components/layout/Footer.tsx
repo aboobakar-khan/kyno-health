@@ -31,11 +31,11 @@ export default function Footer() {
     <footer className="relative bg-[#071F1A] text-white pt-16 pb-24 lg:pb-16 w-full border-t border-[#34D399]/20">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-10">
         {/* ── TOP ACTION & EMERGENCY BANNER ── */}
-        <div className="mb-14 rounded-2xl bg-gradient-to-r from-[#0F3830] via-[#12453B] to-[#0F3830] border border-[#34D399]/25 p-6 sm:p-8 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div className="mb-14 rounded-2xl bg-[#0B2520] border border-[#34D399]/20 p-6 sm:p-8 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#34D399]/15 px-3 py-1 text-xs font-semibold text-[#34D399] mb-2.5">
-              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-ping" />
-              <span>24/7 Emergency &amp; Caretaker Dispatch Hub</span>
+            <div className="inline-flex items-center gap-2 rounded-lg bg-[#34D399]/10 px-3 py-1 text-xs font-medium text-[#34D399] mb-2.5">
+              <span className="w-2 h-2 rounded-full bg-[#10B981]" />
+              <span>24/7 emergency &amp; caretaker dispatch hub</span>
             </div>
             <h3 className="font-serif text-2xl sm:text-3xl font-light text-white">
               Need a verified caretaker or doctor at home in Gurgaon?
@@ -48,20 +48,20 @@ export default function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-3 w-full lg:w-auto flex-shrink-0">
             <a
               href="tel:+919953104104"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#FB923C] hover:bg-[#EA580C] text-white px-6 py-3.5 text-sm font-semibold shadow-md active:scale-95 transition-all w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#FB923C] hover:bg-[#EA580C] text-white px-6 py-3.5 text-sm font-semibold shadow-sm active:scale-95 transition-all w-full sm:w-auto"
             >
               <Phone className="w-4 h-4" />
-              <span>Call Helpline: +91 99531 04104</span>
+              <span>Call helpline: +91 99531 04104</span>
             </a>
 
             <a
               href="https://wa.me/919953104104?text=Hi%20Kyno%20Health,%20I%20need%20a%20caretaker%20in%20Gurgaon"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white px-6 py-3.5 text-sm font-semibold shadow-md active:scale-95 transition-all w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] hover:bg-[#20BA5A] text-white px-6 py-3.5 text-sm font-semibold shadow-sm active:scale-95 transition-all w-full sm:w-auto"
             >
               <MessageCircle className="w-4 h-4 fill-white" />
-              <span>WhatsApp Coordinator</span>
+              <span>WhatsApp coordinator</span>
             </a>
           </div>
         </div>
@@ -129,8 +129,8 @@ export default function Footer() {
 
             {/* Quick 10-Minute Callback Request Form */}
             <div className="mt-6 pt-6 border-t border-white/10">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-[#34D399] mb-2">
-                Request a Callback in 10 Minutes
+              <h4 className="text-xs font-semibold text-[#34D399] mb-2">
+                Request a callback in 10 minutes
               </h4>
               {callbackSubmitted ? (
                 <div className="p-3 rounded-lg bg-[#34D399]/20 border border-[#34D399]/40 text-xs text-white flex items-center gap-2">
@@ -151,7 +151,7 @@ export default function Footer() {
                     type="submit"
                     className="px-4 py-2.5 rounded-lg bg-[#FB923C] hover:bg-[#EA580C] text-white text-xs font-semibold transition-colors flex items-center gap-1.5 whitespace-nowrap cursor-pointer shadow-sm"
                   >
-                    <span>Get Call</span>
+                    <span>Get call</span>
                     <Send className="w-3 h-3" />
                   </button>
                 </form>
@@ -161,8 +161,8 @@ export default function Footer() {
 
           {/* COLUMN 2: Caretaker Services (Span 3) */}
           <div className="lg:col-span-3">
-            <h4 className="text-[14.5px] font-semibold text-[#34D399] mb-4 tracking-wide uppercase text-xs">
-              Caretaker at Home
+            <h4 className="text-xs font-semibold text-[#34D399] mb-4">
+              Caretaker at home
             </h4>
             <ul className="space-y-2.5">
               {footerData.completeCare.map((item) => (
@@ -179,8 +179,8 @@ export default function Footer() {
             </ul>
 
             <div className="mt-8 pt-6 border-t border-white/10">
-              <h4 className="text-[14.5px] font-semibold text-[#34D399] mb-3 tracking-wide uppercase text-xs">
-                Quality Certifications
+              <h4 className="text-xs font-semibold text-[#34D399] mb-3">
+                Quality certifications
               </h4>
               <div className="space-y-2 text-xs text-white/70">
                 <div className="flex items-center gap-2">
@@ -201,8 +201,8 @@ export default function Footer() {
 
           {/* COLUMN 3: Clinical Services & Doctors (Span 3) */}
           <div className="lg:col-span-3">
-            <h4 className="text-[14.5px] font-semibold text-[#34D399] mb-4 tracking-wide uppercase text-xs">
-              Clinical &amp; Medical Services
+            <h4 className="text-xs font-semibold text-[#34D399] mb-4">
+              Clinical &amp; medical services
             </h4>
             <ul className="space-y-2.5">
               {footerData.clinicalLabReview.map((item) => (
@@ -219,7 +219,7 @@ export default function Footer() {
             </ul>
 
             <div className="mt-8 pt-6 border-t border-white/10">
-              <h4 className="text-[14.5px] font-semibold text-[#34D399] mb-3 tracking-wide uppercase text-xs">
+              <h4 className="text-xs font-semibold text-[#34D399] mb-3">
                 About Kyno Health
               </h4>
               <ul className="space-y-2">
@@ -239,8 +239,8 @@ export default function Footer() {
 
           {/* COLUMN 4: Gurgaon Hubs & Quick Actions (Span 2) */}
           <div className="lg:col-span-2">
-            <h4 className="text-[14.5px] font-semibold text-[#34D399] mb-4 tracking-wide uppercase text-xs">
-              Gurgaon Hubs
+            <h4 className="text-xs font-semibold text-[#34D399] mb-4">
+              Gurgaon hubs
             </h4>
             <ul className="space-y-2.5 mb-8">
               {footerData.centers.map((item) => (
@@ -258,13 +258,13 @@ export default function Footer() {
             <div className="space-y-2.5">
               <Link
                 href="/book-caretaker"
-                className="inline-flex items-center justify-center rounded-full bg-[#FB923C] hover:bg-[#EA580C] text-white py-2.5 px-4 text-xs font-semibold w-full text-center shadow-md transition-all"
+                className="inline-flex items-center justify-center rounded-xl bg-[#FB923C] hover:bg-[#EA580C] text-white py-2.5 px-4 text-xs font-semibold w-full text-center shadow-sm transition-all"
               >
                 Book Caretaker
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full border border-white/25 hover:border-white text-white py-2 px-4 text-xs font-medium w-full text-center transition-all"
+                className="inline-flex items-center justify-center rounded-xl border border-white/20 hover:border-white text-white py-2 px-4 text-xs font-medium w-full text-center transition-all"
               >
                 Contact Support
               </Link>

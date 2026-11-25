@@ -309,8 +309,8 @@ export default function Navbar() {
                   <div className="flex items-center gap-2.5">
                     <MapPin className="w-4 h-4 text-[#00875A]" />
                     <div>
-                      <div className="text-[11px] text-gray-500 uppercase tracking-wider font-semibold">
-                        Service Location
+                      <div className="text-[11px] text-gray-500 font-semibold">
+                        Service location
                       </div>
                       <div className="text-sm font-bold text-[#0F2F28]">
                         {selectedCity.name}
@@ -349,8 +349,8 @@ export default function Navbar() {
 
                 {/* Nav Links Accordion */}
                 <div className="space-y-3 pt-2">
-                  <div className="text-xs font-bold uppercase tracking-wider text-gray-400">
-                    Clinical Services &amp; Plans
+                  <div className="text-xs font-semibold text-gray-400">
+                    Clinical services and plans
                   </div>
 
                   {navData.links.map((link) => {

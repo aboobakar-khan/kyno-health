@@ -195,7 +195,7 @@ export default function Outcomes() {
               <div className="p-3 text-center leading-snug flex items-center justify-center text-[13px] font-normal border-b border-[#132D2E]/20">
                 Hospital Ward<br />/ Inpatient
               </div>
-              <div className="p-3 text-center text-[#132D2E] text-[14px] font-semibold leading-snug flex items-center justify-center bg-[#BEE3D6] border-b border-[#132D2E]/20">
+              <div className="p-3 text-center text-[#132D2E] text-[14px] font-semibold leading-snug flex items-center justify-center bg-[#E7EFEA] border-b border-[#132D2E]/20">
                 Kyno Health
               </div>
             </div>
@@ -238,7 +238,7 @@ export default function Outcomes() {
                   </div>
 
                   {/* Column 3: Kyno Health (Mint Column with stacked feature label) */}
-                  <div className="p-3 flex flex-col items-center justify-center text-center bg-[#BEE3D6] border-b border-[#132D2E]/20">
+                  <div className="p-3 flex flex-col items-center justify-center text-center bg-[#E7EFEA] border-b border-[#132D2E]/20">
                     <span className="text-[11px] text-[#132D2E]/80 leading-tight mb-1.5 font-normal">
                       {row.feature}
                     </span>
@@ -261,7 +261,7 @@ export default function Outcomes() {
               <div className="min-w-[850px] border-t border-[#132D2E]/20 relative">
                 {/* Continuous Solid Mint Column for Kyno Health */}
                 <div
-                  className="absolute right-0 top-0 bottom-0 w-[calc(100%*2/12)] bg-[#BEE3D6] pointer-events-none z-0"
+                  className="absolute right-0 top-0 bottom-0 w-[calc(100%*2/12)] bg-[#E7EFEA] pointer-events-none z-0"
                   aria-hidden="true"
                 />
 
@@ -359,7 +359,7 @@ export default function Outcomes() {
             <div className="sticky bottom-8 z-30 flex justify-center pointer-events-none mt-6">
               <a
                 href="/book-caretaker"
-                className="pointer-events-auto inline-flex items-center gap-2 rounded-full bg-[#FB923C] hover:bg-[#EA580C] px-8 py-3.5 text-[15px] font-semibold text-white shadow-xl hover:shadow-2xl transition-all"
+                className="pointer-events-auto inline-flex items-center gap-2 rounded-xl bg-[#FB923C] hover:bg-[#EA580C] px-8 py-3.5 text-[15px] font-semibold text-white shadow-lg transition-all"
               >
                 <span>Book Caretaker in Gurgaon</span>
                 <ArrowRight className="h-4 w-4" />

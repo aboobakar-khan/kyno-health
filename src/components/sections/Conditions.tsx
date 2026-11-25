@@ -36,7 +36,7 @@ export default function Conditions() {
             <div className="mt-8">
               <a
                 href="/services"
-                className="inline-flex items-center gap-2 rounded-full bg-[#0F2F28] px-7 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-[#1A423A] transition-colors"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#0F2F28] px-7 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-[#1A423A] transition-colors"
               >
                 <span>View all departments</span>
                 <ArrowRight className="h-4 w-4" />

@@ -151,7 +151,7 @@ export default function Offerings() {
                   <a
                     href="/book-caretaker?plan=12h"
                     onClick={(e) => activeCard !== 0 && e.stopPropagation()}
-                    className={`mt-5 inline-flex items-center justify-center rounded-full bg-[#FB923C] py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-[#EA580C] transition-all ${
+                    className={`mt-5 inline-flex items-center justify-center rounded-xl bg-[#FB923C] py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-[#EA580C] transition-all ${
                       activeCard === 0 ? "px-10" : "w-full px-6"
                     }`}
                   >
@@ -278,7 +278,7 @@ export default function Offerings() {
                   <a
                     href="/book-caretaker?plan=24h"
                     onClick={(e) => activeCard !== 1 && e.stopPropagation()}
-                    className={`mt-5 inline-flex items-center justify-center rounded-full bg-[#0F2F28] py-3.5 text-sm font-semibold text-white hover:bg-[#1A423A] transition-all ${
+                    className={`mt-5 inline-flex items-center justify-center rounded-xl bg-[#0F2F28] py-3.5 text-sm font-semibold text-white hover:bg-[#1A423A] transition-all ${
                       activeCard === 1 ? "px-10" : "w-full px-6"
                     }`}
                   >
@@ -352,7 +352,7 @@ export default function Offerings() {
 
               <a
                 href="/book-caretaker?plan=12h"
-                className="inline-flex items-center justify-center rounded-full bg-[#FB923C] text-white py-3.5 px-8 text-sm font-semibold hover:bg-[#EA580C] transition-all shadow-sm"
+                className="inline-flex items-center justify-center rounded-xl bg-[#FB923C] text-white py-3.5 px-8 text-sm font-semibold hover:bg-[#EA580C] transition-all shadow-sm"
               >
                 Book 12-Hour Care
               </a>
@@ -406,7 +406,7 @@ export default function Offerings() {
 
               <a
                 href="/book-caretaker?plan=24h"
-                className="inline-flex items-center justify-center rounded-full bg-[#0F2F28] text-white py-3.5 px-8 text-sm font-semibold hover:bg-[#1A423A] transition-all shadow-sm"
+                className="inline-flex items-center justify-center rounded-xl bg-[#0F2F28] text-white py-3.5 px-8 text-sm font-semibold hover:bg-[#1A423A] transition-all shadow-sm"
               >
                 Book 24/7 Live-In Care
               </a>
@@ -431,7 +431,7 @@ export default function Offerings() {
 
           <a
             href="tel:+919953104104"
-            className="flex-shrink-0 inline-flex items-center gap-2 rounded-full bg-[#FB923C] hover:bg-[#EA580C] text-white px-7 py-3 text-sm font-semibold transition-colors"
+            className="flex-shrink-0 inline-flex items-center gap-2 rounded-xl bg-[#FB923C] hover:bg-[#EA580C] text-white px-7 py-3 text-sm font-semibold transition-colors shadow-sm"
           >
             <Phone className="w-4 h-4" />
             <span>Call +91 99531 04104</span>

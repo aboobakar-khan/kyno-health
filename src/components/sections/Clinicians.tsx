@@ -54,7 +54,7 @@ export default function Clinicians() {
                 className="h-full w-full object-cover object-top"
               />
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0B231E]/95 via-[#0B231E]/60 to-transparent p-6 text-white">
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#FB923C] text-[11px] font-medium mb-2 text-white">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-[#FB923C] text-[11px] font-medium mb-2 text-white">
                   <Stethoscope className="w-3 h-3" />
                   <span>Medical Director</span>
                 </div>
@@ -96,9 +96,9 @@ export default function Clinicians() {
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
                 href="/book-caretaker"
-                className="inline-flex items-center justify-center rounded-full bg-[#132D2E] px-8 py-4 text-sm font-semibold text-white shadow-sm hover:bg-[#1B3340] transition-colors"
+                className="inline-flex items-center justify-center rounded-xl bg-[#0F2F28] px-8 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-[#1B3340] transition-colors"
               >
-                Consult With Our Care Team
+                Consult with our care team
               </a>
               <a
                 href="tel:+919953104104"
